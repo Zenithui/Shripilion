@@ -75,7 +75,7 @@
     return {
       diveNumber: fallbackDiveNum || 1,
       theme: 'Pelagic Drift',
-      subtitle: 'Balanced 7-signal dive across all 4 packs',
+      subtitle: 'Balanced 7-signal dive across all 5 packs',
       prompts: getDailyPrompts(seed)
     };
   }
@@ -90,7 +90,9 @@
     const s = shuffleWith(PROMPTS.filter(p => p.pack === 'science'), rng);
     const c = shuffleWith(PROMPTS.filter(p => p.pack === 'culture'), rng);
     const e = shuffleWith(PROMPTS.filter(p => p.pack === 'everyday'), rng);
-    return shuffleWith([w[0], s[0], c[0], e[0], w[1], s[1], c[1], e[1]], rng).slice(0, 7);
+    const n = shuffleWith(PROMPTS.filter(p => p.pack === 'current'), rng);
+    const base = [w[0], s[0], c[0], e[0], n[0], w[1], s[1], n[1], c[1], e[1]].filter(Boolean);
+    return shuffleWith(base, rng).slice(0, 7);
   }
 
   let recentPracticeIds = [];
@@ -1170,14 +1172,16 @@
   }
 
   function syncSettingsModal() {
+    const validTimers = ['15', '25', '35', '0'];
+    const tStr = String(state.settings.timerSeconds);
     document.getElementById('set-autospell').checked = Boolean(state.autoSpell);
-    document.getElementById('set-timer-sec').value = String(state.settings.timerSeconds);
-    const volPct = AudioEngine.getVolume ? Math.round(AudioEngine.getVolume() * 100) : 85;
+    document.getElementById('set-timer-sec').value = validTimers.includes(tStr) ? tStr : '25';
+    const volPct = typeof AudioEngine.getVolume === 'function' ? Math.round(AudioEngine.getVolume() * 100) : 85;
     document.getElementById('audio-volume-slider').value = String(volPct);
     document.getElementById('set-vol-pct').textContent = `${volPct}%`;
-    document.getElementById('set-muted').checked = AudioEngine.isMuted();
-    document.getElementById('set-ambience').checked = AudioEngine.isAmbientEnabled();
-    document.getElementById('set-keyticks').checked = Boolean(state.settings.keyTicks);
+    document.getElementById('set-muted').checked = typeof AudioEngine.isMuted === 'function' ? AudioEngine.isMuted() : false;
+    document.getElementById('set-ambience').checked = typeof AudioEngine.isAmbientEnabled === 'function' ? AudioEngine.isAmbientEnabled() : true;
+    document.getElementById('set-keyticks').checked = state.settings.keyTicks !== false;
     document.getElementById('set-sub-skin').value = state.settings.subSkin || 'gold';
     document.getElementById('set-reduced-motion').checked = Boolean(state.settings.reducedMotion);
 
@@ -1189,8 +1193,11 @@
   }
 
   function openSettings() {
-    syncSettingsModal();
-    document.getElementById('modal-settings').classList.add('open');
+    try {
+      syncSettingsModal();
+    } catch (_) {}
+    const modal = document.getElementById('modal-settings');
+    if (modal) modal.classList.add('open');
   }
 
   function openArchive() {
@@ -1243,17 +1250,11 @@
     btn.title = on ? 'Hydrophone Ocean Ambience: ON' : 'Hydrophone Ocean Ambience: OFF';
   }
 
-  document.addEventListener('DOMContentLoaded', async () => {
+  document.addEventListener('DOMContentLoaded', () => {
     Ocean.init(document.getElementById('ocean-canvas'));
     applyVisualSettings(state.settings);
     syncSoundBtn();
     syncAmbienceBtn();
-
-    if (window.ShrimplionDataset) {
-      await window.ShrimplionDataset.load();
-      syncDatasetGlobals();
-    }
-
     renderHome();
 
     document.getElementById('btn-top-home').addEventListener('click', () => { AudioEngine.uiClick(); renderHome(); });
@@ -1374,6 +1375,7 @@
       syncAutoSpellBtn();
       updateSpellPreview();
       AudioEngine.uiClick();
+      showToast(state.autoSpell ? '🪄 Auto Spell-Check: ON' : '🪄 Auto Spell-Check: OFF');
     });
     document.getElementById('set-timer-sec').addEventListener('change', e => {
       state.settings.timerSeconds = Number(e.target.value);
@@ -1391,29 +1393,34 @@
         AudioEngine.toggleMute();
         syncSoundBtn();
       }
+      showToast(e.target.checked ? '🔇 Sound Muted' : '🔊 Sound Unmuted');
     });
     document.getElementById('set-ambience').addEventListener('change', e => {
       if (e.target.checked !== AudioEngine.isAmbientEnabled()) {
         AudioEngine.toggleAmbience();
         syncAmbienceBtn();
       }
+      showToast(e.target.checked ? '🌊 Hydrophone Ambience: ON' : '🔕 Hydrophone Ambience: OFF');
     });
     document.getElementById('set-keyticks').addEventListener('change', e => {
       state.settings.keyTicks = e.target.checked;
       saveSettings(state.settings);
       AudioEngine.uiClick();
+      showToast(state.settings.keyTicks ? '⌨️ Keystroke Ticks: ON' : '⌨️ Keystroke Ticks: OFF');
     });
     document.getElementById('set-sub-skin').addEventListener('change', e => {
       state.settings.subSkin = e.target.value;
       saveSettings(state.settings);
       applyVisualSettings(state.settings);
       AudioEngine.uiClick();
+      showToast(`🤿 Hull repainted: ${e.target.options[e.target.selectedIndex].text}`);
     });
     document.getElementById('set-reduced-motion').addEventListener('change', e => {
       state.settings.reducedMotion = e.target.checked;
       saveSettings(state.settings);
       applyVisualSettings(state.settings);
       AudioEngine.uiClick();
+      showToast(state.settings.reducedMotion ? '🎞️ Reduced Screen Shake: ON' : '🎞️ Full Impact Shake: ON');
     });
     document.getElementById('btn-settings-reset-daily').addEventListener('click', () => {
       document.getElementById('modal-settings').classList.remove('open');
@@ -1435,5 +1442,15 @@
       showToast('🗑️ Stats, Personal Bests & Today’s Daily cleared.');
       renderHome();
     });
+
+    // Hydrate external JSON dataset asynchronously without blocking UI bindings
+    if (window.ShrimplionDataset) {
+      window.ShrimplionDataset.load().then(() => {
+        syncDatasetGlobals();
+        if (document.getElementById('screen-home').classList.contains('active')) {
+          renderHome();
+        }
+      }).catch(() => {});
+    }
   });
 })();

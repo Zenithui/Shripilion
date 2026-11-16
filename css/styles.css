@@ -157,9 +157,10 @@ html, body {
 /* Minimalist Floating Topbar */
 .topbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 10px;
+  gap: 8px;
   padding: 6px 4px;
 }
 
@@ -187,6 +188,8 @@ html, body {
 
 .top-controls {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
   gap: 6px;
 }
@@ -436,6 +439,12 @@ html, body {
 .pack-card-btn:hover {
   border-color: #38bdf8;
   background: rgba(3, 105, 161, 0.42);
+}
+
+.pack-card-featured {
+  grid-column: 1 / -1;
+  border-color: rgba(56, 189, 248, 0.55);
+  background: rgba(14, 116, 144, 0.25);
 }
 
 .pack-card-btn strong {

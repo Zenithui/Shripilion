@@ -16,14 +16,20 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT = path.resolve(__dirname, '..');
 
-const PACK_ORDER = ['world', 'science', 'culture', 'everyday'];
+const PACK_ORDER = ['world', 'science', 'culture', 'everyday', 'current'];
 
 const PACKS = {
   mixed: {
     id: 'mixed',
     name: 'Open Ocean',
-    subtitle: 'All 4 packs mixed (56 prompts)',
+    subtitle: 'All 5 packs mixed (68 prompts)',
     icon: '🌊'
+  },
+  current: {
+    id: 'current',
+    name: 'Current & Now (2020s+)',
+    subtitle: 'AI, apps, 2020s movies, streaming, music, EVs & memes',
+    icon: '⚡'
   },
   world: {
     id: 'world',
@@ -161,11 +167,13 @@ const ZONES = [
 ];
 
 const DAILY_THEMES = [
-  { theme: 'Mariana Mixed Current', subtitle: 'Balanced voyage across all four packs', bias: null },
+  { theme: 'Mariana Mixed Current', subtitle: 'Balanced voyage across all five packs', bias: null },
+  { theme: 'Currents & Trends (2020s+)', subtitle: 'AI, apps, 2020s pop, gaming & viral hits', bias: 'current' },
   { theme: "Cartographer's Crossing", subtitle: 'Heavy on borders, peaks, rivers & landmarks', bias: 'world' },
   { theme: 'Bioluminescent Lab', subtitle: 'Science-rich sonar survey from atoms to bugs', bias: 'science' },
   { theme: 'Sunken Archive Dive', subtitle: 'Myth, music, classics, games & lore', bias: 'culture' },
   { theme: 'Galley & Pantry Plunge', subtitle: 'Culinary flavors, breeds, sports & crafts', bias: 'everyday' },
+  { theme: 'Silicon & Spotlight', subtitle: 'Spaceflight, EVs, modern films & sports stars', bias: 'current' },
   { theme: 'Pelagic Drift', subtitle: 'Wild currents from every trench', bias: null },
   { theme: 'Abyssal Atlas', subtitle: 'Charting faraway islands, deserts & capitals', bias: 'world' },
   { theme: 'Naturalist Expedition', subtitle: 'Flora, fauna, anatomy & forces of nature', bias: 'science' },
@@ -293,12 +301,9 @@ function loadAndValidatePacks() {
 }
 
 function generateDailySchedule(allPrompts) {
-  const byPack = {
-    world: allPrompts.filter(p => p.pack === 'world').map(p => p.id),
-    science: allPrompts.filter(p => p.pack === 'science').map(p => p.id),
-    culture: allPrompts.filter(p => p.pack === 'culture').map(p => p.id),
-    everyday: allPrompts.filter(p => p.pack === 'everyday').map(p => p.id)
-  };
+  const byPack = Object.fromEntries(
+    PACK_ORDER.map(packId => [packId, allPrompts.filter(p => p.pack === packId).map(p => p.id)])
+  );
 
   const anchorUtc = Date.UTC(2026, 0, 1); // 2026-01-01 = Dive #1
   const startUtc = Date.UTC(2026, 10, 1); // 2026-11-01
@@ -326,19 +331,18 @@ function generateDailySchedule(allPrompts) {
     }
 
     const picked = [];
-    // Always guarantee at least 1 prompt from each of the 4 packs
+    // Always guarantee at least 1 prompt from each of the 5 packs
     for (const packId of PACK_ORDER) {
       picked.push(avail[packId].shift());
     }
 
-    if (themeObj.bias && avail[themeObj.bias].length >= 2) {
+    if (themeObj.bias && avail[themeObj.bias].length >= 1) {
       picked.push(avail[themeObj.bias].shift());
       const others = shuffleWith(PACK_ORDER.filter(p => p !== themeObj.bias), rng);
       picked.push(avail[others[0]].shift());
-      picked.push(avail[others[1]].shift());
     } else {
       const extraPacks = shuffleWith(PACK_ORDER, rng);
-      for (let k = 0; k < 3; k++) {
+      for (let k = 0; k < 2; k++) {
         picked.push(avail[extraPacks[k]].shift());
       }
     }

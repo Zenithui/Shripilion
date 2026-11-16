@@ -8,9 +8,9 @@ A full-featured, offline-ready browser game inspired by **Krillion** (`krillion.
 - **Authentic Modes (`Daily Dive`, `Practice`, `Packs`, `Crew`)**:
   - **Daily Dive, Reset & Archive**: 365-day pre-generated themed daily challenge schedule (`data/daily.json`, covering `2026-11-01` to `2027-10-31`) with `25s` oxygen ring timer, live next-dive countdown, **🔄 Reset Today's Daily Dive** (restoring prior streak cleanly), and the **📅 Daily Archive** modal to replay past themed dives.
   - **Practice**: Unlimited random signals with **⚡ 15s Blitz**, **⏱️ 25s Timed**, or **∞ Untimed** modes.
-  - **Packs**: 4 expanded themed expedition packs (*Geography & World*, *Science & Space*, *Culture & Tech*, *Food & Everyday* — 14 prompts each).
+  - **Packs**: 5 themed expedition packs (*Current & Now (2020s+)*, *Geography & World*, *Science & Space*, *Culture & Tech*, *Food & Everyday* — 68 prompts total).
   - **Crew**: 2–4 local divers coordinate turns — unique valid answers earn a **+150m Crew Sync Bonus**, while duplicate answers collide for **0m**.
-- **Dataset-Backed Question Bank (56 Prompts · 7,153 Canonical Answers · 8,364 Search Forms)**: Stored cleanly in modular JSON files under `data/packs/*.json`, `data/manifest.json`, and `data/daily.json`, loaded dynamically via `fetch()` (`js/dataset-loader.js`) with `js/prompts.js` kept in sync as an offline/`file://` fallback across all 6 rarity tiers:
+- **Dataset-Backed Question Bank (68 Prompts · 8,389 Canonical Answers · 9,839 Search Forms)**: Stored cleanly in modular JSON files under `data/packs/*.json`, `data/manifest.json`, and `data/daily.json`, loaded dynamically via `fetch()` (`js/dataset-loader.js`) with `js/prompts.js` kept in sync as an offline/`file://` fallback across all 6 rarity tiers:
   - 🟢 **Plankton** (`+100m`)
   - 🩵 **Too Clever** (`+150m`)
   - 🔵 **Schooler** (`+300m`)

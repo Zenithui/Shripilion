@@ -1,9 +1,9 @@
 {
   "version": 2,
   "datasetName": "Shrimplion Pelagic Reverse-Trivia Corpus",
-  "totalPrompts": 56,
-  "totalCanonicalAnswers": 7153,
-  "totalSearchForms": 8364,
+  "totalPrompts": 68,
+  "totalCanonicalAnswers": 8389,
+  "totalSearchForms": 9839,
   "dailyRange": {
     "start": "2026-11-01",
     "end": "2027-10-31",
@@ -13,21 +13,29 @@
     "world": 14,
     "science": 14,
     "culture": 14,
-    "everyday": 14
+    "everyday": 14,
+    "current": 12
   },
   "packFiles": {
     "world": "data/packs/world.json",
     "science": "data/packs/science.json",
     "culture": "data/packs/culture.json",
-    "everyday": "data/packs/everyday.json"
+    "everyday": "data/packs/everyday.json",
+    "current": "data/packs/current.json"
   },
   "dailyFile": "data/daily.json",
   "packs": {
     "mixed": {
       "id": "mixed",
       "name": "Open Ocean",
-      "subtitle": "All 4 packs mixed (56 prompts)",
+      "subtitle": "All 5 packs mixed (68 prompts)",
       "icon": "🌊"
+    },
+    "current": {
+      "id": "current",
+      "name": "Current & Now (2020s+)",
+      "subtitle": "AI, apps, 2020s movies, streaming, music, EVs & memes",
+      "icon": "⚡"
     },
     "world": {
       "id": "world",

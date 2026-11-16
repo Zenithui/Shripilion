@@ -1,0 +1,170 @@
+[
+  {
+    "id": "ai-tools-models",
+    "pack": "current",
+    "prompt": "Name an AI model, chatbot, or generative AI tool",
+    "hint": "LLMs, image/video/audio generators, or coding assistants from the modern AI era",
+    "tiers": {
+      "1": ["ChatGPT|GPT|GPT-4|GPT-4o|OpenAI", "Gemini|Google Gemini|Bard", "Copilot|Microsoft Copilot|GitHub Copilot", "Siri", "Alexa"],
+      "2": ["Claude|Anthropic Claude", "Midjourney", "Grok|xAI", "DeepSeek", "Perplexity", "DALL-E|Dalle"],
+      "3": ["Llama|Meta AI", "Stable Diffusion", "Sora", "Cursor", "NotebookLM", "Apple Intelligence", "Grammarly", "Character AI|Character.AI"],
+      "4": ["Mistral|Le Chat", "Runway|Runway Gen-3", "Suno", "Udio", "ElevenLabs", "Poe", "Hugging Face", "Qwen", "Veo", "Windsurf", "Devin", "Bolt|Bolt.new", "Lovable", "v0"],
+      "5": ["Flux|Black Forest Labs", "Ideogram", "Kling|Kling AI", "Pika|Pika Labs", "Luma|Dream Machine", "Cohere|Command R", "Gemma", "Phi|Phi-3", "DeepL", "Descript", "HeyGen", "Synthesia", "Pi|Inflection", "Replit Agent", "Cline", "Aider"],
+      "6": ["Ernie Bot|ERNIE", "Kimi|Moonshot", "Doubao", "GLM|ChatGLM", "Yi|01.AI", "MiniMax|Hailuo", "Nemotron", "Granite|IBM Granite", "Olmo|AI2 OLMo", "RWKV", "Jamba|AI21", "Recraft", "Higgsfield", "Sesame|Maya", "AudioCraft|MusicGen", "Bark", "Whisper", "Vosk", "ComfyUI", "LoRA|ControlNet", "Reka", "Nous Hermes", "Dolphin"]
+    }
+  },
+  {
+    "id": "social-media-apps",
+    "pack": "current",
+    "prompt": "Name a social media platform, creator site, or messaging app",
+    "hint": "Major social networks, short-video apps, microblogs, forums, or encrypted chat apps",
+    "tiers": {
+      "1": ["Instagram|IG", "TikTok", "YouTube", "Facebook|FB", "X|Twitter", "Snapchat|Snap", "WhatsApp"],
+      "2": ["Reddit", "Discord", "LinkedIn", "Pinterest", "Twitch", "Threads", "Messenger|Facebook Messenger", "Telegram"],
+      "3": ["Bluesky", "Signal", "WeChat", "Patreon", "Substack", "Tumblr", "BeReal", "Quora", "Slack", "iMessage"],
+      "4": ["Mastodon", "Line", "KakaoTalk", "Viber", "Lemon8", "Kick", "Rumble", "OnlyFans", "Ko-fi", "Letterboxd", "Goodreads", "Strava", "Nextdoor", "Meetup", "Bumble|Tinder|Hinge"],
+      "5": ["Xiaohongshu|RedNote|Little Red Book", "Bilibili", "Douyin", "Weibo", "Kuaishou", "VK|VKontakte", "Clubhouse", "Truth Social", "Farcaster|Warpcast", "Nostr|Damus", "Are.na", "Cara", "Locket", "Partiful", "Fizz", "YikYak", "Blind", "Glassdoor"],
+      "6": ["Pixelfed", "PeerTube", "Lemmy", "Kbin", "Friendica", "Misskey", "Pleroma", "Micro.blog", "SpaceHey", "Neocities", "Pillowfort", "Cohost", "Peach", "Vero", "Ello", "Minds", "Gab", "Parler", "Gettr", "Odysee", "Dailymotion", "NicoNico|Niconico", "Mixi", "Taringa", "Hi5", "Tantan", "Soul", "Zalo", "Band"]
+    }
+  },
+  {
+    "id": "streaming-shows-hits",
+    "pack": "current",
+    "prompt": "Name a hit 2020s TV or streaming series",
+    "hint": "Series with major new seasons or premieres from 2020 onward across Netflix, Max, Apple TV+, Disney+, Prime, or Hulu",
+    "tiers": {
+      "1": ["Stranger Things", "Squid Game", "Wednesday", "The Last of Us", "The Mandalorian", "Bridgerton", "The Boys"],
+      "2": ["House of the Dragon", "Succession", "The Bear", "Ted Lasso", "Severance", "The White Lotus|White Lotus", "Fallout", "Euphoria", "Cobra Kai", "Emily in Paris"],
+      "3": ["Shogun", "Arcane", "Andor", "Reacher", "Invincible", "Only Murders in the Building", "Yellowjackets", "The Queens Gambit|Queens Gambit", "Baby Reindeer", "One Piece", "Beef", "Abbott Elementary", "Better Call Saul", "Ozark", "Ginny and Georgia"],
+      "4": ["Adolescence", "Silo", "Slow Horses", "The Penguin", "Rings of Power|The Lord of the Rings The Rings of Power", "Ripley", "3 Body Problem", "True Detective Night Country", "Solo Leveling", "Frieren|Frieren Beyond Journeys End", "Dandadan", "Blue Eye Samurai", "The Pitt", "Nobody Wants This", "Hacks", "Heartstopper", "Reservation Dogs", "Poker Face", "Barry", "What We Do in the Shadows"],
+      "5": ["Pachinko", "And Just Like That", "The Diplomat", "Bad Sisters", "Foundation", "For All Mankind", "Shrinking", "Dark Matter", "Presumed Innocent", "Mr and Mrs Smith", "The Curse", "Scavengers Reign", "Pantheon", "Pluto", "Delicious in Dungeon|Dungeon Meshi", "Jujutsu Kaisen", "Chainsaw Man", "Mob Psycho 100", "Station Eleven", "I May Destroy You", "Normal People", "Small Axe", "Somebody Somewhere", "Interview with the Vampire"],
+      "6": ["Kleo", "1899", "The Lazarus Project", "Mrs Davis", "Common Side Effects", "Carol and the End of the World", "The Rehearsal", "How To with John Wilson", "Los Espookys", "Fantasmas", "English Teacher", "Say Nothing", "Black Doves", "The Day of the Jackal", "The Agency", "Giri Haji", "Sort Of", "We Are Lady Parts", "Deadloch", "Fisk", "Colin from Accounts", "Mr Inbetween", "Ramy", "Mo", "Such Brave Girls", "Am I Being Unreasonable", "Acapulco", "Drops of God", "Sunny", "Tokyo Vice", "The Sympathizer", "The New Look"]
+    }
+  },
+  {
+    "id": "modern-pop-stars",
+    "pack": "current",
+    "prompt": "Name a major 2020s music artist, rapper, or group",
+    "hint": "Chart-topping or critically acclaimed artists active in the 2020s",
+    "tiers": {
+      "1": ["Taylor Swift", "Beyonce", "Drake", "Billie Eilish", "Ariana Grande", "The Weeknd", "Bruno Mars", "Olivia Rodrigo", "Bad Bunny", "Dua Lipa"],
+      "2": ["Sabrina Carpenter", "Chappell Roan", "Kendrick Lamar", "SZA", "Harry Styles", "Doja Cat", "Post Malone", "BTS", "Blackpink", "Travis Scott", "Lady Gaga", "Ed Sheeran"],
+      "3": ["Charli XCX", "Lana Del Rey", "Tyler the Creator", "Tyla", "Noah Kahan", "Benson Boone", "Teddy Swims", "Gracie Abrams", "Miley Cyrus", "Justin Bieber", "Rihanna", "Karol G", "Peso Pluma", "Stray Kids", "NewJeans", "Morgan Wallen", "Zach Bryan", "Hozier"],
+      "4": ["Fred Again|Fred again..", "Raye", "Doechii", "Renee Rapp", "Tate McRae", "Troye Sivan", "beabadoobee", "Clairo", "FKA twigs", "Frank Ocean", "Rosalia", "Burna Boy", "Rema", "Wizkid", "Asake", "Feid", "Rauw Alejandro", "Anitta", "LE SSERAFIM|Le Sserafim", "aespa", "ATEEZ", "IVE", "Jungkook", "Phoebe Bridgers", "boygenius", "Mitski", "Laufey"],
+      "5": ["Mk.gee", "Dijon", "Fontaines DC|Fontaines D.C.", "Wet Leg", "Turnstile", "Knock2", "ISOxo", "Four Tet", "Jamie xx", "Peggy Gou", "Kaytranada", "PinkPantheress", "Nia Archives", "Central Cee", "Little Simz", "Dave", "Stormzy", "Skepta", "Blood Orange", "Magdalena Bay", "Caroline Polachek", "100 gecs", "underscores", "Jane Remover", "Geese", "Wednesday Band", "Waxahatchee", "MJ Lenderman", "Ethel Cain", "The Marias", "Men I Trust", "Khruangbin"],
+      "6": ["Nourished by Time", "Cindy Lee", "Arooj Aftab", "Fabiana Palladino", "Jai Paul", "Oklou", "A. G. Cook|AG Cook", "Sophie|SOPHIE", "Shygirl", "Two Shell", "Overmono", "Bicep", "Romy", "Sampha", "Cleo Sol", "SAULT", "Ezra Collective", "Yussef Dayes", "Nubya Garcia", "Kokoroko", "Nilufer Yanya", "English Teacher", "The Last Dinner Party", "Kneecap", "Amyl and the Sniffers", "King Gizzard and the Lizard Wizard|KGLW", "Viagra Boys", "Idles", "Black Country New Road|BCNR", "black midi|Geordie Greep", "Squid", "Yard Act", "Alvvays", "Chicano Batman", "Cuco", "Omar Apollo", "Mustafa", "Raveena", "Foushee", "brent faiyaz|Brent Faiyaz"]
+    }
+  },
+  {
+    "id": "ev-modern-cars",
+    "pack": "current",
+    "prompt": "Name an electric vehicle (EV), EV brand, or modern EV model",
+    "hint": "Electric carmakers or specific electric cars, trucks & SUVs",
+    "tiers": {
+      "1": ["Tesla", "Model 3|Tesla Model 3", "Model Y|Tesla Model Y", "Cybertruck|Tesla Cybertruck", "Prius|Toyota Prius"],
+      "2": ["Rivian", "Ford Mustang Mach-E|Mach-E", "Ford F-150 Lightning|F-150 Lightning", "Hyundai Ioniq|Ioniq 5|Ioniq 6", "BYD", "Chevy Bolt|Chevrolet Bolt", "Nissan Leaf", "Porsche Taycan"],
+      "3": ["Lucid|Lucid Air", "Polestar|Polestar 2", "Kia EV6", "Kia EV9", "BMW i4|BMW iX", "Audi e-tron|Audi Q4 e-tron", "Volkswagen ID.4|ID.4", "Volvo EX30|EX90", "Model S|Tesla Model S", "Model X|Tesla Model X"],
+      "4": ["Rivian R1T", "Rivian R1S", "Rivian R2", "Lucid Gravity", "Hummer EV|GMC Hummer EV", "Cadillac Lyriq", "Chevy Blazer EV|Equinox EV", "Mercedes EQS|Mercedes EQE", "Jaguar I-Pace", "Mini Cooper SE", "Fiat 500e", "Subaru Solterra", "Toyota bZ4X", "Honda Prologue", "Dodge Charger Daytona EV", "BYD Seal", "BYD Atto 3", "BYD Dolphin"],
+      "5": ["NIO|Nio ET5|Nio ES8", "XPeng|XPeng G6", "Li Auto", "Xiaomi SU7", "Zeekr|Zeekr 001", "Polestar 3", "Polestar 4", "VinFast|VF8|VF9", "Fisker Ocean", "Canoo", "Aptera", "Slate Auto", "Scout Motors", "Jeep Wagoneer S", "Kia EV3", "Hyundai Ioniq 9", "Renault 5 E-Tech", "MG4", "Dacia Spring", "Cupra Born", "Smart #1"],
+      "6": ["Rimac Nevera|Rimac", "Lotus Eletre", "Lotus Emeya", "Pininfarina Battista", "Aspark Owl", "Maserati GranTurismo Folgore", "Rolls-Royce Spectre", "Afeela", "Togg", "Aion|GAC Aion", "Avatr", "Deepal", "Leapmotor", "Neta", "Voyah", "Seres", "Hongqi E-HS9", "Yangwang U8|Yangwang U9", "Lightyear 0", "Sono Sion", "Bollinger B1", "Lordstown Endurance", "Faraday Future|FF 91", "Mullen", "workhorse|Workhorse", "Microlino", "Citroen Ami", "Kandi", "Wuling Hongguang Mini EV", "Ora Funky Cat|Ora Good Cat"]
+    }
+  },
+  {
+    "id": "modern-space-missions",
+    "pack": "current",
+    "prompt": "Name a modern space mission, rocket, telescope, or space company",
+    "hint": "21st-century launch vehicles, rovers, probes, telescopes, or commercial spaceflight",
+    "tiers": {
+      "1": ["SpaceX", "NASA", "James Webb Space Telescope|JWST|Webb", "Hubble|Hubble Space Telescope", "Blue Origin", "Falcon 9"],
+      "2": ["Starship|SpaceX Starship", "Artemis", "Perseverance|Perseverance Rover", "Curiosity|Curiosity Rover", "Virgin Galactic", "International Space Station|ISS"],
+      "3": ["Crew Dragon|Dragon", "Falcon Heavy", "Ingenuity|Mars Helicopter", "Starlink", "Voyager|Voyager 1|Voyager 2", "New Horizons", "Parker Solar Probe", "Boeing Starliner|Starliner"],
+      "4": ["Blue Origin New Glenn|New Glenn", "New Shepard", "Rocket Lab|Electron", "Europa Clipper", "DART", "OSIRIS-REx", "Juno", "Cassini", "Rosetta|Philae", "InSight", "Opportunity|Spirit", "TESS", "Gaia", "Chandrayaan-3|Chandrayaan", "Tiangong", "Ariane 6|Ariane 5"],
+      "5": ["Vulcan Centaur|ULA", "Sierra Space|Dream Chaser", "Axiom|Axiom Space", "Polaris Dawn", "Inspiration4", "Lucy", "Psyche", "JUICE", "BepiColombo", "Hayabusa2|Hayabusa", "SLIM", "Chang e 6|Chang e 5|Chang e 4", "Tianwen-1|Zhurong", "Mangalyaan|Mars Orbiter Mission", "Aditya-L1", "Euclid", "Nancy Grace Roman|Roman Space Telescope", "Vera Rubin Observatory", "Terran R|Relativity Space", "Firefly|Alpha|Blue Ghost", "Intuitive Machines|Odysseus", "Astrobotic|Peregrine"],
+      "6": ["Hera", "DESTINY+", "MMX|Martian Moons eXploration", "XRISM", "SPHEREx", "NEO Surveyor", "Dragonfly", "DAVINCI", "VERITAS", "EnVision", "Comet Interceptor", "PLATO", "ARIEL", "LISA", "Vega-C", "H3 Rocket", "KSLV-II|Nuri", "Long March 5|Long March 9", "Zhuque-2", "Vikram-S|Skyroot", "Agnikul|Agnibaan", "Isar Aerospace|Spectrum", "RFA One", "Orbex Prime", "Stoke Space|Nova", "Impulse Space", "Vast|Haven-1", "Orbital Reef", "Starlab", "Gateway|Lunar Gateway", "VIPER", "ESCAPADE", "CAPSTONE", "Lunar Trailblazer", "Rashid Rover", "Hiten", "Beresheet"]
+    }
+  },
+  {
+    "id": "modern-video-games-2020s",
+    "pack": "current",
+    "prompt": "Name a hit video game released in the 2020s (2020–now)",
+    "hint": "AAA hits, live-service favorites, or viral indies launched in 2020 or later",
+    "tiers": {
+      "1": ["Elden Ring", "Baldur s Gate 3|Baldurs Gate 3|BG3", "Animal Crossing New Horizons", "Valorant", "Among Us", "Cyberpunk 2077"],
+      "2": ["Genshin Impact", "The Legend of Zelda Tears of the Kingdom|Tears of the Kingdom", "Helldivers 2", "Palworld", "Spider-Man 2|Marvels Spider-Man 2", "God of War Ragnarok", "Hogwarts Legacy", "Hades"],
+      "3": ["Balatro", "Astro Bot", "Black Myth Wukong", "Marvel Rivals", "Lethal Company", "Ghost of Tsushima", "Resident Evil 4 Remake|Resident Evil Village", "Final Fantasy VII Rebirth|Final Fantasy VII Remake", "Doom Eternal", "It Takes Two", "Fall Guys", "Phasmophobia"],
+      "4": ["Hades II|Hades 2", "Split Fiction", "Monster Hunter Wilds", "Clair Obscur Expedition 33", "Metaphor ReFantazio", "Alan Wake 2", "Kingdom Come Deliverance 2|Kingdom Come Deliverance II", "Starfield", "Honkai Star Rail", "Zenless Zone Zero", "Path of Exile 2", "Satisfactory", "Vampire Survivors", "Sifu", "Hi-Fi Rush", "Stray", "Dave the Diver", "Cult of the Lamb", "Tunic", "Inscryption", "Returnal", "Silksong|Hollow Knight Silksong"],
+      "5": ["Blue Prince", "Animal Well", "UFO 50", "Neva", "1000xRESIST", "Mouthwashing", "Content Warning", "REPO|R.E.P.O.", "Schedule I", "Manor Lords", "Frostpunk 2", "Space Marine 2", "Silent Hill 2 Remake", "Like a Dragon Infinite Wealth", "Persona 3 Reload", "Tekken 8", "Street Fighter 6", "Granblue Fantasy Relink", "Deadlock", "The Finals", "Armored Core VI", "Pentiment", "Chants of Sennaar", "Lorelei and the Laser Eyes", "Caves of Qud", "Signalis", "Dredge"],
+      "6": ["Cairn", "Citizen Sleeper 2", "Norco", "Immortality", "Neon White", "Pizza Tower", "Bombrush Cyberfunk|Bomb Rush Cyberfunk", "Cassette Beasts", "Cocoon", "Venba", "Viewfinder", "Jusant", "Amnesia The Bunker", "El Paso Elsewhere", "PseudoRegalia|Pseudoregalia", "Kunitsu-Gami", "Nine Sols", "Tactical Breach Wizards", "Drova", "Fields of Mistria", "Tiny Glade", "Webfishing", "Buckshot Roulette", "Arctic Eggs", "Mullet MadJack", "Crow Country", "Boreal Tenebrae", "En Garde!", "Thank Goodness Youre Here", "Indika", "Snufkin", "A Highland Song", "The Case of the Golden Idol", "Rise of the Golden Idol"]
+    }
+  },
+  {
+    "id": "podcasts-creators",
+    "pack": "current",
+    "prompt": "Name a popular YouTuber, Twitch streamer, or hit podcast",
+    "hint": "Major internet creators, science YouTubers, streamers, or chart-topping podcasts",
+    "tiers": {
+      "1": ["MrBeast", "Joe Rogan|The Joe Rogan Experience", "PewDiePie", "Kai Cenat", "Markiplier", "IShowSpeed", "Ninja"],
+      "2": ["MKBHD|Marques Brownlee", "Mark Rober", "Dude Perfect", "Emma Chamberlain", "Call Her Daddy", "Veritasium", "Kurzgesagt", "Pokimane", "xQc"],
+      "3": ["Ludwig", "Valkyrae", "HasanAbi", "Asmongold", "MoistCr1TiKaL|penguinz0", "Linus Tech Tips", "Casey Neistat", "Jacksepticeye", "Technoblade", "CaseOh", "The Diary of a CEO|Steven Bartlett", "Huberman Lab", "SmartLess", "Armchair Expert", "Crime Junkie", "Good Mythical Morning"],
+      "4": ["3Blue1Brown", "VSauce|Vsauce", "CGP Grey", "Tom Scott", "Johnny Harris", "Cleo Abram", "hank green|Hank Green|CrashCourse", "Jet Lag The Game|Wendover Productions", "Ryan Trahan", "Airrack", "Jynxzi", "Ironmouse", "CdawgVA|Trash Taste", "Acquired", "The Rest Is History", "All-In Podcast", "This Past Weekend|Theo Von", "New Heights|Jason Kelce", "Radiolab", "99% Invisible", "Serial", "Stuff You Should Know"],
+      "5": ["Technology Connections", "BobbyBroccoli", "Jon Bois|Secret Base", "Summoning Salt", "hbomberguy|Hbomberguy", "Folding Ideas|Dan Olson", "Jenny Nicholson", "Defunctland", "Sarah Z", "Contrapoints", "Jacob Geller", "Noah Caldwell-Gervais", "Action Button|Tim Rogers", "Northernlion", "DougDoug", "PointCrow", "SmallAnt", "BotezLive", "GothamChess|Levy Rozman", "Hardcore History|Dan Carlin", "Ologies", "Revolutions|Mike Duncan", "If Books Could Kill", "Maintenance Phase", "You Must Remember This", "Heavyweight"],
+      "6": ["EmpLemon", "Ahoy", "LGR", "Lazy Game Reviews", "Techmoan", "Posy", "Simone Giertz", "Stuff Made Here", "Ben Eater", "Applied Science", "NileRed", "Cody s Lab", "Anton Petrov", "Astrum", "Drachinifel", "Perun", "Fall of Civilizations", "In Our Time|Melvyn Bragg", "Literature and History", "The History of Rome", "Blowback", "Search Engine|PJ Vogt", "Reply All", "Darknet Diaries", "Swindled", "The Rest Is Politics", "Odd Lots", "Decoder|Nilay Patel", "Hard Fork", "404 Media", "Pivot|Kara Swisher", "Stratechery|Dithering"]
+    }
+  },
+  {
+    "id": "modern-tech-gadgets",
+    "pack": "current",
+    "prompt": "Name a modern tech gadget, wearable, or gaming device",
+    "hint": "Smartphones, wearables, handhelds, smart rings, AR/VR headsets, or creator hardware",
+    "tiers": {
+      "1": ["iPhone", "iPad", "Apple Watch", "AirPods", "Nintendo Switch", "PlayStation 5|PS5", "Xbox|Xbox Series X", "MacBook"],
+      "2": ["Kindle", "Steam Deck", "Apple Vision Pro|Vision Pro", "Meta Quest|Oculus Quest|Quest 3", "GoPro", "Fitbit", "Samsung Galaxy", "Google Pixel"],
+      "3": ["Garmin", "Oura Ring", "Whoop", "Raspberry Pi", "DJI Drone|Mavic|DJI Mini", "AirTag", "ROG Ally|Asus ROG Ally", "Lenovo Legion Go", "PlayStation Portal", "Switch 2|Nintendo Switch 2", "Bose QuietComfort", "Sony WH-1000XM5", "Sonos", "Ring Doorbell"],
+      "4": ["Ray-Ban Meta|Meta Ray-Ban", "Framework Laptop", "Flipper Zero", "Analogue Pocket", "Playdate", "reMarkable|reMarkable 2", "Boox", "Kobo", "SteamVR|Valve Index", "Bigscreen Beyond", "Anker Power Bank", "Elgato Stream Deck", "Shure SM7B", "Instax|Polaroid Go", "Nothing Phone", "Fairphone", "Eight Sleep"],
+      "5": ["Rabbit R1", "Humane AI Pin", "Teenage Engineering OP-1|OP-1", "EP-133 K.O. II", "Ableton Push", "Keychron", "Wooting 60HE", "Logitech MX Master", "Bambu Lab|Bambu A1|Prusa", "xTool", "Insta360|Insta360 X4", "DJI Osmo Pocket", "XREAL Air|XREAL", "Viture", "Miyoo Mini", "Anbernic", "Retroid Pocket", "Odin 2|Ayn Odin", "YubiKey", "Ledger|Trezor"],
+      "6": ["clockworkpi|uConsole", "MNT Reform", "PinePhone", "Daylight Computer|DC-1", "Boox Palma", "Mudita Kompakt", "Light Phone|Light Phone III", "Punkt MP02", "Supernote|Ratta Supernote", "Wacom Movink", "Loupedeck", "TourBox", "Monome Norns", "Dirtywave M8", "Polyend Tracker", "Critter and Guitari Organelle", "Bela", "Meshtastic|LilyGO", "HackRF|Portapack", "Bus Pirate", "Saleae Logic", "GL.iNet", "UniFi", "Home Assistant Green", "Aqara", "Ultrahuman Ring"]
+    }
+  },
+  {
+    "id": "internet-slang-memes",
+    "pack": "current",
+    "prompt": "Name a 2020s internet slang term, meme, or viral phrase",
+    "hint": "Gen Z / Gen Alpha slang, TikTok memes, or 2020s online catchphrases",
+    "tiers": {
+      "1": ["Rizz", "Cap|No Cap", "Sus", "Mid", "Slay", "Vibe|Vibes", "Cringe", "GOAT"],
+      "2": ["Skibidi", "Sigma", "Delulu", "Bussin", "Bet", "NPC", "Touch Grass", "Gaslight", "Ratio|L + Ratio"],
+      "3": ["Aura", "Brainrot|Brain Rot", "Let Him Cook|Cook|Cooking", "Brat", "Demure|Very Demure", "Main Character", "Ick|The Ick", "Ate|Left No Crumbs", "Valid", "Rent Free", "Simp", "Stan", "Ghosting", "Based"],
+      "4": ["Girl Dinner", "Girl Math", "Roman Empire", "Mewing", "Looksmaxxing", "Mog|Mogging", "Gyatt", "Ohio|Only in Ohio", "Canon Event", "Beige Flag", "Quiet Quitting", "Bed Rotting", "Chronic Online|Chronically Online", "Glazing", "Chat Is This Real", "Unspoken Rizz", "Rizzler", "Baby Gronk", "Fanum Tax"],
+      "5": ["Underconsumption|Underconsumption Core", "Vibe Shift", "Lore|Deep Lore", "Locked In", "Crash Out|Crashing Out", "Unc|Unc Status", "Type Shit", "Clock It", "Standing on Business", "Sending Me", "Its Giving|It s Giving", "Serving", "Mother|Mothering", "Gag|Gagged", "Cottagecore", "Goblincore", "Dark Academia", "Doomscroll|Doomscrolling", "Enshittification", "Dead Internet Theory"],
+      "6": ["Slop|AI Slop", "Yapping|Yap", "Yapathon", "Mogged", "Rawdogging|Flight Rawdogging", "Tube Girl", "Grimace Shake", "Barbenheimer", "Gentleminions", "Moo Deng", "Pesto the Penguin", "Chill Guy", "Just Put the Fries in the Bag", "We Live in a Simulation", "Nothing Ever Happens", "Propaganda I m Not Falling For", "Bama Rush", "West Elm Caleb", "Couch Guy", "Corn Kid", "Negroni Sbagliato", "Pink Sauce", "Girlhood", "Brat Summer", "Hobbitcore", "Gorpcore", "Normcore", "Skibidi Toilet", "Poggers|Pog", "Kekw|KEKW", "Copium|Hopium"]
+    }
+  },
+  {
+    "id": "modern-sports-stars",
+    "pack": "current",
+    "prompt": "Name a superstar 2020s athlete",
+    "hint": "Active global stars across soccer, basketball, tennis, baseball, F1, football, Olympics, or cycling",
+    "tiers": {
+      "1": ["Lionel Messi|Messi", "Cristiano Ronaldo|Ronaldo", "LeBron James", "Simone Biles", "Shohei Ohtani", "Patrick Mahomes", "Stephen Curry|Steph Curry"],
+      "2": ["Kylian Mbappe|Mbappe", "Lewis Hamilton", "Max Verstappen", "Carlos Alcaraz", "Caitlin Clark", "Coco Gauff", "Travis Kelce", "Nikola Jokic", "Novak Djokovic"],
+      "3": ["Lamine Yamal", "Jude Bellingham", "Erling Haaland", "Victor Wembanyama", "Jannik Sinner", "Iga Swiatek", "Luka Doncic", "Giannis Antetokounmpo", "Aaron Judge", "Josh Allen", "Lamar Jackson", "A ja Wilson|Aja Wilson", "Katie Ledecky", "Noah Lyles", "Sha Carri Richardson|Shacarri Richardson"],
+      "4": ["Shai Gilgeous-Alexander|SGA", "Anthony Edwards", "Jayson Tatum", "Cooper Flagg", "Paige Bueckers", "Sabrina Ionescu", "Angel Reese", "Vinicius Junior|Vini Jr", "Rodri", "Bukayo Saka", "Cole Palmer", "Aitana Bonmati", "Alexia Putellas", "Lando Norris", "Charles Leclerc", "Oscar Piastri", "Mondo Duplantis|Armand Duplantis", "Leon Marchand", "Tadej Pogacar", "Juan Soto", "Mookie Betts", "Connor McDavid"],
+      "5": ["Mathieu van der Poel", "Jonas Vingegaard", "Remco Evenepoel", "Demi Vollering", "Summer McIntosh", "Ariarne Titmus", "Kaylee McKeown", "Caeleb Dressel", "Julien Alfred", "Letsile Tebogo", "Femke Bol", "Sydney McLaughlin-Levrone", "Beatrice Chebet", "Jakob Ingebrigtsen", "Sifan Hassan", "Ilia Malinin", "Kaori Sakamoto", "Sunisa Lee|Suni Lee", "Rebeca Andrade", "Rory McIlroy", "Scottie Scheffler", "Nelly Korda", "Janja Garnbret", "Islam Makhachev", "Ilia Topuria", "Alex Pereira"],
+      "6": ["Yuki Kawamura", "Eileen Gu", "Mikaela Shiffrin", "Marco Odermatt", "Johannes Hoesflot Klaebo", "An Se-young", "Viktor Axelsen", "Ma Long", "Fan Zhendong", "Sun Yingsha", "Kim Ye-ji|Kim Yeji", "Yusuf Dikec", "Gabriel Medina", "Carissa Moore", "Rayssa Leal", "Sky Brown", "Arisa Trew", "Quincy Wilson", "Gout Gout", "Biniam Girmay", "Tomoa Narasaki", "Brooke Raboutou", "Oriane Bertone", "Toby Roberts", "Neeraj Chopra", "Arshad Nadeem", "Hamish Kerr", "Haruka Kitaguchi", "Mijain Lopez", "Teddy Riner", "Clarisse Agbegnenou", "Sasha DiGiulian"]
+    }
+  },
+  {
+    "id": "modern-films-2020s",
+    "pack": "current",
+    "prompt": "Name a notable movie released in the 2020s (2020–now)",
+    "hint": "Blockbusters, Oscar contenders, animated hits, or acclaimed indies from 2020 onward",
+    "tiers": {
+      "1": ["Barbie", "Oppenheimer", "Top Gun Maverick", "Spider-Man No Way Home", "Inside Out 2", "Dune", "Avatar The Way of Water"],
+      "2": ["Everything Everywhere All at Once", "Wicked", "Deadpool and Wolverine", "The Batman", "Spider-Man Across the Spider-Verse", "Dune Part Two", "Super Mario Bros Movie|The Super Mario Bros Movie"],
+      "3": ["Saltburn", "Anyone But You", "Moana 2", "Beetlejuice Beetlejuice", "Gladiator II", "Wonka", "RRR", "Encanto", "Puss in Boots The Last Wish", "Godzilla Minus One", "Anora", "Challengers", "The Wild Robot"],
+      "4": ["Sinners", "Conclave", "The Substance", "The Brutalist", "Poor Things", "The Holdovers", "Past Lives", "Killers of the Flower Moon", "Anatomy of a Fall", "The Zone of Interest", "American Fiction", "Flow", "Nosferatu", "A Complete Unknown", "Furiosa", "The Fall Guy", "Twisters", "Civil War", "Longlegs", "Talk to Me", "Alien Romulus", "The Banshees of Inisherin", "Tar|TAR", "Triangle of Sadness", "Aftersun", "Babylon", "Tenet", "Soul", "CODA", "Druk|Another Round"],
+      "5": ["Nickel Boys", "I m Still Here|Im Still Here", "Sing Sing", "A Real Pain", "The Seed of the Sacred Fig", "All We Imagine as Light", "I Saw the TV Glow", "The Iron Claw", "May December", "Monster 2023|Kore-eda Monster", "Perfect Days", "Decision to Leave", "Drive My Car", "The Worst Person in the World", "Licorice Pizza", "The Power of the Dog", "Pig", "The Green Knight", "Marcel the Shell with Shoes On", "Petite Maman", "C mon C mon", "Tick Tick Boom", "The Mitchells vs the Machines", "KPop Demon Hunters", "One Battle After Another", "Marty Supreme", "Mickey 17", "28 Years Later"],
+      "6": ["EO", "Close", "Saint Omer", "Tori and Lokita", "La Chimera", "Evil Does Not Exist", "Do Not Expect Too Much from the End of the World", "About Dry Grasses", "Fallen Leaves", "The Beasts|As Bestas", "Alcarras", "Pacifiction", "No Bears", "Hit the Road", "The Quiet Girl|An Cailin Ciuin", "Scrapper", "How to Have Sex", "Janet Planet", "Didi", "Kneecap", "Good One", "Rye Lane", "Theater Camp", "Bottoms", "Shiva Baby", "Red Rocket", "Vortex", "Bergman Island", "Memoria", "Titane", "Quo Vadis Aida", "Flee"]
+    }
+  }
+]
