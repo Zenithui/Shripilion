@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHRIMPLION — The Daily Dive</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- Living Pixel-Art Vertical Ocean World (0m Sky & Boat -> 7,000m Hadal Trench) -->
+  <div class="ocean-viewport">
+    <canvas id="ocean-canvas"></canvas>
+  </div>
+
+  <!-- Low-Oxygen Red Edge Pulse -->
+  <div id="oxygen-vignette" class="oxygen-vignette"></div>
+
+  <!-- Right-Edge Mini Ocean Column Progress Map -->
+  <aside id="depth-minimap" class="depth-minimap" aria-hidden="true">
+    <span class="minimap-cap">⛵0m</span>
+    <div class="minimap-track">
+      <div id="minimap-fill" class="minimap-fill"></div>
+      <div id="minimap-sub-dot" class="minimap-sub-dot"></div>
+    </div>
+    <span class="minimap-cap">💎7k</span>
+  </aside>
+
+  <!-- Centered Foreground Game UI -->
+  <div class="ui-layer">
+    <header class="topbar">
+      <button id="btn-top-home" class="top-brand-btn" type="button">
+        <span>🦐</span>
+        <span>SHRIMPLION</span>
+      </button>
+
+      <div class="top-controls">
+        <span id="streak-chip" class="streak-chip" title="Daily Dive Streak">🔥 0</span>
+        <button id="btn-stats" class="mini-pill-btn" type="button">📊 Stats</button>
+        <button id="btn-help" class="mini-pill-btn" type="button">❓ Rules</button>
+        <button id="btn-sound" class="mini-pill-btn" type="button" aria-label="Toggle Sound">🔊</button>
+      </div>
+    </header>
+
+    <!-- ===================================================================
+         SCREEN 1: LANDING SCREEN (Sky, S.S. KRILL Boat & Bobbing Sub Above!)
+         =================================================================== -->
+    <main id="screen-home" class="screen active">
+      <div class="home-spacer-for-boat"></div>
+
+      <div class="landing-center">
+        <h1 class="game-logo-title">SHRIMPLION</h1>
+        <p class="game-logo-sub">The Daily Dive · 7 signals · 25 seconds</p>
+
+        <!-- Pixel Mascot "Krill" Comms Strip -->
+        <div class="krill-comms-box">
+          <div class="krill-avatar" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 14 14" shape-rendering="crispEdges">
+              <rect x="4" y="2" width="6" height="2" fill="#FDA4AF"/>
+              <rect x="3" y="4" width="8" height="4" fill="#F472B6"/>
+              <rect x="4" y="5" width="2" height="2" fill="#020617"/>
+              <rect x="8" y="5" width="2" height="2" fill="#020617"/>
+              <rect x="4" y="5" width="1" height="1" fill="#FFFFFF"/>
+              <rect x="8" y="5" width="1" height="1" fill="#FFFFFF"/>
+              <rect x="4" y="8" width="6" height="3" fill="#FB7185"/>
+              <rect x="5" y="11" width="4" height="2" fill="#F43F5E"/>
+              <rect x="2" y="1" width="2" height="1" fill="#FDE047"/>
+              <rect x="10" y="1" width="2" height="1" fill="#FDE047"/>
+            </svg>
+          </div>
+          <div>
+            <div class="krill-name-tag">KRILL // DEEP-SEA GUIDE</div>
+            <p id="home-krill-speech" class="krill-speech">
+              beep. Obvious answers float at the surface. Obscure truths sink us toward 7,000m!
+            </p>
+          </div>
+        </div>
+
+        <!-- Primary Play Daily Dive CTA -->
+        <button id="btn-play-daily" class="main-play-btn" type="button">
+          PLAY DAILY DIVE
+        </button>
+
+        <!-- Authentic 3 Secondary Modes: Practice · Packs · Crew -->
+        <div class="mode-trio-grid">
+          <button id="btn-mode-practice" class="mode-btn" type="button">🤿 Practice</button>
+          <button id="btn-mode-packs" class="mode-btn" type="button">📦 Packs</button>
+          <button id="btn-mode-crew" class="mode-btn" type="button">👥 Crew</button>
+        </div>
+
+        <!-- Drawer 1: Practice -->
+        <div id="drawer-practice" class="mode-drawer">
+          <div class="drawer-title">🤿 Practice Dive — Unlimited Random Signals</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+            <button id="btn-launch-practice-timed" class="drawer-launch-btn" type="button">⏱️ 25s Timed</button>
+            <button id="btn-launch-practice-untimed" class="drawer-launch-btn" style="background:#a78bfa;" type="button">∞ Untimed</button>
+          </div>
+        </div>
+
+        <!-- Drawer 2: Themed Packs -->
+        <div id="drawer-packs" class="mode-drawer">
+          <div class="drawer-title">📦 Select a Themed Dive Pack</div>
+          <div class="pack-list">
+            <button class="pack-card-btn" data-launch-pack="world" type="button">
+              <strong>🧭 Geography & World</strong>
+              <span>Countries, capitals, states & seas</span>
+            </button>
+            <button class="pack-card-btn" data-launch-pack="science" type="button">
+              <strong>🔬 Science & Space</strong>
+              <span>Elements, moons, stars & nature</span>
+            </button>
+            <button class="pack-card-btn" data-launch-pack="culture" type="button">
+              <strong>🏛️ Culture & Tech</strong>
+              <span>History, myth, music, games & code</span>
+            </button>
+            <button class="pack-card-btn" data-launch-pack="everyday" type="button">
+              <strong>🧀 Food & Everyday</strong>
+              <span>Fruits, cheeses, pasta & sports</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Drawer 3: Crew Dive (2–4 Local Divers) -->
+        <div id="drawer-crew" class="mode-drawer">
+          <div class="drawer-title">👥 Crew Dive — Coordinate Without Colliding!</div>
+          <p style="font-size:0.77rem;color:#cbd5e1;margin-bottom:10px;line-height:1.4;">
+            2–4 divers take turns on each signal. All-unique valid answers earn a <strong>+150m Crew Sync Bonus</strong> — duplicate answers collide for <strong>0m</strong>!
+          </p>
+          <div class="crew-inputs">
+            <input id="crew-p1" class="crew-name-input" type="text" value="Diver 1" placeholder="Diver 1" />
+            <input id="crew-p2" class="crew-name-input" type="text" value="Diver 2" placeholder="Diver 2" />
+            <input id="crew-p3" class="crew-name-input" type="text" placeholder="Diver 3 (optional)" />
+            <input id="crew-p4" class="crew-name-input" type="text" placeholder="Diver 4 (optional)" />
+          </div>
+          <button id="btn-launch-crew" class="drawer-launch-btn" type="button">⚓ Launch Crew Dive</button>
+        </div>
+
+        <!-- Compact 6-Tier Legend Strip -->
+        <div class="tier-mini-strip">
+          <span class="tier-mini-chip" style="color:#34d399;">🟢 Plankton 100m</span>
+          <span class="tier-mini-chip" style="color:#38bdf8;">🩵 Too Clever 150m</span>
+          <span class="tier-mini-chip" style="color:#60a5fa;">🔵 Schooler 300m</span>
+          <span class="tier-mini-chip" style="color:#c084fc;">🟣 Rare 600m</span>
+          <span class="tier-mini-chip" style="color:#fb923c;">🟠 Deep Cut 850m</span>
+          <span class="tier-mini-chip" style="color:#f472b6;border-color:rgba(244,114,182,0.45);">💎 Shrimplion 1,000m</span>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===================================================================
+         SCREEN 2: ACTIVE GAMEPLAY (Centered Over Scrolling Pixel Ocean)
+         =================================================================== -->
+    <section id="screen-play" class="screen">
+      <!-- Top Signal & Live Rolling Depth Bar -->
+      <div class="play-hud-bar">
+        <div id="signal-dots" class="signal-dots"></div>
+        <div class="live-depth-box">
+          <span id="live-zone-tag" class="zone-tag">☀️ Sunlight Zone</span>
+          <span id="live-odometer" class="odometer-depth">0m</span>
+        </div>
+      </div>
+
+      <!-- Open Submersible Viewport Window + Spring-Slam Tier Stamp during Plunges! -->
+      <div class="sub-stage-window">
+        <div id="plunge-stamp-wrap" class="plunge-stamp-wrap">
+          <div id="tier-stamp-badge" class="tier-stamp-badge">💎 ONE IN A SHRIMPLION</div>
+          <div id="floating-meters-pop" class="floating-meters-pop">+1,000m</div>
+        </div>
+      </div>
+
+      <!-- Centered Prompt & Input Box -->
+      <div id="prompt-card" class="prompt-card">
+        <div id="ring-timer-wrap" class="ring-timer-wrap">
+          <svg viewBox="0 0 68 68">
+            <circle class="ring-bg" cx="34" cy="34" r="28"></circle>
+            <circle id="ring-fg" class="ring-fg" cx="34" cy="34" r="28"></circle>
+          </svg>
+          <span id="ring-num" class="ring-num">25</span>
+        </div>
+
+        <div id="crew-turn-banner" class="crew-turn-banner"></div>
+        <div id="signal-eyebrow" class="signal-eyebrow">SIGNAL 1 / 7</div>
+        <h2 id="prompt-headline" class="prompt-headline">Name an element on the Periodic Table</h2>
+        <p id="prompt-subhint" class="prompt-subhint">Any of the 118 confirmed chemical elements</p>
+
+        <form id="dive-form" autocomplete="off">
+          <div class="dive-input-wrap">
+            <input
+              id="dive-input"
+              class="dive-input"
+              type="text"
+              placeholder="Type a rare valid answer…"
+              autocomplete="off"
+              autocorrect="off"
+              spellcheck="false"
+            />
+            <button class="dive-submit-btn" type="submit">DIVE ↵</button>
+          </div>
+          <div class="reject-pill">
+            <span id="reject-text" class="reject-text" role="alert"></span>
+            <button id="btn-pass" class="pass-link" type="button">Pass / Surface (0m)</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Bottom Plunge Comms Card (leaves ocean plunge clearly visible above!) -->
+      <div id="plunge-card" class="plunge-card">
+        <div class="plunge-answer-row">
+          <span id="plunge-answer-name" class="plunge-answer-name">Ytterbium</span>
+          <span id="plunge-fuzzy-tag" style="font-size:0.76rem;color:#fef08a;font-weight:700;"></span>
+        </div>
+
+        <div class="krill-comms-box" style="margin-bottom:10px;">
+          <div class="krill-avatar" aria-hidden="true">
+            <svg width="26" height="26" viewBox="0 0 14 14" shape-rendering="crispEdges">
+              <rect x="4" y="2" width="6" height="2" fill="#FDA4AF"/>
+              <rect x="3" y="4" width="8" height="4" fill="#F472B6"/>
+              <rect x="4" y="5" width="2" height="2" fill="#020617"/>
+              <rect x="8" y="5" width="2" height="2" fill="#020617"/>
+              <rect x="4" y="8" width="6" height="3" fill="#FB7185"/>
+              <rect x="5" y="11" width="4" height="2" fill="#F43F5E"/>
+            </svg>
+          </div>
+          <div>
+            <div class="krill-name-tag">KRILL // SONAR LOG</div>
+            <p id="plunge-krill-speech" class="krill-speech"></p>
+          </div>
+        </div>
+
+        <div id="plunge-pearl-hint" class="plunge-pearl-hint"></div>
+        <button id="btn-next-signal" class="next-signal-btn" type="button">NEXT SIGNAL (ENTER) →</button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SCREEN 3: END-OF-DIVE RESULTS & COMPLETE ANSWER ENCYCLOPEDIA
+         =================================================================== -->
+    <section id="screen-summary" class="screen">
+      <div class="results-card">
+        <div id="res-mode-label" style="font-size:0.76rem;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:#7dd3fc;">
+          DAILY DIVE #307
+        </div>
+        <div id="res-depth-big" class="results-depth-big">4,650m</div>
+        <div id="res-zone-badge" style="font-size:0.84rem;font-weight:700;color:#bae6fd;">
+          🐡 The Abyss (Abyssopelagic)
+        </div>
+
+        <!-- Animated 7-Bar Vertical Plunge Chart -->
+        <div id="dive-bars-chart" class="dive-bars-chart"></div>
+
+        <div class="results-actions">
+          <button id="btn-share" class="share-action-btn" type="button">📋 Share Dive</button>
+          <button id="btn-again-practice" class="mode-btn" type="button">🤿 Practice Dive</button>
+          <button id="btn-back-surface" class="mode-btn" type="button">⛵ Surface</button>
+        </div>
+      </div>
+
+      <div class="log-section">
+        <div style="display:flex;justify-content:space-between;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#bae6fd;padding:0 4px 8px;">
+          <span>📖 All Accepted Answers by Tier</span>
+          <span>Tap signal to expand ▾</span>
+        </div>
+        <div id="log-list"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- =====================================================================
+       STATS MODAL
+       ===================================================================== -->
+  <div id="modal-stats" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;">
+        <h2 style="font-size:1.1rem;font-weight:900;">📊 Diver Logbook</h2>
+        <button data-close type="button" style="background:none;border:none;color:#94a3b8;font-size:1.3rem;cursor:pointer;">✕</button>
+      </div>
+      <div class="kpi-row">
+        <div class="kpi-cell"><div id="st-dives" class="kpi-num">0</div><div class="kpi-txt">Dives</div></div>
+        <div class="kpi-cell"><div id="st-streak" class="kpi-num">0</div><div class="kpi-txt">Streak</div></div>
+        <div class="kpi-cell"><div id="st-best" class="kpi-num">0m</div><div class="kpi-txt">Deepest</div></div>
+        <div class="kpi-cell"><div id="st-avg" class="kpi-num">0m</div><div class="kpi-txt">Average</div></div>
+      </div>
+      <div style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#7dd3fc;margin-bottom:8px;">
+        Rarity Distribution
+      </div>
+      <div id="st-dist"></div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       RULES MODAL
+       ===================================================================== -->
+  <div id="modal-help" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <h2 style="font-size:1.1rem;font-weight:900;">❓ How Shrimplion Works</h2>
+        <button data-close type="button" style="background:none;border:none;color:#94a3b8;font-size:1.3rem;cursor:pointer;">✕</button>
+      </div>
+      <div style="font-size:0.86rem;line-height:1.58;color:#cbd5e1;display:flex;flex-direction:column;gap:10px;">
+        <p><strong>7 Signals · 25 Seconds:</strong> Every signal is an open-ended prompt. Common answers keep you near the surface boat; rare, obscure valid answers plunge your sub deeper toward the <strong>7,000m Hadal Trench</strong>.</p>
+        <p><strong>No Strike Penalty:</strong> Unrecognized answers don’t end the round — keep typing new guesses until oxygen runs out! Minor typos are forgiven automatically.</p>
+        <p><strong>The 6 Rarity Tiers (1 pt = 10m):</strong><br/>
+          🟢 <strong>Plankton</strong> (+100m) — Obvious first thought<br/>
+          🩵 <strong>Too Clever</strong> (+150m) — The trap dodge thousands of others also try!<br/>
+          🔵 <strong>Schooler</strong> (+300m) — Solid general recall<br/>
+          🟣 <strong>Rare</strong> (+600m) — Genuinely uncommon<br/>
+          🟠 <strong>Deep Cut</strong> (+850m) — Niche specialist pull<br/>
+          💎 <strong>One in a Shrimplion</strong> (+1,000m) — Legendary trench treasure!
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast-banner" role="status" aria-live="polite"></div>
+
+  <script src="js/prompts.js"></script>
+  <script src="js/matcher.js"></script>
+  <script src="js/audio.js"></script>
+  <script src="js/pixel-ocean.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
