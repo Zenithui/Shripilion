@@ -7,7 +7,7 @@ A full-featured, offline-ready browser game inspired by **Krillion** (`krillion.
 - **Living 60fps Pixel-Art Ocean Column (`js/pixel-ocean.js`)**: Starts at `0m` with a pixel sun, drifting clouds, flapping seagulls, rippling waves, and the bobbing *S.S. KRILL* research boat. Each valid answer physically plunges your yellow pixel bathysphere (with blinking **Krill** captain & spinning propeller) downward through dithered ocean strata populated by pixel sea turtles, pulsing jellyfish, giant squid, bioluminescent anglerfish, and a rocky **7,000m Hadal Trench floor** with hydrothermal vents and a glowing pearl clam.
 - **Authentic Modes (`Daily Dive`, `Practice`, `Packs`, `Crew`)**:
   - **Daily Dive, Reset & Archive**: 365-day pre-generated themed daily challenge schedule (`data/daily.json`, covering `2026-11-01` to `2027-10-31`) with `25s` oxygen ring timer, live next-dive countdown, **🔄 Reset Today's Daily Dive** (restoring prior streak cleanly), and the **📅 Daily Archive** modal to replay past themed dives.
-  - **Practice**: Unlimited random signals with **25s Timed** or **∞ Untimed** modes.
+  - **Practice**: Unlimited random signals with **⚡ 15s Blitz**, **⏱️ 25s Timed**, or **∞ Untimed** modes.
   - **Packs**: 4 expanded themed expedition packs (*Geography & World*, *Science & Space*, *Culture & Tech*, *Food & Everyday* — 14 prompts each).
   - **Crew**: 2–4 local divers coordinate turns — unique valid answers earn a **+150m Crew Sync Bonus**, while duplicate answers collide for **0m**.
 - **Dataset-Backed Question Bank (56 Prompts · 7,153 Canonical Answers · 8,364 Search Forms)**: Stored cleanly in modular JSON files under `data/packs/*.json`, `data/manifest.json`, and `data/daily.json`, loaded dynamically via `fetch()` (`js/dataset-loader.js`) with `js/prompts.js` kept in sync as an offline/`file://` fallback across all 6 rarity tiers:
@@ -18,9 +18,10 @@ A full-featured, offline-ready browser game inspired by **Krillion** (`krillion.
   - 🟠 **Deep Cut** (`+850m`)
   - 💎 **One in a Shrimplion** (`+1,000m`)
 - **Auto Spell-Check Engine (`js/matcher.js`)**: Live inline `suggestSpelling()` preview + automatic phonetic & fuzzy correction (`Filippines` → `Philippines`, `Chiwawa` → `Chihuahua`, `Flourine` → `Fluorine`, `Newyork` → `New York`, `John Kennedy` → `John F. Kennedy`), `Tab`/click suggestion chips, and an in-round `🪄 Auto-Spell: ON/OFF` toggle.
-- **Sonar Combo Streaks, Hint Buoy & Diver Ranks**: Consecutive Rare+ answers earn up to `+150m` **⚡ Sonar Combo** bonus; each solo dive includes a 1-time **📡 Hint Buoy** (`first letter + length`); cumulative depth unlocks Submarine Callsign Ranks in Stats.
+- **Sonar Combo Streaks, Hint Buoy, Personal Bests & Diver Ranks**: Consecutive Rare+ answers earn up to `+150m` **⚡ Sonar Combo** bonus; each solo dive includes a 1-time **📡 Hint Buoy** (`first letter + length`); per-prompt **🏆 Personal Bests** celebrate new rarity highs; cumulative depth unlocks Submarine Callsign Ranks in Stats.
+- **Dedicated Settings & Hull Customization (`⚙️ Settings`)**: Configure Auto Spell-Check, Practice/Pack/Crew oxygen timer (`15s` Blitz, `25s` Classic, `35s` Relaxed, `∞ Untimed`), master volume/mute, Hydrophone Ocean Ambience, typewriter sonar key ticks, **Bathysphere Hull Paint** (`Classic Gold`, `Kraken Coral`, `Abyssal Cyan`, `Biolume Green`), reduced screen shake, Daily Reset, and two-step data reset.
 - **Procedural Submarine Audio & Hydrophone Bed (`js/audio.js`)**: Pure Web Audio depth-reactive underwater hydrophone soundscape (`🌊` toggle), master volume slider, mechanical keystroke sonar ticks, spell-correct shimmer, combo chords, zone transition fanfare, and dive reset splash.
-- **Complete Post-Dive Answer Encyclopedia**: Expand any prompt in your Dive Log after finishing a run to inspect every accepted answer across all 6 tiers.
+- **Searchable Post-Dive Answer Encyclopedia**: Expand any prompt in your Dive Log, filter all accepted answers across the dive live (`🔎 Filter answers`), or copy the full prompt-by-prompt breakdown (`📝 Copy Full Log`).
 
 ## 🚀 Running Locally & Rebuilding Dataset
 

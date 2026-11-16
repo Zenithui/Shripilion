@@ -38,6 +38,7 @@
         <button id="btn-archive" class="mini-pill-btn" type="button">📅 Archive</button>
         <button id="btn-stats" class="mini-pill-btn" type="button">📊 Stats</button>
         <button id="btn-help" class="mini-pill-btn" type="button">❓ Rules</button>
+        <button id="btn-settings" class="mini-pill-btn" type="button" title="Game, Audio & Sub Settings">⚙️ Settings</button>
         <button id="btn-ambience" class="mini-pill-btn" type="button" title="Toggle Underwater Audio Bed">🌊</button>
         <button id="btn-sound" class="mini-pill-btn" type="button" aria-label="Toggle Sound">🔊</button>
       </div>
@@ -100,7 +101,8 @@
         <!-- Drawer 1: Practice -->
         <div id="drawer-practice" class="mode-drawer">
           <div class="drawer-title">🤿 Practice Dive — Unlimited Random Signals</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+            <button id="btn-launch-practice-blitz" class="drawer-launch-btn" style="background:#fb923c;" type="button">⚡ 15s Blitz</button>
             <button id="btn-launch-practice-timed" class="drawer-launch-btn" type="button">⏱️ 25s Timed</button>
             <button id="btn-launch-practice-untimed" class="drawer-launch-btn" style="background:#a78bfa;" type="button">∞ Untimed</button>
           </div>
@@ -223,6 +225,7 @@
       <div id="plunge-card" class="plunge-card">
         <div class="plunge-answer-row">
           <span id="plunge-answer-name" class="plunge-answer-name">Ytterbium</span>
+          <span id="plunge-pb-tag" class="plunge-pb-tag" style="display:none;">🏆 PERSONAL BEST</span>
           <span id="plunge-fuzzy-tag" style="font-size:0.76rem;color:#fef08a;font-weight:700;"></span>
         </div>
 
@@ -266,6 +269,7 @@
 
         <div class="results-actions">
           <button id="btn-share" class="share-action-btn" type="button">📋 Share Dive</button>
+          <button id="btn-copy-details" class="mode-btn" type="button">📝 Copy Full Log</button>
           <button id="btn-reset-daily-summary" class="mode-btn" type="button" style="display:none;">🔄 Reset Daily Dive</button>
           <button id="btn-again-practice" class="mode-btn" type="button">🤿 Practice Dive</button>
           <button id="btn-back-surface" class="mode-btn" type="button">⛵ Surface</button>
@@ -273,10 +277,11 @@
       </div>
 
       <div class="log-section">
-        <div style="display:flex;justify-content:space-between;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#bae6fd;padding:0 4px 8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;color:#bae6fd;padding:0 4px 8px;">
           <span>📖 All Accepted Answers by Tier</span>
           <span>Tap signal to expand ▾</span>
         </div>
+        <input id="log-search-input" class="log-search-input" type="search" placeholder="🔎 Filter answers across this dive..." autocomplete="off" />
         <div id="log-list"></div>
       </div>
     </section>
@@ -292,10 +297,6 @@
         <button data-close type="button" style="background:none;border:none;color:#94a3b8;font-size:1.3rem;cursor:pointer;">✕</button>
       </div>
       <div id="st-rank" class="diver-rank-banner">🛟 Callsign Rank: Surface Cadet</div>
-      <div class="audio-vol-row">
-        <label for="audio-volume-slider">🔊 Master Volume</label>
-        <input id="audio-volume-slider" type="range" min="0" max="100" value="85" />
-      </div>
       <div class="kpi-row">
         <div class="kpi-cell"><div id="st-dives" class="kpi-num">0</div><div class="kpi-txt">Dives</div></div>
         <div class="kpi-cell"><div id="st-streak" class="kpi-num">0</div><div class="kpi-txt">Streak</div></div>
@@ -348,6 +349,107 @@
         Replay any past themed Daily Dive without affecting today’s daily streak.
       </p>
       <div id="archive-list" class="archive-list"></div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       SETTINGS MODAL
+       ===================================================================== -->
+  <div id="modal-settings" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <h2 style="font-size:1.1rem;font-weight:900;">⚙️ Submarine Settings</h2>
+        <button data-close type="button" style="background:none;border:none;color:#94a3b8;font-size:1.3rem;cursor:pointer;">✕</button>
+      </div>
+
+      <div class="settings-section-title">Gameplay &amp; Spell-Check</div>
+      <div class="settings-list">
+        <label class="setting-row">
+          <div>
+            <strong>🪄 Auto Spell-Check</strong>
+            <span>Auto-accept minor typos &amp; phonetic spellings</span>
+          </div>
+          <input id="set-autospell" type="checkbox" checked />
+        </label>
+
+        <div class="setting-row">
+          <div>
+            <strong>⏱️ Practice / Packs Timer</strong>
+            <span>Daily Dive stays 25s; applies to Practice, Packs &amp; Crew</span>
+          </div>
+          <select id="set-timer-sec" class="setting-select">
+            <option value="15">15s Blitz</option>
+            <option value="25">25s Classic</option>
+            <option value="35">35s Relaxed</option>
+            <option value="0">∞ Untimed</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="settings-section-title">Audio &amp; Hydrophone</div>
+      <div class="settings-list">
+        <div class="setting-row">
+          <div>
+            <strong>🔊 Master Volume</strong>
+            <span id="set-vol-pct">85%</span>
+          </div>
+          <input id="audio-volume-slider" type="range" min="0" max="100" value="85" />
+        </div>
+
+        <label class="setting-row">
+          <div>
+            <strong>🔇 Mute All Sound</strong>
+            <span>Silence all sonar, music &amp; ocean effects</span>
+          </div>
+          <input id="set-muted" type="checkbox" />
+        </label>
+
+        <label class="setting-row">
+          <div>
+            <strong>🌊 Hydrophone Ocean Ambience</strong>
+            <span>Depth-filtered underwater ambient rumble while diving</span>
+          </div>
+          <input id="set-ambience" type="checkbox" checked />
+        </label>
+
+        <label class="setting-row">
+          <div>
+            <strong>⌨️ Typewriter Sonar Ticks</strong>
+            <span>Subtle teletype tick sound when typing guesses</span>
+          </div>
+          <input id="set-keyticks" type="checkbox" checked />
+        </label>
+      </div>
+
+      <div class="settings-section-title">Visuals &amp; Vessel</div>
+      <div class="settings-list">
+        <div class="setting-row">
+          <div>
+            <strong>🤿 Bathysphere Hull Paint</strong>
+            <span>Customize your pixel submersible color</span>
+          </div>
+          <select id="set-sub-skin" class="setting-select">
+            <option value="gold">🟨 Classic Gold</option>
+            <option value="coral">🩷 Kraken Coral</option>
+            <option value="cyan">🩵 Abyssal Cyan</option>
+            <option value="emerald">💚 Biolume Green</option>
+          </select>
+        </div>
+
+        <label class="setting-row">
+          <div>
+            <strong>🎞️ Reduce Screen Shake</strong>
+            <span>Skip heavy impact shake on 850m–1,000m plunges</span>
+          </div>
+          <input id="set-reduced-motion" type="checkbox" />
+        </label>
+      </div>
+
+      <div class="settings-section-title">Data &amp; Daily Dive</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+        <button id="btn-settings-reset-daily" class="mode-btn" type="button">🔄 Reset Today’s Daily</button>
+        <button id="btn-wipe-stats" class="mode-btn danger-outline" type="button">🗑️ Reset All Stats</button>
+      </div>
     </div>
   </div>
 

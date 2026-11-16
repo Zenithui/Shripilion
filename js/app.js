@@ -145,8 +145,49 @@
     try { localStorage.removeItem(`shrimplion_daily_${dateKey}`); } catch (_) {}
   }
 
-  function loadAutoSpellPref() {
-    try { return localStorage.getItem('shrimplion_autospell') !== 'false'; } catch (_) { return true; }
+  const SETTINGS_KEY = 'shrimplion_settings_v1';
+  const PROMPT_BESTS_KEY = 'shrimplion_prompt_bests_v1';
+
+  function loadSettings() {
+    const legacyAuto = localStorage.getItem('shrimplion_autospell');
+    const defaults = {
+      autoSpell: legacyAuto !== 'false',
+      timerSeconds: 25,
+      keyTicks: true,
+      subSkin: 'gold',
+      reducedMotion: false
+    };
+    try {
+      const raw = localStorage.getItem(SETTINGS_KEY);
+      return raw ? { ...defaults, ...JSON.parse(raw) } : defaults;
+    } catch (_) {
+      return defaults;
+    }
+  }
+
+  function saveSettings(next) {
+    try {
+      localStorage.setItem(SETTINGS_KEY, JSON.stringify(next));
+      localStorage.setItem('shrimplion_autospell', String(next.autoSpell));
+    } catch (_) {}
+  }
+
+  function applyVisualSettings(stObj) {
+    if (Ocean.setSubSkin) Ocean.setSubSkin(stObj.subSkin || 'gold');
+    if (Ocean.setReducedMotion) Ocean.setReducedMotion(Boolean(stObj.reducedMotion));
+  }
+
+  function loadPromptBests() {
+    try {
+      const raw = localStorage.getItem(PROMPT_BESTS_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch (_) {
+      return {};
+    }
+  }
+
+  function savePromptBests(bests) {
+    try { localStorage.setItem(PROMPT_BESTS_KEY, JSON.stringify(bests)); } catch (_) {}
   }
 
   function getDiverRank(totalMeters) {
@@ -183,6 +224,7 @@
   // =========================================================================
   // GAME STATE
   // =========================================================================
+  const initialSettings = loadSettings();
   const state = {
     mode: 'daily',          // 'daily' | 'archive' | 'practice' | 'pack' | 'crew'
     packId: 'mixed',
@@ -195,7 +237,8 @@
     rareCombo: 0,
     hintsLeft: 1,
     hintUsedOnSignal: false,
-    autoSpell: loadAutoSpellPref(),
+    autoSpell: initialSettings.autoSpell,
+    settings: initialSettings,
     activeSuggestion: '',
     archiveDateKey: '',
     archiveDiveNumber: 0,
@@ -211,7 +254,8 @@
     lastWholeSec: -1,
     inReveal: false,
     revealOpenedAt: 0,
-    lastShareText: ''
+    lastShareText: '',
+    lastDetailText: ''
   };
 
   function showScreen(name) {
@@ -393,24 +437,28 @@
       state.prompts = entry.prompts;
       state.crewNames = [];
     } else if (mode === 'practice') {
+      const customSec = opts.timerSeconds !== undefined ? opts.timerSeconds : state.settings.timerSeconds;
+      const isUntimed = opts.untimed !== undefined ? Boolean(opts.untimed) : Number(customSec) === 0;
       state.mode = 'practice';
       state.packId = 'mixed';
-      state.untimed = Boolean(opts.untimed);
-      state.timerDuration = 25;
+      state.untimed = isUntimed;
+      state.timerDuration = isUntimed ? 25 : Math.max(10, Number(customSec) || 25);
       state.prompts = getPackPrompts('mixed');
       state.crewNames = [];
     } else if (mode === 'pack') {
+      const customSec = state.settings.timerSeconds;
       state.mode = 'pack';
       state.packId = opts.packId || 'world';
-      state.untimed = false;
-      state.timerDuration = 25;
+      state.untimed = Number(customSec) === 0;
+      state.timerDuration = state.untimed ? 25 : Math.max(10, Number(customSec) || 25);
       state.prompts = getPackPrompts(state.packId);
       state.crewNames = [];
     } else if (mode === 'crew') {
+      const customSec = state.settings.timerSeconds;
       state.mode = 'crew';
       state.packId = 'mixed';
-      state.untimed = false;
-      state.timerDuration = 25;
+      state.untimed = Number(customSec) === 0;
+      state.timerDuration = state.untimed ? 25 : Math.max(10, Number(customSec) || 25);
       state.prompts = getPackPrompts('mixed');
       state.crewNames = opts.crewNames && opts.crewNames.length >= 2
         ? opts.crewNames
@@ -850,8 +898,22 @@
     void stampWrap.offsetWidth;
     stampWrap.classList.add('show');
 
+    // Personal Best per-prompt tracking (solo runs when tier >= 1)
+    let isNewPB = false;
+    if (tier >= 1 && state.mode !== 'crew') {
+      const bests = loadPromptBests();
+      const prev = bests[promptObj.id];
+      if (!prev || tier > prev.bestTier) {
+        bests[promptObj.id] = { bestTier: tier, bestAnswer: displayAnswer, bestMeters: totalGain };
+        savePromptBests(bests);
+        if (prev || tier >= 4) isNewPB = true;
+      }
+    }
+
     // 4. Populate Bottom Plunge Card + Krill Typewriter Reaction
     document.getElementById('plunge-answer-name').textContent = displayAnswer;
+    const pbTag = document.getElementById('plunge-pb-tag');
+    if (pbTag) pbTag.style.display = isNewPB ? 'inline-block' : 'none';
     document.getElementById('plunge-fuzzy-tag').textContent = fuzzy
       ? (correctedFrom ? `✨ Auto spell-checked (${correctedFrom})` : '✨ Typo forgiven')
       : '';
@@ -989,6 +1051,16 @@
       data.emojis
     ].join('\n');
 
+    state.lastDetailText = [
+      `🦐 SHRIMPLION — ${data.label}`,
+      `⚓ ${data.totalDepth.toLocaleString()}m / 7,000m (${zone.name})`,
+      '',
+      ...data.results.map((r, i) => `${i + 1}. ${r.promptText}\n   ${TIERS[r.tier].emoji} ${r.answer} (+${r.meters}m · ${TIERS[r.tier].name})`)
+    ].join('\n');
+
+    const logSearch = document.getElementById('log-search-input');
+    if (logSearch) logSearch.value = '';
+
     // Render Expandable Answer Encyclopedia
     const logList = document.getElementById('log-list');
     logList.innerHTML = '';
@@ -1023,7 +1095,7 @@
           grp.className = 'tier-group';
           const chips = list.map(a => {
             const mine = a.toLowerCase() === res.answer.toLowerCase();
-            return `<span class="ans-chip${mine ? ' mine' : ''}">${escapeHtml(a)}</span>`;
+            return `<span class="ans-chip${mine ? ' mine' : ''}" data-ans="${escapeHtml(a.toLowerCase())}">${escapeHtml(a)}</span>`;
           }).join('');
           grp.innerHTML = `
             <div class="tier-group-head" style="color:${ti.color}">${ti.emoji} ${ti.name} (+${ti.meters}m) · ${list.length}</div>
@@ -1042,6 +1114,26 @@
     showScreen('summary');
   }
 
+  function filterSummaryLog(query) {
+    const q = String(query || '').trim().toLowerCase();
+    document.querySelectorAll('#log-list .log-card').forEach(card => {
+      if (!q) {
+        card.style.display = '';
+        card.classList.remove('open');
+        card.querySelectorAll('.ans-chip').forEach(ch => { ch.style.display = ''; });
+        return;
+      }
+      let anyMatch = false;
+      card.querySelectorAll('.ans-chip').forEach(ch => {
+        const match = (ch.dataset.ans || '').includes(q);
+        ch.style.display = match ? '' : 'none';
+        if (match) anyMatch = true;
+      });
+      card.style.display = anyMatch ? '' : 'none';
+      if (anyMatch) card.classList.add('open');
+    });
+  }
+
   function escapeHtml(s) {
     return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
   }
@@ -1057,11 +1149,6 @@
     document.getElementById('st-best').textContent = `${st.bestDepth.toLocaleString()}m`;
     const avg = st.divesPlayed ? Math.round(st.totalMeters / st.divesPlayed) : 0;
     document.getElementById('st-avg').textContent = `${avg.toLocaleString()}m`;
-
-    const volSlider = document.getElementById('audio-volume-slider');
-    if (volSlider && AudioEngine.getVolume) {
-      volSlider.value = String(Math.round(AudioEngine.getVolume() * 100));
-    }
 
     const dist = document.getElementById('st-dist');
     dist.innerHTML = '';
@@ -1080,6 +1167,30 @@
       dist.appendChild(r);
     }
     document.getElementById('modal-stats').classList.add('open');
+  }
+
+  function syncSettingsModal() {
+    document.getElementById('set-autospell').checked = Boolean(state.autoSpell);
+    document.getElementById('set-timer-sec').value = String(state.settings.timerSeconds);
+    const volPct = AudioEngine.getVolume ? Math.round(AudioEngine.getVolume() * 100) : 85;
+    document.getElementById('audio-volume-slider').value = String(volPct);
+    document.getElementById('set-vol-pct').textContent = `${volPct}%`;
+    document.getElementById('set-muted').checked = AudioEngine.isMuted();
+    document.getElementById('set-ambience').checked = AudioEngine.isAmbientEnabled();
+    document.getElementById('set-keyticks').checked = Boolean(state.settings.keyTicks);
+    document.getElementById('set-sub-skin').value = state.settings.subSkin || 'gold';
+    document.getElementById('set-reduced-motion').checked = Boolean(state.settings.reducedMotion);
+
+    const wipeBtn = document.getElementById('btn-wipe-stats');
+    if (wipeBtn) {
+      wipeBtn.dataset.armed = '0';
+      wipeBtn.textContent = '🗑️ Reset All Stats';
+    }
+  }
+
+  function openSettings() {
+    syncSettingsModal();
+    document.getElementById('modal-settings').classList.add('open');
   }
 
   function openArchive() {
@@ -1134,6 +1245,7 @@
 
   document.addEventListener('DOMContentLoaded', async () => {
     Ocean.init(document.getElementById('ocean-canvas'));
+    applyVisualSettings(state.settings);
     syncSoundBtn();
     syncAmbienceBtn();
 
@@ -1154,7 +1266,8 @@
     document.getElementById('btn-mode-packs').addEventListener('click', () => { AudioEngine.uiClick(); toggleHomeDrawer('packs'); });
     document.getElementById('btn-mode-crew').addEventListener('click', () => { AudioEngine.uiClick(); toggleHomeDrawer('crew'); });
 
-    document.getElementById('btn-launch-practice-timed').addEventListener('click', () => launchDive('practice', { untimed: false }));
+    document.getElementById('btn-launch-practice-blitz').addEventListener('click', () => launchDive('practice', { untimed: false, timerSeconds: 15 }));
+    document.getElementById('btn-launch-practice-timed').addEventListener('click', () => launchDive('practice', { untimed: false, timerSeconds: 25 }));
     document.getElementById('btn-launch-practice-untimed').addEventListener('click', () => launchDive('practice', { untimed: true }));
 
     document.querySelectorAll('[data-launch-pack]').forEach(btn => {
@@ -1171,7 +1284,7 @@
     // Gameplay & Auto Spell-Check + Sonar Hint
     const diveInput = document.getElementById('dive-input');
     diveInput.addEventListener('input', () => {
-      AudioEngine.keystrokeTick();
+      if (state.settings.keyTicks) AudioEngine.keystrokeTick();
       updateSpellPreview();
     });
     diveInput.addEventListener('keydown', e => {
@@ -1183,7 +1296,8 @@
 
     document.getElementById('btn-toggle-autospell').addEventListener('click', () => {
       state.autoSpell = !state.autoSpell;
-      try { localStorage.setItem('shrimplion_autospell', String(state.autoSpell)); } catch (_) {}
+      state.settings.autoSpell = state.autoSpell;
+      saveSettings(state.settings);
       AudioEngine.uiClick();
       syncAutoSpellBtn();
       updateSpellPreview();
@@ -1206,7 +1320,7 @@
       }
     });
 
-    // Results actions
+    // Results actions & Encyclopedia filter
     document.getElementById('btn-share').addEventListener('click', async () => {
       try {
         await navigator.clipboard.writeText(state.lastShareText);
@@ -1215,12 +1329,24 @@
         showToast('📋 Score ready to share!');
       }
     });
-    document.getElementById('btn-again-practice').addEventListener('click', () => launchDive('practice', { untimed: false }));
+    document.getElementById('btn-copy-details').addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(state.lastDetailText || state.lastShareText);
+        showToast('📝 Copied full signal-by-signal log!');
+      } catch (_) {
+        showToast('📝 Full log ready!');
+      }
+    });
+    document.getElementById('log-search-input').addEventListener('input', e => {
+      filterSummaryLog(e.target.value);
+    });
+    document.getElementById('btn-again-practice').addEventListener('click', () => launchDive('practice'));
     document.getElementById('btn-back-surface').addEventListener('click', renderHome);
 
-    // Modals & Audio controls
+    // Modals & Settings & Audio controls
     document.getElementById('btn-archive').addEventListener('click', () => { AudioEngine.uiClick(); openArchive(); });
     document.getElementById('btn-stats').addEventListener('click', () => { AudioEngine.uiClick(); openStats(); });
+    document.getElementById('btn-settings').addEventListener('click', () => { AudioEngine.uiClick(); openSettings(); });
     document.getElementById('btn-help').addEventListener('click', () => {
       AudioEngine.uiClick();
       document.getElementById('modal-help').classList.add('open');
@@ -1239,11 +1365,75 @@
       AudioEngine.toggleMute();
       syncSoundBtn();
     });
-    const volSlider = document.getElementById('audio-volume-slider');
-    if (volSlider) {
-      volSlider.addEventListener('input', e => {
-        AudioEngine.setVolume(Number(e.target.value) / 100);
-      });
-    }
+
+    // Settings Modal Controls
+    document.getElementById('set-autospell').addEventListener('change', e => {
+      state.autoSpell = e.target.checked;
+      state.settings.autoSpell = state.autoSpell;
+      saveSettings(state.settings);
+      syncAutoSpellBtn();
+      updateSpellPreview();
+      AudioEngine.uiClick();
+    });
+    document.getElementById('set-timer-sec').addEventListener('change', e => {
+      state.settings.timerSeconds = Number(e.target.value);
+      saveSettings(state.settings);
+      AudioEngine.uiClick();
+      showToast(state.settings.timerSeconds === 0 ? '⏱️ Practice/Pack timer set to Untimed' : `⏱️ Practice/Pack timer set to ${state.settings.timerSeconds}s`);
+    });
+    document.getElementById('audio-volume-slider').addEventListener('input', e => {
+      const pct = Number(e.target.value);
+      AudioEngine.setVolume(pct / 100);
+      document.getElementById('set-vol-pct').textContent = `${pct}%`;
+    });
+    document.getElementById('set-muted').addEventListener('change', e => {
+      if (e.target.checked !== AudioEngine.isMuted()) {
+        AudioEngine.toggleMute();
+        syncSoundBtn();
+      }
+    });
+    document.getElementById('set-ambience').addEventListener('change', e => {
+      if (e.target.checked !== AudioEngine.isAmbientEnabled()) {
+        AudioEngine.toggleAmbience();
+        syncAmbienceBtn();
+      }
+    });
+    document.getElementById('set-keyticks').addEventListener('change', e => {
+      state.settings.keyTicks = e.target.checked;
+      saveSettings(state.settings);
+      AudioEngine.uiClick();
+    });
+    document.getElementById('set-sub-skin').addEventListener('change', e => {
+      state.settings.subSkin = e.target.value;
+      saveSettings(state.settings);
+      applyVisualSettings(state.settings);
+      AudioEngine.uiClick();
+    });
+    document.getElementById('set-reduced-motion').addEventListener('change', e => {
+      state.settings.reducedMotion = e.target.checked;
+      saveSettings(state.settings);
+      applyVisualSettings(state.settings);
+      AudioEngine.uiClick();
+    });
+    document.getElementById('btn-settings-reset-daily').addEventListener('click', () => {
+      document.getElementById('modal-settings').classList.remove('open');
+      resetDailyDive(false);
+    });
+    document.getElementById('btn-wipe-stats').addEventListener('click', e => {
+      const btn = e.currentTarget;
+      if (btn.dataset.armed !== '1') {
+        btn.dataset.armed = '1';
+        btn.textContent = '⚠️ Click Again to Confirm';
+        return;
+      }
+      localStorage.removeItem(STATS_KEY);
+      localStorage.removeItem(PROMPT_BESTS_KEY);
+      const today = getTodayInfo();
+      removeDailyRecord(today.dateKey);
+      document.getElementById('modal-settings').classList.remove('open');
+      AudioEngine.resetSplash();
+      showToast('🗑️ Stats, Personal Bests & Today’s Daily cleared.');
+      renderHome();
+    });
   });
 })();

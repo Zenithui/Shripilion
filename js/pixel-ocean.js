@@ -241,11 +241,20 @@
   let vw = 320;
   let vh = 240;
 
+  const SUB_SKINS = {
+    gold: { Y: '#facc15', G: '#fde047', A: '#d97706', O: '#f97316' },
+    coral: { Y: '#f472b6', G: '#fbcfe8', A: '#be185d', O: '#fb7185' },
+    cyan: { Y: '#38bdf8', G: '#bae6fd', A: '#0369a1', O: '#22d3ee' },
+    emerald: { Y: '#34d399', G: '#a7f3d0', A: '#047857', O: '#10b981' }
+  };
+
   const world = {
     dockedAtSurface: true,     // true on home screen (sub hangs right below boat at 0m)
     currentMeters: 0,          // smoothly animated camera depth in meters
     targetMeters: 0,           // target depth in meters
     velocityMeters: 0,         // descent speed (meters/frame)
+    subSkin: 'gold',
+    reducedMotion: false,
     rejectShakeFrames: 0,
     screenShakeFrames: 0,
     screenShakeMag: 0,
@@ -322,7 +331,7 @@
     ctx.imageSmoothingEnabled = false;
   }
 
-  function drawSprite(rows, px, py, flipX) {
+  function drawSprite(rows, px, py, flipX, overrides) {
     const ix = Math.round(px);
     const iy = Math.round(py);
     for (let r = 0; r < rows.length; r++) {
@@ -330,8 +339,10 @@
       const len = row.length;
       for (let c = 0; c < len; c++) {
         const ch = row[flipX ? len - 1 - c : c];
-        if (ch === '.' || !PALETTE[ch]) continue;
-        ctx.fillStyle = PALETTE[ch];
+        if (ch === '.') continue;
+        const col = (overrides && overrides[ch]) || PALETTE[ch];
+        if (!col) continue;
+        ctx.fillStyle = col;
         ctx.fillRect(ix + c, iy + r, 1, 1);
       }
     }
@@ -392,8 +403,10 @@
     let shakeY = 0;
     if (world.screenShakeFrames > 0) {
       world.screenShakeFrames--;
-      shakeX = Math.round((Math.random() - 0.5) * world.screenShakeMag);
-      shakeY = Math.round((Math.random() - 0.5) * world.screenShakeMag);
+      if (!world.reducedMotion) {
+        shakeX = Math.round((Math.random() - 0.5) * world.screenShakeMag);
+        shakeY = Math.round((Math.random() - 0.5) * world.screenShakeMag);
+      }
     }
 
     ctx.save();
@@ -703,7 +716,7 @@
 
     // Blink Krill's eyes inside porthole every ~140 frames
     const isBlink = world.frame % 140 > 133;
-    drawSprite(isBlink ? SPRITE_SUB_BLINK : SPRITE_SUB_OPEN_EYE, subX, subY, false);
+    drawSprite(isBlink ? SPRITE_SUB_BLINK : SPRITE_SUB_OPEN_EYE, subX, subY, false, SUB_SKINS[world.subSkin]);
 
     // Spinning pixel propeller blades on left stern
     const propPhase = Math.floor(world.frame / (Math.abs(world.velocityMeters) > 2 ? 2 : 6)) % 3;
@@ -876,6 +889,14 @@
       world.dockedAtSurface = meters <= 0;
       world.currentMeters = meters;
       world.targetMeters = meters;
+    },
+
+    setSubSkin(skin) {
+      if (SUB_SKINS[skin]) world.subSkin = skin;
+    },
+
+    setReducedMotion(flag) {
+      world.reducedMotion = Boolean(flag);
     }
   };
 })();
