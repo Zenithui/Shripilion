@@ -35,6 +35,7 @@
 
       <div class="top-controls">
         <span id="streak-chip" class="streak-chip" title="Daily Dive Streak">🔥 0</span>
+        <button id="btn-archive" class="mini-pill-btn" type="button">📅 Archive</button>
         <button id="btn-stats" class="mini-pill-btn" type="button">📊 Stats</button>
         <button id="btn-help" class="mini-pill-btn" type="button">❓ Rules</button>
         <button id="btn-sound" class="mini-pill-btn" type="button" aria-label="Toggle Sound">🔊</button>
@@ -50,6 +51,11 @@
       <div class="landing-center">
         <h1 class="game-logo-title">SHRIMPLION</h1>
         <p class="game-logo-sub">The Daily Dive · 7 signals · 25 seconds</p>
+        <div class="daily-meta-row">
+          <span id="daily-theme-pill" class="daily-theme-pill">🌊 Loading daily current...</span>
+          <span id="dataset-badge" class="dataset-badge">📦 Dataset loading...</span>
+        </div>
+        <div id="daily-countdown" class="daily-countdown" aria-live="off"></div>
 
         <!-- Pixel Mascot "Krill" Comms Strip -->
         <div class="krill-comms-box">
@@ -102,19 +108,19 @@
           <div class="pack-list">
             <button class="pack-card-btn" data-launch-pack="world" type="button">
               <strong>🧭 Geography & World</strong>
-              <span>Countries, capitals, states & seas</span>
+              <span>Countries, rivers, peaks, islands, cities & landmarks</span>
             </button>
             <button class="pack-card-btn" data-launch-pack="science" type="button">
               <strong>🔬 Science & Space</strong>
-              <span>Elements, moons, stars & nature</span>
+              <span>Elements, moons, anatomy, marine life & physics</span>
             </button>
             <button class="pack-card-btn" data-launch-pack="culture" type="button">
               <strong>🏛️ Culture & Tech</strong>
-              <span>History, myth, music, games & code</span>
+              <span>Myth, music, art, books, games, code & chess</span>
             </button>
             <button class="pack-card-btn" data-launch-pack="everyday" type="button">
               <strong>🧀 Food & Everyday</strong>
-              <span>Fruits, cheeses, pasta & sports</span>
+              <span>Food, spices, pets, colors, sports & vehicles</span>
             </button>
           </div>
         </div>
@@ -310,9 +316,26 @@
     </div>
   </div>
 
+  <!-- =====================================================================
+       DAILY ARCHIVE MODAL
+       ===================================================================== -->
+  <div id="modal-archive" class="modal-overlay" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+        <h2 style="font-size:1.1rem;font-weight:900;">📅 Daily Dive Archive</h2>
+        <button data-close type="button" style="background:none;border:none;color:#94a3b8;font-size:1.3rem;cursor:pointer;">✕</button>
+      </div>
+      <p style="font-size:0.78rem;color:#94a3b8;margin-bottom:12px;">
+        Replay any past themed Daily Dive without affecting today’s daily streak.
+      </p>
+      <div id="archive-list" class="archive-list"></div>
+    </div>
+  </div>
+
   <div id="toast" class="toast-banner" role="status" aria-live="polite"></div>
 
   <script src="js/prompts.js"></script>
+  <script src="js/dataset-loader.js"></script>
   <script src="js/matcher.js"></script>
   <script src="js/audio.js"></script>
   <script src="js/pixel-ocean.js"></script>

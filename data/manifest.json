@@ -1,0 +1,199 @@
+{
+  "version": 2,
+  "datasetName": "Shrimplion Pelagic Reverse-Trivia Corpus",
+  "totalPrompts": 56,
+  "totalCanonicalAnswers": 7153,
+  "totalSearchForms": 8364,
+  "dailyRange": {
+    "start": "2026-11-01",
+    "end": "2027-10-31",
+    "days": 365
+  },
+  "packCounts": {
+    "world": 14,
+    "science": 14,
+    "culture": 14,
+    "everyday": 14
+  },
+  "packFiles": {
+    "world": "data/packs/world.json",
+    "science": "data/packs/science.json",
+    "culture": "data/packs/culture.json",
+    "everyday": "data/packs/everyday.json"
+  },
+  "dailyFile": "data/daily.json",
+  "packs": {
+    "mixed": {
+      "id": "mixed",
+      "name": "Open Ocean",
+      "subtitle": "All 4 packs mixed (56 prompts)",
+      "icon": "🌊"
+    },
+    "world": {
+      "id": "world",
+      "name": "Cartographer's Trench",
+      "subtitle": "Countries, rivers, peaks, islands, cities & landmarks",
+      "icon": "🧭"
+    },
+    "science": {
+      "id": "science",
+      "name": "Hadal Lab",
+      "subtitle": "Elements, space, anatomy, marine life, physics & insects",
+      "icon": "🔬"
+    },
+    "culture": {
+      "id": "culture",
+      "name": "Sunken Archive",
+      "subtitle": "Myth, music, art, books, games, code & chess",
+      "icon": "🏛️"
+    },
+    "everyday": {
+      "id": "everyday",
+      "name": "Submarine Galley",
+      "subtitle": "Food, spices, pets, colors, sports, vehicles & trades",
+      "icon": "🧀"
+    }
+  },
+  "tiers": {
+    "0": {
+      "id": 0,
+      "name": "Surfaced",
+      "points": 0,
+      "meters": 0,
+      "emoji": "⚪",
+      "color": "#94a3b8",
+      "bg": "rgba(148,163,184,0.18)",
+      "tagline": "Out of oxygen — zero depth gained.",
+      "quips": [
+        "beep... oxygen tank ran dry! Staying at current depth.",
+        "No signal locked! Floating steady where we are."
+      ]
+    },
+    "1": {
+      "id": 1,
+      "name": "Plankton",
+      "points": 10,
+      "meters": 100,
+      "emoji": "🟢",
+      "color": "#34d399",
+      "bg": "rgba(52,211,153,0.18)",
+      "tagline": "The obvious first choice everyone thinks of.",
+      "quips": [
+        "Surface plankton! Everyone on Earth typed that first.",
+        "Valid, sure — if you enjoy sunbathing near the boat!"
+      ]
+    },
+    "2": {
+      "id": 2,
+      "name": "Too Clever",
+      "points": 15,
+      "meters": 150,
+      "emoji": "🩵",
+      "color": "#38bdf8",
+      "bg": "rgba(56,189,248,0.18)",
+      "tagline": "The \"clever\" dodge thousands of others also guessed!",
+      "quips": [
+        "Too clever! Thousands of trivia nerds had that exact same \"unique\" idea.",
+        "Classic crowd bottleneck — you dodged #1 right into #2!"
+      ]
+    },
+    "3": {
+      "id": 3,
+      "name": "Schooler",
+      "points": 30,
+      "meters": 300,
+      "emoji": "🔵",
+      "color": "#60a5fa",
+      "bg": "rgba(96,165,250,0.2)",
+      "tagline": "Swimming safely with a respectable school.",
+      "quips": [
+        "Solid Schooler! Sinking cleanly into darker water.",
+        "Not bad, diver — leaving the surface splashes behind!"
+      ]
+    },
+    "4": {
+      "id": 4,
+      "name": "Rare",
+      "points": 60,
+      "meters": 600,
+      "emoji": "🟣",
+      "color": "#c084fc",
+      "bg": "rgba(192,132,252,0.22)",
+      "tagline": "Now you’re thinking. Dodged the crowd!",
+      "quips": [
+        "Now we’re diving! Big 600-meter drop past the crowd!",
+        "beep! Rare signal locked — watch the pressure gauge!"
+      ]
+    },
+    "5": {
+      "id": 5,
+      "name": "Deep Cut",
+      "points": 85,
+      "meters": 850,
+      "emoji": "🟠",
+      "color": "#fb923c",
+      "bg": "rgba(251,146,60,0.22)",
+      "tagline": "Genuinely obscure specialist knowledge!",
+      "quips": [
+        "WHOA! Deep Cut!! Hull bolts rattling — 850m plunge!",
+        "Serious abyssal recall! Almost nobody pulls that one!"
+      ]
+    },
+    "6": {
+      "id": 6,
+      "name": "One in a Shrimplion",
+      "points": 100,
+      "meters": 1000,
+      "emoji": "💎",
+      "color": "#f472b6",
+      "bg": "rgba(244,114,182,0.26)",
+      "tagline": "ULTIMATE ABYSSAL TREASURE (<1% RARITY)!",
+      "quips": [
+        "BEEP BEEP!! ONE IN A SHRIMPLION!! FULL KILOMETER PLUNGE!!",
+        "LEGENDARY TRENCH PEARL!! Straight toward the 7,000m floor!!"
+      ]
+    }
+  },
+  "zones": [
+    {
+      "min": 0,
+      "max": 700,
+      "name": "Sunlight Zone",
+      "sci": "Epipelagic",
+      "badge": "☀️",
+      "desc": "Bright coastal waters teeming with plankton."
+    },
+    {
+      "min": 700,
+      "max": 1800,
+      "name": "Twilight Zone",
+      "sci": "Mesopelagic",
+      "badge": "🪼",
+      "desc": "Fading sunbeams where lanternfish flicker."
+    },
+    {
+      "min": 1800,
+      "max": 3500,
+      "name": "Midnight Zone",
+      "sci": "Bathypelagic",
+      "badge": "🦑",
+      "desc": "Pitch-black water lit only by bioluminescence."
+    },
+    {
+      "min": 3500,
+      "max": 5500,
+      "name": "The Abyss",
+      "sci": "Abyssopelagic",
+      "badge": "🐡",
+      "desc": "Crushing pressure above hydrothermal vents."
+    },
+    {
+      "min": 5500,
+      "max": 7001,
+      "name": "Hadal Trench",
+      "sci": "Hadalpelagic",
+      "badge": "👑",
+      "desc": "The deepest ocean floor — realm of legends."
+    }
+  ]
+}

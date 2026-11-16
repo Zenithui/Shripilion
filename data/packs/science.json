@@ -1,0 +1,198 @@
+[
+  {
+    "id": "periodic-elements",
+    "pack": "science",
+    "prompt": "Name an element on the Periodic Table",
+    "hint": "Any of the 118 confirmed chemical elements",
+    "tiers": {
+      "1": ["Oxygen", "Hydrogen", "Gold", "Silver", "Carbon", "Iron", "Helium", "Nitrogen", "Copper", "Sodium"],
+      "2": ["Aluminum|Aluminium", "Calcium", "Chlorine", "Neon", "Lead", "Zinc", "Mercury", "Uranium", "Platinum", "Potassium", "Tin", "Nickel", "Silicon", "Lithium", "Magnesium", "Sulfur|Sulphur"],
+      "3": ["Argon", "Titanium", "Cobalt", "Phosphorus", "Fluorine", "Bromine", "Iodine", "Arsenic", "Krypton", "Xenon", "Radon", "Plutonium", "Tungsten|Wolfram", "Chromium", "Manganese", "Barium", "Boron", "Beryllium"],
+      "4": ["Bismuth", "Cesium|Caesium", "Francium", "Gallium", "Germanium", "Selenium", "Strontium", "Zirconium", "Palladium", "Cadmium", "Antimony", "Tellurium", "Radium", "Thorium", "Vanadium", "Molybdenum", "Rhodium", "Indium", "Iridium", "Osmium"],
+      "5": ["Rubidium", "Yttrium", "Niobium", "Technetium", "Ruthenium", "Hafnium", "Tantalum", "Rhenium", "Thallium", "Polonium", "Astatine", "Actinium", "Protactinium", "Neptunium", "Americium", "Curium", "Californium", "Einsteinium", "Lanthanum", "Cerium", "Neodymium", "Europium", "Gadolinium", "Scandium"],
+      "6": ["Praseodymium", "Promethium", "Samarium", "Terbium", "Dysprosium", "Holmium", "Erbium", "Thulium", "Ytterbium", "Lutetium", "Berkelium", "Fermium", "Mendelevium", "Nobelium", "Lawrencium", "Rutherfordium", "Dubnium", "Seaborgium", "Bohrium", "Hassium", "Meitnerium", "Darmstadtium", "Roentgenium", "Copernicium", "Nihonium", "Flerovium", "Moscovium", "Livermorium", "Tennessine", "Oganesson"]
+    }
+  },
+  {
+    "id": "solar-system-worlds",
+    "pack": "science",
+    "prompt": "Name a planet, dwarf planet, or moon in our Solar System",
+    "hint": "From Mercury and the Moon out to Kuiper Belt dwarf planets & outer moons",
+    "tiers": {
+      "1": ["Earth", "Mars", "Jupiter", "Saturn", "Venus", "Mercury", "Neptune", "Uranus", "Pluto", "The Moon|Moon|Luna"],
+      "2": ["Titan", "Europa", "Io", "Ganymede", "Callisto", "Ceres", "Enceladus", "Phobos", "Deimos"],
+      "3": ["Triton", "Charon", "Eris", "Makemake", "Haumea", "Mimas", "Rhea", "Iapetus", "Dione", "Tethys"],
+      "4": ["Miranda", "Oberon", "Titania", "Umbriel", "Ariel", "Hyperion", "Phoebe", "Sedna", "Quaoar", "Orcus", "Amalthea"],
+      "5": ["Nereid", "Proteus", "Larissa", "Galatea", "Despina", "Puck", "Janus", "Epimetheus", "Pan", "Daphnis", "Atlas", "Prometheus", "Pandora", "Himalia", "Thebe", "Metis", "Adrastea", "Nix", "Hydra", "Gonggong", "Hygeia"],
+      "6": ["Kerberos", "Styx", "Dysnomia", "Hi iaka|Hiiaka", "Namaka", "Vanth", "Weywot", "Actaea", "Salacia", "Varuna", "Ixion", "Cordelia", "Ophelia", "Bianca", "Cressida", "Desdemona", "Juliet", "Portia", "Rosalind", "Belinda", "Perdita", "Mab", "Cupid", "Caliban", "Sycorax", "Prospero", "Setebos", "Stephano", "Trinculo", "Naiad", "Thalassa", "Halimede", "Sao", "Laomedeia", "Psamathe", "Neso", "Hippocamp", "Elara", "Pasiphae", "Sinope", "Lysithea", "Carme", "Ananke", "Leda", "Callirrhoe", "Themisto", "Methone", "Pallene", "Telesto", "Calypso", "Helene", "Polydeuces", "Siarnaq", "Albiorix", "Ymir"]
+    }
+  },
+  {
+    "id": "constellations",
+    "pack": "science",
+    "prompt": "Name an official constellation",
+    "hint": "Any of the 88 official IAU constellations",
+    "tiers": {
+      "1": ["Orion", "Ursa Major|Big Dipper|Great Bear", "Ursa Minor|Little Dipper|Little Bear", "Leo", "Scorpius|Scorpio", "Taurus", "Gemini", "Cassiopeia"],
+      "2": ["Aries", "Cancer", "Virgo", "Libra", "Sagittarius", "Capricornus|Capricorn", "Aquarius", "Pisces", "Andromeda", "Pegasus", "Cygnus", "Lyra"],
+      "3": ["Centaurus", "Crux|Southern Cross", "Canis Major", "Canis Minor", "Perseus", "Draco", "Hercules", "Aquila", "Hydra", "Ophiuchus"],
+      "4": ["Auriga", "Bootes", "Carina", "Cetus", "Eridanus", "Vela", "Puppis", "Cepheus", "Corona Borealis", "Corvus", "Delphinus", "Lepus", "Monoceros", "Phoenix", "Sagitta", "Triangulum"],
+      "5": ["Ara", "Canes Venatici", "Columba", "Coma Berenices", "Crater", "Dorado", "Grus", "Indus", "Leo Minor", "Lupus", "Lynx", "Pavo", "Piscis Austrinus", "Serpens", "Sextans", "Tucana", "Vulpecula", "Lacerta", "Scutum"],
+      "6": ["Antlia", "Apus", "Caelum", "Camelopardalis", "Chamaeleon", "Circinus", "Corona Australis", "Equuleus", "Fornax", "Horologium", "Hydrus", "Mensa", "Microscopium", "Musca", "Norma", "Octans", "Pictor", "Pyxis", "Reticulum", "Sculptor", "Telescopium", "Triangulum Australe", "Volans"]
+    }
+  },
+  {
+    "id": "dinosaurs",
+    "pack": "science",
+    "prompt": "Name a dinosaur",
+    "hint": "True non-avian dinosaur genera (sorry Pterodactyl & Plesiosaur!)",
+    "tiers": {
+      "1": ["Tyrannosaurus Rex|T-Rex|T Rex|Tyrannosaurus", "Triceratops", "Velociraptor", "Stegosaurus", "Brachiosaurus", "Brontosaurus"],
+      "2": ["Spinosaurus", "Ankylosaurus", "Allosaurus", "Diplodocus", "Apatosaurus", "Iguanodon", "Pachycephalosaurus", "Parasaurolophus"],
+      "3": ["Dilophosaurus", "Carnotaurus", "Gallimimus", "Archaeopteryx", "Deinonychus", "Utahraptor", "Giganotosaurus", "Compsognathus", "Oviraptor", "Baryonyx"],
+      "4": ["Therizinosaurus", "Styracosaurus", "Argentinosaurus", "Microraptor", "Corythosaurus", "Maiasaura", "Carcharodontosaurus", "Ceratosaurus", "Protoceratops", "Coelophysis", "Plateosaurus", "Edmontosaurus"],
+      "5": ["Deinocheirus", "Amargasaurus", "Acrocanthosaurus", "Suchomimus", "Majungasaurus", "Cryolophosaurus", "Dreadnoughtus", "Patagotitan", "Kentrosaurus", "Pachyrhinosaurus", "Psittacosaurus", "Herrerasaurus", "Eoraptor", "Albertosaurus", "Tarbosaurus", "Troodon"],
+      "6": ["Yi Qi|Yi", "Nigersaurus", "Kosmoceratops", "Qianzhousaurus", "Yutyrannus", "Concavenator", "Irritator", "Mononykus", "Sinosauropteryx", "Anchiornis", "Citipati", "Lambeosaurus", "Ouranosaurus", "Muttaburrasaurus", "Leaellynasaura", "Minmi", "Miragaia", "Saltasaurus", "Sauroposeidon", "Mamenchisaurus", "Shunosaurus", "Abrictosaurus", "Heterodontosaurus", "Scelidosaurus", "Polacanthus", "Nodosaurus", "Borealopelta", "Zuul", "Nanuqsaurus", "Australovenator", "Megaraptor", "Maip", "Torvosaurus", "Megalosaurus", "Halszkaraptor", "Balaur"]
+    }
+  },
+  {
+    "id": "bird-species",
+    "pack": "science",
+    "prompt": "Name a type of bird",
+    "hint": "Common bird families or specific wild/domesticated bird species",
+    "tiers": {
+      "1": ["Eagle|Bald Eagle", "Pigeon|Dove", "Penguin", "Owl", "Robin", "Crow|Raven", "Chicken", "Duck", "Parrot", "Sparrow"],
+      "2": ["Flamingo", "Peacock|Peafowl", "Swan", "Hummingbird", "Seagull|Gull", "Hawk", "Falcon|Peregrine Falcon", "Ostrich", "Turkey", "Goose", "Blue Jay", "Cardinal", "Woodpecker", "Pelican", "Toucan"],
+      "3": ["Albatross", "Puffin", "Emu", "Kiwi", "Heron", "Stork", "Crane", "Vulture|Condor", "Canary", "Finch", "Magpie", "Starling", "Swallow", "Kingfisher", "Kookaburra", "Cockatoo", "Macaw", "Pheasant", "Quail"],
+      "4": ["Cassowary", "Cormorant", "Osprey", "Kestrel", "Kite", "Mockingbird", "Oriole", "Wren", "Chickadee", "Nightingale", "Lark", "Thrush", "Blackbird", "Cuckoo", "Roadrunner", "Sandpiper", "Plover", "Loon", "Grebe", "Ibis", "Egret", "Spoonbill", "Parakeet|Budgie|Budgerigar"],
+      "5": ["Shoebill", "Kakapo", "Secretarybird|Secretary Bird", "Quetzal|Resplendent Quetzal", "Lyrebird", "Bowerbird", "Booby|Blue-Footed Booby", "Frigatebird", "Gannet", "Petrel", "Shearwater", "Tern", "Curlew", "Avocet", "Oystercatcher", "Bittern", "Moorhen", "Coot", "Grouse", "Partridge", "Ptarmigan", "Hornbill", "Hoopoe", "Bee-Eater", "Roller", "Swift", "Nightjar", "Whip-poor-will", "Nuthatch", "Creeper", "Waxwing", "Shrike", "Tanager", "Bunting", "Grackle", "Cowbird", "Jackdaw", "Rook"],
+      "6": ["Hoatzin", "Potoo", "Tawny Frogmouth|Frogmouth", "Oilbird", "Lammergeier|Bearded Vulture", "Kea", "Takahe", "Huia", "Rhea", "Tinamou", "Megapode|Malleefowl", "Capercaillie", "Bustard|Kori Bustard", "Seriema", "Sunbittern", "Kagu", "Jacana", "Skimmer", "Murrelet", "Auklet", "Guillemot", "Sandgrouse", "Turaco", "Coucal", "Ani", "Trogon", "Motmot", "Tody", "Jacamar", "Puffbird", "Barbet", "Honeyguide", "Caracara", "Pitta", "Broadbill", "Cotinga|Cock-of-the-Rock", "Manakin", "Antbird", "Ovenbird|Hornero", "Dipper", "Wallcreeper", "Picathartes|Rockfowl", "Vanga", "Drongo", "Fantail", "Riflebird", "Bird-of-Paradise"]
+    }
+  },
+  {
+    "id": "gemstones-minerals",
+    "pack": "science",
+    "prompt": "Name a gemstone or crystal mineral",
+    "hint": "Precious stones, semi-precious gems, or collectible crystals",
+    "tiers": {
+      "1": ["Diamond", "Ruby", "Emerald", "Sapphire", "Quartz|Rose Quartz", "Amethyst", "Pearl"],
+      "2": ["Opal", "Jade", "Topaz", "Garnet", "Turquoise", "Onyx", "Amber", "Obsidian"],
+      "3": ["Aquamarine", "Peridot", "Citrine", "Moonstone", "Lapis Lazuli|Lapis", "Malachite", "Agate", "Jasper", "Pyrite|Fools Gold", "Tourmaline"],
+      "4": ["Tanzanite", "Alexandrite", "Morganite", "Zircon", "Spinel", "Labradorite", "Tiger Eye|Tigers Eye", "Bloodstone", "Carnelian", "Chalcedony", "Fluorite", "Selenite", "Calcite", "Hematite", "Sunstone", "Amazonite", "Aventurine", "Beryl"],
+      "5": ["Kunzite", "Chrysoberyl", "Moldavite", "Larimar", "Rhodochrosite", "Rhodonite", "Charoite", "Sodalite", "Azurite", "Chrysocolla", "Kyanite", "Iolite", "Andalusite", "Apatite", "Sphene|Titanite", "Epidote", "Zoisite", "Tsavorite", "Demantoid", "Spessartine", "Celestite|Celestine"],
+      "6": ["Painite", "Benitoite", "Bixbite|Red Beryl", "Taaffeite", "Musgravite", "Grandidierite", "Jeremejevite", "Serendibite", "Poudretteite", "Hibonite", "Paraiba Tourmaline", "Padparadscha", "Sphalerite", "Kornerupine", "Scapolite", "Danburite", "Phenakite", "Euclase", "Petalite", "Hiddenite", "Hackmanite", "Tugtupite", "Sugilite", "Pietersite", "Shattuckite", "Dioptase", "Crocoite", "Wulfenite", "Vanadinite", "Cavansite", "Baryte|Barite", "Scheelite", "Cassiterite", "Hauyne", "Lazurite", "Staurolite"]
+    }
+  },
+  {
+    "id": "trees",
+    "pack": "science",
+    "prompt": "Name a type of tree",
+    "hint": "Deciduous, evergreen, fruit, or tropical trees",
+    "tiers": {
+      "1": ["Oak", "Pine", "Maple", "Palm", "Birch", "Apple|Apple Tree", "Cherry|Cherry Blossom", "Willow|Weeping Willow"],
+      "2": ["Redwood", "Sequoia|Giant Sequoia", "Cedar", "Spruce", "Fir|Douglas Fir", "Elm", "Walnut", "Eucalyptus", "Magnolia", "Cypress"],
+      "3": ["Ash", "Beech", "Sycamore", "Poplar", "Aspen", "Chestnut", "Hickory", "Pecan", "Mahogany", "Teak", "Baobab", "Banyan", "Olive", "Lemon", "Orange", "Peach", "Pear"],
+      "4": ["Ginkgo|Gingko|Ginkgo Biloba", "Jacaranda", "Acacia", "Ebony", "Alder", "Larch", "Hemlock", "Juniper", "Yew", "Dogwood", "Hawthorn", "Linden|Basswood|Lime Tree", "Hazel|Hazelnut", "Fig", "Avocado", "Mango", "Coconut", "Bonsai", "Cottonwood", "Mulberry", "Persimmon"],
+      "5": ["Monkey Puzzle", "Bristlecone Pine", "Kapok", "Mangrove", "Tamarind", "Neem", "Moringa", "Catalpa", "Sassafras", "Hornbeam", "Rowan|Mountain Ash", "Tupelo|Black Gum", "Sweetgum", "Buckeye|Horse Chestnut", "Locust|Black Locust|Honey Locust", "Mimosa|Silk Tree", "Balsa", "Rosewood", "Sandalwood", "Cork Oak", "Joshua Tree", "Plumeria|Frangipani", "Cacao", "Cinnamon", "Rubber Tree"],
+      "6": ["Dragon Blood Tree|Socotra Dragon Tree", "Wollemi Pine", "Lignum Vitae", "Pau Brasil|Pernambuco|Brazilwood", "Quiver Tree", "Pohutukawa", "Kauri", "Totara", "Rimu", "Jarrah", "Karri", "Huon Pine", "Marula", "Mopane", "Fever Tree", "Sausage Tree|Kigelia", "Travellers Tree|Travellers Palm", "Cannonball Tree", "Rainbow Eucalyptus", "Sandbox Tree|Dynamite Tree", "Manchineel", "Paulownia|Empress Tree", "Osage Orange|Bois d Arc", "Kentucky Coffeetree", "Katsura", "Dawn Redwood|Metasequoia", "Tamarack", "Medlar", "Serviceberry|Amelanchier", "Laburnum", "Franklinia", "Stewartia", "Zelkova", "Hackberry", "London Plane|Plane Tree", "Araucaria", "Podocarpus"]
+    }
+  },
+  {
+    "id": "human-bones",
+    "pack": "science",
+    "prompt": "Name a bone in the human body",
+    "hint": "Anatomical or common names for human skeletal bones",
+    "tiers": {
+      "1": ["Skull|Cranium", "Femur|Thigh Bone", "Rib|Ribs", "Spine|Vertebra|Vertebrae", "Pelvis|Hip Bone", "Jaw|Jawbone|Mandible", "Collarbone|Clavicle"],
+      "2": ["Humerus", "Radius", "Ulna", "Tibia|Shinbone", "Fibula", "Kneecap|Patella", "Sternum|Breastbone", "Shoulder Blade|Scapula"],
+      "3": ["Tailbone|Coccyx", "Sacrum", "Phalanges|Finger Bone|Toe Bone", "Metacarpal|Metacarpals", "Metatarsal|Metatarsals", "Carpal|Carpals|Wrist Bone", "Tarsal|Tarsals|Ankle Bone", "Cheekbone|Zygomatic"],
+      "4": ["Maxilla", "Nasal Bone", "Frontal Bone", "Parietal Bone", "Temporal Bone", "Occipital Bone", "Ilium", "Ischium", "Pubis", "Calcaneus|Heel Bone", "Talus"],
+      "5": ["Hyoid|Hyoid Bone", "Stapes|Stirrup", "Incus|Anvil", "Malleus|Hammer", "Ethmoid", "Sphenoid", "Vomer", "Lacrimal", "Palatine", "Scaphoid", "Lunate", "Navicular", "Cuboid"],
+      "6": ["Pisiform", "Triquetrum", "Hamate", "Capitate", "Trapezium", "Trapezoid", "Medial Cuneiform|Cuneiform", "Intermediate Cuneiform", "Lateral Cuneiform", "Inferior Nasal Concha", "Manubrium", "Xiphoid Process", "Atlas|C1", "Axis|C2", "Sesamoid|Fabella", "Wormian Bone|Sutural Bone"]
+    }
+  },
+  {
+    "id": "marine-creatures",
+    "pack": "science",
+    "prompt": "Name an ocean or sea creature",
+    "hint": "Fish, marine mammals, cephalopods, crustaceans, or abyssal dwellers",
+    "tiers": {
+      "1": ["Shark|Great White Shark", "Whale|Blue Whale", "Dolphin", "Octopus", "Fish|Clownfish", "Crab", "Lobster", "Jellyfish", "Sea Turtle|Turtle"],
+      "2": ["Starfish|Sea Star", "Seahorse", "Squid", "Stingray|Ray", "Seal", "Sea Lion", "Walrus", "Orca|Killer Whale", "Shrimp|Krill", "Eel", "Salmon", "Tuna"],
+      "3": ["Narwhal", "Beluga|Beluga Whale", "Humpback Whale", "Sperm Whale", "Hammerhead Shark", "Manta Ray", "Manatee", "Sea Otter", "Penguin", "Coral", "Sea Anemone", "Sea Urchin", "Clam", "Oyster", "Mussel", "Scallop", "Swordfish", "Barracuda", "Pufferfish", "Anglerfish"],
+      "4": ["Moray Eel", "Giant Squid", "Cuttlefish", "Nautilus", "Horseshoe Crab", "Hermit Crab", "Barnacle", "Sea Cucumber", "Sand Dollar", "Plankton", "Marlin", "Flying Fish", "Lionfish", "Sunfish|Mola Mola", "Whale Shark", "Tiger Shark", "Bull Shark", "Dugong", "Elephant Seal", "Leopard Seal"],
+      "5": ["Coelacanth", "Mantis Shrimp", "Leafy Sea Dragon|Sea Dragon", "Blobfish", "Vampire Squid", "Colossal Squid", "Goblin Shark", "Greenland Shark", "Frilled Shark", "Basking Shark", "Oarfish|Giant Oarfish", "Fangtooth", "Viperfish", "Hatchetfish", "Lanternfish", "Hagfish", "Lamprey", "Sea Pig", "Yeti Crab", "King Crab", "Spider Crab", "Conch", "Abalone", "Geoduck", "Vaquita"],
+      "6": ["Barreleye|Spookfish", "Gulper Eel|Pelican Eel", "Bobbit Worm", "Pyrosome", "Siphonophore", "Bigfin Squid|Magnapinna", "Dumbo Octopus", "Blanket Octopus", "Blue Dragon|Glaucus Atlanticus", "Sea Angel|Clione", "Christmas Tree Worm", "Tube Worm|Riftia", "Scaly-Foot Gastropod|Sea Pangolin", "Hoff Crab", "Cookiecutter Shark", "Megamouth Shark", "Chimaera|Ghost Shark", "Lumpsucker", "Sarcastic Fringehead", "Frogfish", "Stargazer", "Stonefish", "Ribbon Eel", "Telescope Octopus", "Sea Butterfly", "Comb Jelly|Ctenophore", "Salp", "Velvet Belly Lanternshark", "Black Swallower", "Tripod Fish"]
+    }
+  },
+  {
+    "id": "mammals",
+    "pack": "science",
+    "prompt": "Name a mammal",
+    "hint": "Wild or domesticated land, flying, or aquatic mammals",
+    "tiers": {
+      "1": ["Dog", "Cat", "Lion", "Tiger", "Elephant", "Bear", "Horse", "Cow", "Monkey", "Whale", "Dolphin"],
+      "2": ["Giraffe", "Zebra", "Kangaroo", "Koala", "Wolf", "Fox", "Deer", "Rabbit|Bunny", "Pig", "Sheep", "Goat", "Gorilla", "Chimpanzee", "Hippo|Hippopotamus", "Rhino|Rhinoceros", "Bat"],
+      "3": ["Cheetah", "Leopard", "Jaguar", "Panda|Giant Panda", "Polar Bear", "Sloth", "Otter", "Beaver", "Raccoon", "Squirrel", "Hedgehog", "Camel", "Llama", "Alpaca", "Moose", "Bison|Buffalo", "Seal", "Walrus", "Platypus", "Hyena", "Meerkat"],
+      "4": ["Capybara", "Armadillo", "Anteater", "Porcupine", "Badger", "Wolverine", "Ferret", "Skunk", "Opossum", "Wombat", "Tasmanian Devil", "Echidna", "Lemur", "Orangutan", "Baboon", "Macaque", "Lynx", "Cougar|Puma|Mountain Lion", "Caracal", "Serval", "Gazelle", "Antelope", "Impala", "Wildebeest", "Manatee", "Narwhal", "Chinchilla", "Guinea Pig", "Hamster", "Mole", "Shrew"],
+      "5": ["Pangolin", "Tapir", "Okapi", "Aardvark", "Aardwolf", "Red Panda", "Snow Leopard", "Clouded Leopard", "Ocelot", "Fennec Fox", "Honey Badger", "Mongoose", "Wallaby", "Quokka", "Tree Kangaroo", "Sugar Glider", "Coati", "Kinkajou", "Binturong", "Civet", "Genet", "Tarsier", "Slow Loris", "Gibbon", "Mandrill", "Proboscis Monkey", "Capuchin", "Howler Monkey", "Ibex", "Chamois", "Musk Ox", "Caribou|Reindeer", "Elk", "Pika", "Marmot", "Mara"],
+      "6": ["Aye-Aye", "Fossa", "Saiga|Saiga Antelope", "Babirusa", "Gerenuk", "Dik-Dik", "Klipspringer", "Bongo", "Nyala", "Kudu", "Eland", "Oryx", "Addax", "Pronghorn", "Takin", "Markhor", "Gaur", "Kouprey", "Anoa", "Visayan Warty Pig", "Tenrec", "Solenodon", "Desman", "Naked Mole-Rat", "Jerboa", "Springhare", "Viscacha", "Agouti", "Paca", "Pacarana", "Nutria|Coypu", "Numbat", "Quoll", "Bilby", "Bandicoot", "Cuscus", "Kowari", "Dunnart", "Colugo|Flying Lemur", "Tree Shrew", "Hyrax|Rock Hyrax", "Dugong", "Chevrotain|Mouse-Deer", "Zorilla", "Tayra", "Grison", "Linsang", "Margay", "Kodkod", "Pallas Cat|Manul", "Sand Cat", "Rusty-Spotted Cat", "Fishing Cat", "Jaguarundi", "Dhole", "Bush Dog", "Maned Wolf", "Bat-Eared Fox", "Tanuki|Raccoon Dog", "Spectacled Bear", "Sun Bear", "Sloth Bear", "Olinguito", "Vaquita"]
+    }
+  },
+  {
+    "id": "flowers-plants",
+    "pack": "science",
+    "prompt": "Name a flower or ornamental plant",
+    "hint": "Garden blooms, wildflowers, bulbs, succulents, or botanical oddities",
+    "tiers": {
+      "1": ["Rose", "Sunflower", "Daisy", "Tulip", "Lily", "Dandelion", "Orchid", "Lavender"],
+      "2": ["Daffodil", "Carnation", "Violet", "Iris", "Marigold", "Poppy", "Cactus", "Fern", "Bamboo", "Lotus", "Hydrangea"],
+      "3": ["Peony", "Chrysanthemum|Mum", "Hibiscus", "Jasmine", "Magnolia", "Lilac", "Pansy", "Petunia", "Geranium", "Buttercup", "Clover", "Bluebell", "Snapdragon", "Aloe|Aloe Vera", "Ivy"],
+      "4": ["Dahlia", "Zinnia", "Aster", "Begonia", "Camellia", "Azalea", "Rhododendron", "Gardenia", "Foxglove", "Anemone", "Crocus", "Hyacinth", "Narcissus", "Gladiolus", "Morning Glory", "Wisteria", "Honeysuckle", "Clematis", "Cosmos", "Forget-Me-Not", "Venus Flytrap", "Pitcher Plant", "Jade Plant", "Monstera", "Pothos"],
+      "5": ["Edelweiss", "Bird of Paradise", "Protea|King Protea", "Amaryllis", "Ranunculus", "Delphinium", "Larkspur", "Columbine", "Bleeding Heart", "Primrose", "Cowslip", "Snowdrop", "Hellebore", "Verbena", "Phlox", "Salvia", "Lupine", "Yarrow", "Echinacea|Coneflower", "Black-Eyed Susan", "Thistle", "Heather", "Gorse", "Oleander", "Plumeria|Frangipani", "Bougainvillea", "Passiflora|Passionflower", "Sundew", "Bonsai"],
+      "6": ["Rafflesia|Corpse Flower", "Titan Arum|Amorphophallus", "Welwitschia", "Ghost Orchid", "Middlemist Red", "Kadupul", "Jade Vine", "Fritillary|Snake Head Fritillary", "Asphodel", "Monkshood|Aconite|Wolfsbane", "Belladonna|Deadly Nightshade", "Mandrake", "Datura|Jimsonweed", "Heliconia", "Torch Ginger", "Cockscomb|Celosia", "Love-in-a-Mist|Nigella", "Nemesia", "Osteospermum", "Gazania", "Statice|Limonium", "Scabiosa|Pincushion Flower", "Astrantia", "Alstroemeria", "Freesia", "Nerine", "Agapanthus", "Calla Lily", "Canna", "Clivia", "Kalanchoe", "Lithops|Living Stones", "Haworthia", "Echeveria", "Sempervivum|Hens and Chicks", "Tillandsia|Air Plant", "Staghorn Fern", "Maidenhair Fern", "Sensitive Plant|Mimosa Pudica", "Bat Flower|Tacca", "Silver Sword", "Puya Raimondii", "Victoria Amazonica", "Wolffia"]
+    }
+  },
+  {
+    "id": "weather-phenomena",
+    "pack": "science",
+    "prompt": "Name a weather or atmospheric phenomenon",
+    "hint": "Storms, winds, precipitation types, cloud types, or sky optics",
+    "tiers": {
+      "1": ["Rain", "Snow", "Wind", "Thunder", "Lightning", "Tornado", "Hurricane", "Rainbow", "Fog", "Hail"],
+      "2": ["Blizzard", "Monsoon", "Cyclone", "Typhoon", "Thunderstorm", "Sleet", "Frost", "Dew", "Mist", "Drought", "Heatwave|Heat Wave"],
+      "3": ["Drizzle", "Freezing Rain", "Ice Storm", "Dust Storm|Sandstorm", "Waterspout", "Dust Devil", "Aurora|Aurora Borealis|Northern Lights|Aurora Australis", "Cumulus", "Cirrus", "Stratus", "Cumulonimbus", "Avalanche", "Squall"],
+      "4": ["Gale", "Microburst", "Downburst", "Derecho", "Haboob", "Thundersnow", "Graupel", "Black Ice", "Rime|Rime Ice", "Hoarfrost", "Smog", "Haze", "Vog", "Trade Winds", "Jet Stream", "El Nino", "La Nina", "Double Rainbow", "Sun Dog|Sundog|Parhelion", "Halo|Solar Halo|Lunar Halo"],
+      "5": ["Virga", "Mammatus|Mammatus Clouds", "Lenticular Cloud", "Shelf Cloud", "Wall Cloud", "Supercell", "Ball Lightning", "St Elmos Fire|Saint Elmos Fire", "Chinook|Chinook Wind", "Santa Ana Winds", "Foehn|Fohn", "Mistral", "Sirocco", "Bora", "Katabatic Wind", "Moonbow|Lunar Rainbow", "Fogbow", "Green Flash", "Crepuscular Rays", "Polar Vortex", "Atmospheric River", "Bomb Cyclone"],
+      "6": ["Brocken Spectre", "Red Sprite|Sprite", "Blue Jet", "ELVES", "Gigantic Jet", "Steve", "Noctilucent Cloud", "Nacreous Cloud|Polar Stratospheric Cloud", "Asperitas", "Kelvin-Helmholtz Cloud", "Morning Glory Cloud", "Roll Cloud", "Fallstreak Hole|Hole Punch Cloud", "Pyrocumulus|Flammagenitus", "Fire Whirl|Firenado", "Steam Devil", "Snownado", "Brinicle", "Penitentes", "Frost Flower", "Ice Shove", "Diamond Dust", "Circumzenithal Arc", "Circumhorizontal Arc|Fire Rainbow", "Pillar|Light Pillar", "Fata Morgana", "Anticrepuscular Rays", "Belt of Venus", "Alpenglow", "Airglow", "Gegenschein", "Zodiacal Light", "Khamsin", "Harmattan", "Shamal", "Pampero", "Zonda", "Williwaw", "Fremantle Doctor", "Roaring Forties", "Furious Fifties", "Screaming Sixties", "Horse Latitudes", "Doldrums"]
+    }
+  },
+  {
+    "id": "physics-units",
+    "pack": "science",
+    "prompt": "Name a scientific or historical unit of measurement",
+    "hint": "SI units, imperial/customary units, physics constants, or astronomical units",
+    "tiers": {
+      "1": ["Meter|Metre", "Kilometer|Kilometre", "Centimeter|Centimetre", "Inch", "Foot|Feet", "Yard", "Mile", "Pound", "Kilogram", "Gram", "Second", "Minute", "Hour", "Liter|Litre", "Gallon"],
+      "2": ["Millimeter|Millimetre", "Ounce", "Ton|Tonne", "Celsius", "Fahrenheit", "Kelvin", "Volt", "Watt", "Ampere|Amp", "Hertz", "Calorie", "Byte", "Bit", "Knot", "Acre", "Hectare"],
+      "3": ["Joule", "Newton", "Ohm", "Pascal", "Mole", "Light Year|Light-Year", "Decibel", "Kilowatt-Hour|Kilowatt Hour", "Square Meter", "Cubic Meter", "Bar", "Atmosphere|ATM", "Horsepower", "Carat", "Troy Ounce", "Fathom", "League"],
+      "4": ["Tesla", "Weber", "Henry", "Farad", "Coulomb", "Siemens", "Lumen", "Lux", "Candela", "Becquerel", "Gray", "Sievert", "Radian", "Steradian", "Electronvolt", "Astronomical Unit|AU", "Parsec", "Angstrom", "Micron|Micrometer", "Nanometer", "PSI", "Torr", "Millibar", "Mach", "Furlong", "Rod", "Chain", "Cubit", "Stone", "Bushel", "Peck", "Pint", "Quart", "Fluid Ounce"],
+      "5": ["Gauss", "Oersted", "Maxwell", "Dyne", "Erg", "Poise", "Stokes", "Curie", "Roentgen", "Rem", "Rad", "Rankine", "Reaumur", "BTU", "Therm", "Slug", "Poundal", "Dalton|Atomic Mass Unit|AMU", "Barn", "Diopter", "Sone", "Phon", "Richter", "Scoville", "Mohs", "Baud", "Flops", "Nautical Mile", "Cable", "Hand", "Span", "Gill", "Hogshead", "Dram", "Grain", "Kip"],
+      "6": ["Svedberg", "Dobson|Dobson Unit", "Langley", "Jansky", "Rayleigh", "Kayser", "Debye", "Hartree", "Rydberg", "Bohr", "Planck Length", "Planck Time", "Planck Mass", "Shackle", "Shake", "Jiffy", "Skein", "Smoot", "Fermis|Fermi", "Statcoulomb", "Abampere", "Biot", "Gilbert", "Franklin", "Mho", "Nit", "Stilb", "Lambert", "Apostilb", "Foot-Candle", "Talbot", "Sabin", "Mel", "Bark", "Cent", "Savart", "Nepers|Neper", "Bel", "Shannon", "Hartley|Ban", "Nat", "Trit", "Darcy", "Katal", "Gal|Galileo", "Eotvos", "Barye", "Piez|Pieze", "Sthene", "Morgen", "Verst", "Arshin", "Sazhen", "Pood", "Li", "Shaku", "Tsubo", "Koku", "Sho", "Toise", "Lieue", "Arpent", "Line|Ligne", "Point", "Pica", "Twip", "Em", "En", "Mil|Thou", "Barn-megaparsec"]
+    }
+  },
+  {
+    "id": "insects-bugs",
+    "pack": "science",
+    "prompt": "Name an insect, arachnid, or bug",
+    "hint": "True insects, spiders, scorpions, or backyard creepy-crawlies",
+    "tiers": {
+      "1": ["Ant", "Bee|Honeybee", "Butterfly", "Spider", "Mosquito", "Fly|Housefly", "Beetle", "Ladybug|Ladybird"],
+      "2": ["Grasshopper", "Cricket", "Dragonfly", "Moth", "Wasp", "Hornet", "Bumblebee", "Cockroach|Roach", "Caterpillar", "Flea", "Tick", "Scorpion", "Tarantula", "Termite"],
+      "3": ["Praying Mantis|Mantis", "Firefly|Lightning Bug", "Cicada", "Centipede", "Millipede", "Locust", "Aphid", "Bedbug|Bed Bug", "Gnat", "Fruit Fly", "Horsefly", "Black Widow", "Brown Recluse", "Daddy Longlegs|Harvestman", "Stink Bug", "Dung Beetle", "June Bug", "Monarch|Monarch Butterfly"],
+      "4": ["Walking Stick|Stick Insect", "Leaf Insect", "Weevil", "Earwig", "Silverfish", "Katydid", "Damselfly", "Mayfly", "Lacewing", "Boll Weevil", "Japanese Beetle", "Stag Beetle", "Rhinoceros Beetle", "Scarab", "Click Beetle", "Wolf Spider", "Jumping Spider", "Orb Weaver", "Trapdoor Spider", "Huntsman Spider", "Camel Spider", "Mite", "Chigger", "Louse|Lice", "Yellowjacket", "Mud Dauber", "Carpenter Ant", "Fire Ant", "Army Ant", "Leafcutter Ant"],
+      "5": ["Atlas Moth", "Luna Moth", "Deaths-Head Hawkmoth|Deaths Head Hawkmoth", "Hercules Beetle", "Goliath Beetle", "Bombardier Beetle", "Tiger Beetle", "Water Strider", "Water Boatman", "Backswimmer", "Giant Water Bug", "Assassin Bug", "Wheel Bug", "Kissing Bug", "Lanternfly|Spotted Lanternfly", "Treehopper", "Planthopper", "Spittlebug", "Caddisfly", "Stonefly", "Dobsonfly", "Antlion", "Robber Fly", "Botfly", "Tsetse Fly", "Hoverfly", "Crane Fly", "Sawfly", "Ichneumon Wasp", "Tarantula Hawk", "Velvet Ant", "Orchid Mantis", "Goliath Birdeater", "Peacock Spider", "Whip Scorpion", "Vinegaroon"],
+      "6": ["Tailless Whip Scorpion|Amblypygid", "Pseudoscorpion", "Sea Spider|Pycnogonid", "Springtail|Collembola", "Bristletail", "Firebrat", "Zorapteran", "Webspinner|Embioptera", "Ice Crawler|Grylloblattid", "Gladiator|Mantophasmatodea", "Snakefly", "Scorpionfly|Mecoptera", "Twisted-Wing Parasite|Strepsiptera", "Thrips", "Booklouse|Barklouse", "Psyllid", "Whitefly", "Scale Insect|Cochineal", "Mealybug", "Toad Bug", "Creeping Water Bug", "Thread-Legged Bug", "Emperor Scorpion", "Deathstalker", "Bark Scorpion", "Portia Spider", "Bolas Spider", "Ogre-Faced Spider", "Diving Bell Spider", "Bagheera Kiplingi", "Jewel Wasp|Emerald Cockroach Wasp", "Fig Wasp", "Gall Wasp", "Fairyfly", "Megaphragma", "Titan Beetle", "Jewel Beetle|Buprestid", "Oil Beetle|Blister Beetle", "Deathwatch Beetle", "Whirligig Beetle", "Rove Beetle", "Featherwing Beetle", "Trilobite Beetle", "Violin Mantis", "Devil Flower Mantis", "Thorn Bug", "Peanut-Head Bug", "Glasswing Butterfly", "Birdwing|Queen Alexandras Birdwing", "Blue Morpho", "Puss Moth", "Hummingbird Hawkmoth"]
+    }
+  }
+]

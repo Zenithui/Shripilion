@@ -1,0 +1,198 @@
+[
+  {
+    "id": "fruits",
+    "pack": "everyday",
+    "prompt": "Name a fruit",
+    "hint": "Common grocery fruits, berries, citrus, melons, or exotic tropical fruits",
+    "tiers": {
+      "1": ["Apple", "Banana", "Orange", "Strawberry", "Grape", "Watermelon", "Lemon", "Blueberry", "Pineapple", "Mango"],
+      "2": ["Peach", "Pear", "Cherry", "Raspberry", "Blackberry", "Lime", "Kiwi|Kiwifruit", "Plum", "Coconut", "Avocado", "Tomato", "Cantaloupe", "Pomegranate", "Grapefruit"],
+      "3": ["Apricot", "Nectarine", "Papaya", "Cranberry", "Fig", "Date", "Tangerine", "Mandarin", "Clementine", "Honeydew", "Passionfruit|Passion Fruit", "Dragonfruit|Dragon Fruit|Pitaya", "Guava", "Lychee", "Blackcurrant"],
+      "4": ["Persimmon", "Starfruit|Carambola", "Durian", "Jackfruit", "Plantain", "Kumquat", "Quince", "Mulberry", "Gooseberry", "Elderberry", "Boysenberry", "Acai", "Prune", "Raisin", "Blood Orange", "Pomelo", "Yuzu", "Key Lime", "Breadfruit", "Prickly Pear", "Olive"],
+      "5": ["Rambutan", "Mangosteen", "Cherimoya", "Soursop|Guanabana", "Loquat", "Jujube", "Longan", "Cloudberry", "Lingonberry", "Huckleberry", "Marionberry", "Loganberry", "Tayberry", "Salmonberry", "Redcurrant", "Pawpaw", "Feijoa|Pineapple Guava", "Tamarind", "Ugli Fruit", "Kiwano|Horned Melon", "Physalis|Cape Gooseberry|Goldenberry", "Calamansi", "Bergamot", "Citron", "Damson", "Greengage"],
+      "6": ["Jabuticaba", "Salak|Snake Fruit", "Sapodilla", "Mamey Sapote|Sapote", "Black Sapote", "Canistel|Eggfruit", "Lucuma", "Cupuacu", "Camu Camu", "Guarana", "Ackee", "Miracle Fruit|Miracle Berry", "Buddhas Hand", "Finger Lime", "Amanatsu", "Sudachi", "Kabosu", "Tamarillo", "Pepino", "Naranjilla|Lulo", "Babaco", "Marang", "Cempedak", "Langsat|Lanzones", "Santol", "Pulasan", "Rose Apple|Jambu", "Wax Apple", "Surinam Cherry|Pitanga", "Acerola", "Medlar", "Rowanberry", "Sea Buckthorn", "Saskatoon Berry|Juneberry", "Aronia|Chokeberry", "Maypop", "Monstera Deliciosa", "Hala Fruit", "Noni", "Bael", "Wood Apple", "Kokum", "Bilimbi", "Jostaberry"]
+    }
+  },
+  {
+    "id": "pasta-shapes",
+    "pack": "everyday",
+    "prompt": "Name a pasta shape or type",
+    "hint": "Italian long, short, tube, stuffed, or regional pasta shapes",
+    "tiers": {
+      "1": ["Spaghetti", "Penne", "Macaroni|Elbow Macaroni", "Fettuccine", "Lasagna|Lasagne", "Ravioli", "Linguine"],
+      "2": ["Rigatoni", "Fusilli", "Rotini", "Farfalle|Bowtie|Bow Tie", "Tortellini", "Orzo", "Angel Hair|Capellini", "Gnocchi", "Ziti"],
+      "3": ["Tagliatelle", "Pappardelle", "Bucatini", "Orecchiette", "Cavatappi", "Shells|Conchiglie", "Cannelloni", "Manicotti", "Ditalini", "Vermicelli", "Alphabet Pasta|Alfabeto"],
+      "4": ["Tortelloni", "Agnolotti", "Paccheri", "Gemelli", "Campanelle|Gigli", "Radiatori", "Casarecce", "Strozzapreti", "Cavatelli", "Trofie", "Mafaldine|Mafalde", "Pastina", "Acini di Pepe", "Stelline", "Ruote|Wagon Wheels|Rotelle", "Mostaccioli"],
+      "5": ["Pici", "Bigoli", "Garganelli", "Busiate", "Malloreddus|Gnocchetti Sardi", "Fregola|Fregula", "Pizzoccheri", "Tagliolini", "Trenette", "Bavette", "Spaghettoni", "Mezze Maniche", "Calamarata", "Lumache|Lumaconi", "Pipe Rigate", "Anelletti", "Fideo", "Cappelletti", "Mezzelune", "Pansotti", "Fagottini"],
+      "6": ["Su Filindeu", "Corzetti|Croxetti", "Culurgiones", "Lorighittas", "Scialatielli", "Stringozzi|Strangozzi", "Ciriole", "Umbricelli", "Tajarin", "Plin|Agnolotti del Plin", "Anolini", "Casoncelli", "Tortelli", "Marubini", "Passatelli", "Strascinati", "Capunti", "Foglie d Ulivo", "Sagne", "Lagane", "Fileja", "Maccheroni alla Chitarra|Spaghetti alla Chitarra", "Testaroli", "Panigacci", "Cencioni", "Maltagliati", "Quadrucci", "Risoni", "Tempestina", "Gramigna", "Torchietti|Torchio", "Sachettoni", "Caramelle", "Casunziei", "Canederli"]
+    }
+  },
+  {
+    "id": "cheeses",
+    "pack": "everyday",
+    "prompt": "Name a type of cheese",
+    "hint": "Cheeses from any country or milk tradition",
+    "tiers": {
+      "1": ["Cheddar", "Mozzarella", "Parmesan|Parmigiano-Reggiano|Parmigiano", "Swiss", "Brie", "Gouda", "American|American Cheese"],
+      "2": ["Feta", "Provolone", "Cream Cheese", "Blue Cheese", "Goat Cheese|Chevre", "Monterey Jack", "Pepper Jack", "Ricotta", "Cottage Cheese", "Camembert", "Colby|Colby Jack"],
+      "3": ["Gruyere", "Gorgonzola", "Havarti", "Muenster", "Manchego", "Pecorino|Pecorino Romano", "Halloumi", "Burrata", "Mascarpone", "Roquefort", "Stilton", "Edam", "Emmental|Emmentaler", "Asiago", "Fontina", "Paneer", "Velveeta"],
+      "4": ["Raclette", "Comte", "Jarlsberg", "Cotija", "Oaxaca", "Queso Fresco", "Queso Blanco", "Panela", "String Cheese", "Limburger", "Red Leicester", "Wensleydale", "Double Gloucester", "Cheshire", "Caerphilly", "Taleggio", "Grana Padano", "Scamorza", "Provolone Piccante", "Neufchatel", "Port Salut", "Boursin", "Babybel"],
+      "5": ["Epoisses", "Mimolette", "Reblochon", "Morbier", "Beaufort", "Cantal", "Saint-Nectaire", "Tomme de Savoie", "Ossau-Iraty", "Vacherin Mont d Or|Mont d Or", "Appenzeller", "Tete de Moine", "Sbrinz", "Brunost|Gjetost", "Danablu", "Cabrales", "Idiazabal", "Mahon", "Tetilla", "Robiola", "Stracchino|Crescenza", "Caciocavallo", "Bocconcini", "Kasseri", "Kefalotyri", "Graviera", "Mizithra", "Labneh", "Nabulsi", "Ackawi", "Humboldt Fog", "Clothbound Cheddar|Tickler"],
+      "6": ["Casu Marzu|Casu Martzu", "Milbenkase", "Pule", "Stinking Bishop", "Cornish Yarg", "Shropshire Blue", "Dorset Blue Vinney", "Swaledale", "Stichelton", "Cashel Blue", "Gubbeen", "Bitto|Storico Ribelle", "Castelmagno", "Raschera", "Bra", "Bagoss", "Piave", "Montasio", "Puzzone di Moena", "Squacquerone", "Ragusano", "Fiore Sardo", "Livarot", "Pont-l Eveque", "Maroilles", "Langres", "Chaource", "Brillat-Savarin", "Saint-Andre", "Selles-sur-Cher", "Valencay", "Crottin de Chavignol", "Pouligny-Saint-Pierre", "Sainte-Maure de Touraine", "Rocamadour", "Bleu d Auvergne", "Fourme d Ambert", "Salers", "Laguiole", "Abondance", "Roncal", "Zamorano", "Torta del Casar", "Garrotxa", "Majorero", "Queijo Serra da Estrela", "Sao Jorge", "Tilsit|Tilsiter", "Handkase", "Quargel", "Bryndza", "Oscypek", "Parenica", "Sirene", "Kashkaval", "Sulguni", "Chechil", "Rushan", "Sakura Cheese", "Chhurpi"]
+    }
+  },
+  {
+    "id": "dog-breeds",
+    "pack": "everyday",
+    "prompt": "Name a dog breed",
+    "hint": "Recognized purebred dogs or iconic breeds",
+    "tiers": {
+      "1": ["Labrador Retriever|Labrador|Lab", "Golden Retriever", "German Shepherd", "Poodle", "Bulldog|English Bulldog", "French Bulldog|Frenchie", "Beagle", "Chihuahua", "Pug", "Siberian Husky|Husky"],
+      "2": ["Dachshund|Wiener Dog|Sausage Dog", "Corgi|Pembroke Welsh Corgi|Cardigan Welsh Corgi", "Rottweiler", "Boxer", "Doberman|Doberman Pinscher", "Great Dane", "Shih Tzu", "Yorkshire Terrier|Yorkie", "Dalmatian", "Pomeranian", "Border Collie", "Shiba Inu"],
+      "3": ["Australian Shepherd", "Pit Bull|Pitbull|American Pit Bull Terrier", "Cavalier King Charles Spaniel", "Cocker Spaniel", "Springer Spaniel", "Saint Bernard|St Bernard", "Bernese Mountain Dog", "Mastiff|English Mastiff", "Greyhound", "Basset Hound", "Bloodhound", "Boston Terrier", "Jack Russell Terrier|Parson Russell Terrier", "Bull Terrier", "Maltese", "Bichon Frise", "Chow Chow", "Akita", "Samoyed", "Alaskan Malamute", "Shetland Sheepdog|Sheltie", "Collie|Rough Collie"],
+      "4": ["Whippet", "Italian Greyhound", "Weimaraner", "Vizsla", "German Shorthaired Pointer|Pointer", "Irish Setter", "English Setter", "Newfoundland", "Great Pyrenees", "Cane Corso", "Rhodesian Ridgeback", "Basenji", "Shar-Pei|Chinese Shar-Pei", "Pekingese", "Lhasa Apso", "Havanese", "Papillon", "Miniature Pinscher", "Miniature Schnauzer|Schnauzer|Giant Schnauzer", "Scottish Terrier|Scottie", "West Highland White Terrier|Westie", "Airedale Terrier", "Staffordshire Bull Terrier|Staffy", "Australian Cattle Dog|Blue Heeler", "Belgian Malinois|Malinois", "Afghan Hound", "Irish Wolfhound"],
+      "5": ["Borzoi", "Saluki", "Leonberger", "Komondor", "Puli", "Old English Sheepdog", "Briard", "Bouvier des Flandres", "Keeshond", "Schipperke", "American Eskimo Dog", "Finnish Spitz", "Norwegian Elkhound", "Pharaoh Hound", "Ibizan Hound", "Coonhound|Black and Tan Coonhound|Redbone Coonhound|Bluetick Coonhound", "Foxhound", "Harrier", "Brittany", "Chesapeake Bay Retriever", "Flat-Coated Retriever", "Nova Scotia Duck Tolling Retriever|Toller", "Bullmastiff", "Neapolitan Mastiff", "Dogue de Bordeaux", "Tibetan Mastiff", "Anatolian Shepherd", "Kuvasz", "Bedlington Terrier", "Cairn Terrier", "Fox Terrier|Wire Fox Terrier", "Kerry Blue Terrier", "Soft Coated Wheaten Terrier", "Chinese Crested", "Brussels Griffon", "Japanese Chin", "Coton de Tulear|Cotons de Tulear"],
+      "6": ["Xoloitzcuintli|Xolo|Mexican Hairless", "Norwegian Lundehund", "Azawakh", "Sloughi", "Scottish Deerhound", "Otterhound", "Lagotto Romagnolo", "Barbet", "Portuguese Water Dog", "Spanish Water Dog", "Irish Water Spaniel", "Clumber Spaniel", "Sussex Spaniel", "Field Spaniel", "Welsh Springer Spaniel", "Boykin Spaniel", "Kooikerhondje", "Stabyhoun", "Drentsche Patrijshond", "Spinone Italiano", "Bracco Italiano", "Wirehaired Pointing Griffon", "Pudelpointer", "Munsterlander", "Bergamasco|Bergamasco Sheepdog", "Mudi", "Pumi", "Beauceron", "Berger Picard", "Pyrenean Shepherd", "Catalan Sheepdog", "Polish Lowland Sheepdog", "Icelandic Sheepdog", "Swedish Vallhund", "Lancashire Heeler", "Entlebucher Mountain Dog", "Appenzeller Sennenhund", "Greater Swiss Mountain Dog", "Boerboel", "Tosa|Tosa Inu", "Dogo Argentino", "Fila Brasileiro", "Thai Ridgeback", "Jindo|Korean Jindo", "Kai Ken", "Kishu Ken", "Shikoku", "Hokkaido", "Canaan Dog", "Carolina Dog", "New Guinea Singing Dog", "Chinook", "Plott Hound", "Petit Basset Griffon Vendeen|PBGV", "Dandie Dinmont Terrier", "Sealyham Terrier", "Skye Terrier", "Glen of Imaal Terrier", "Manchester Terrier", "Norfolk Terrier", "Norwich Terrier", "Lakeland Terrier", "Welsh Terrier", "Affenpinscher", "Lowchen", "Bolognese", "Russian Toy", "Peruvian Inca Orchid"]
+    }
+  },
+  {
+    "id": "olympic-sports",
+    "pack": "everyday",
+    "prompt": "Name an Olympic sport or event",
+    "hint": "Current or historical Summer & Winter Olympic sports and disciplines",
+    "tiers": {
+      "1": ["Swimming", "Gymnastics|Artistic Gymnastics", "Basketball", "Soccer|Football", "Track and Field|Athletics|Sprinting", "Tennis", "Volleyball", "Boxing"],
+      "2": ["Diving", "Figure Skating", "Ice Hockey", "Skiing|Alpine Skiing", "Snowboarding", "Wrestling", "Weightlifting", "Cycling", "Rowing", "Archery", "Fencing", "Golf", "Badminton", "Table Tennis|Ping Pong"],
+      "3": ["Curling", "Bobsleigh|Bobsled", "Luge", "Skeleton", "Speed Skating|Short Track Speed Skating", "Water Polo", "Handball", "Rugby|Rugby Sevens", "Surfing", "Skateboarding", "Sport Climbing|Rock Climbing", "Judo", "Taekwondo", "Karate", "Triathlon", "Marathon", "Beach Volleyball", "Baseball", "Softball", "Equestrian|Show Jumping"],
+      "4": ["Biathlon", "Cross-Country Skiing", "Ski Jumping", "Freestyle Skiing", "Artistic Swimming|Synchronized Swimming", "Rhythmic Gymnastics", "Trampoline", "Canoeing|Kayaking|Canoe Sprint", "Sailing", "Shooting", "Field Hockey", "BMX|BMX Racing|BMX Freestyle", "Mountain Biking", "Track Cycling", "Breaking|Breakdancing", "Pole Vault", "High Jump", "Long Jump", "Triple Jump", "Shot Put", "Discus", "Javelin", "Hammer Throw", "Hurdles", "Decathlon", "Heptathlon", "Dressage", "Eventing"],
+      "5": ["Modern Pentathlon", "Nordic Combined", "Ski Mountaineering|Skimo", "Canoe Slalom", "Flag Football", "Lacrosse", "Squash", "Cricket", "Tug of War", "Race Walking", "Steeplechase", "3x3 Basketball", "Coastal Rowing", "Open Water Swimming|Marathon Swimming", "Greco-Roman Wrestling", "Freestyle Wrestling", "Epee", "Foil", "Sabre"],
+      "6": ["Roque", "Jeu de Paume", "Basque Pelota|Pelota", "Croquet", "Polo", "Rackets", "Water Motorsports|Motorboating", "Live Pigeon Shooting", "Plunge for Distance", "Standing High Jump", "Standing Long Jump", "Solo Synchronized Swimming", "Rope Climbing", "Club Swinging", "Dueling Pistol", "Running Deer Shooting", "Military Patrol", "Skijoring", "Ice Stock Sport|Eisstockschiessen", "Bandy", "Winter Pentathlon", "Speed Skiing", "Ski Ballet|Acroski", "Keirin", "Madison", "Omnium", "Finn", "Laser|ILCA", "Nacra 17", "Rink Hockey|Roller Hockey", "Korfball", "Savate"]
+    }
+  },
+  {
+    "id": "martial-arts",
+    "pack": "everyday",
+    "prompt": "Name a martial art or combat sport",
+    "hint": "Traditional martial arts, grappling styles, weapon arts, or ring sports",
+    "tiers": {
+      "1": ["Karate", "Kung Fu|Wushu", "Judo", "Taekwondo", "Boxing", "Wrestling", "Jiu-Jitsu|Brazilian Jiu-Jitsu|BJJ", "MMA|Mixed Martial Arts"],
+      "2": ["Muay Thai", "Kickboxing", "Krav Maga", "Tai Chi|Taijiquan", "Aikido", "Sumo", "Capoeira", "Fencing", "Kendo"],
+      "3": ["Wing Chun", "Jeet Kune Do", "Sambo", "Hapkido", "Ninjutsu", "Jujutsu|Japanese Jujutsu", "Eskrima|Kali|Arnis", "Silat|Pencak Silat", "Savate", "Kyokushin", "Greco-Roman Wrestling", "Freestyle Wrestling"],
+      "4": ["Tang Soo Do", "Shotokan", "Kenpo|Kempo", "Sanda|Sanshou", "Lethwei", "Catch Wrestling", "Lucha Libre", "Iaido", "Kenjutsu", "Shaolin Kung Fu", "Drunken Boxing|Zui Quan", "Systema", "Vale Tudo", "Shootfighting", "Pankration"],
+      "5": ["Baguazhang", "Xingyiquan", "Bajiquan", "Hung Gar", "Choy Li Fut", "Shuai Jiao", "Shorinji Kempo", "Goju-Ryu", "Wado-Ryu", "Shito-Ryu", "Naginatajutsu", "Bojutsu", "Kyudo", "Jodo", "Kalaripayattu", "Gatka", "Vovinam", "Bokator", "Krabi-Krabong", "Ssireum", "Bartitsu", "HEMA|Historical European Martial Arts"],
+      "6": ["Dambe", "Laamb|Senegalese Wrestling", "Bokh|Mongolian Wrestling", "Schwingen", "Yagli Gures|Turkish Oil Wrestling", "Pehlwani|Kushti", "Glima", "Collar-and-Elbow", "Cornish Wrestling", "Lancashire Wrestling", "Backhold", "Gouren", "Chidaoba", "Kokh", "Kurash", "Alysh", "Belt Wrestling", "Malla-Yuddha", "Vajra-Mushti", "Silambam", "Mardani Khel", "Thang-Ta", "Angampora", "Bando", "Banshay", "Lerdrit", "Muay Boran", "Pradal Serey", "Tomoi", "Kuntao", "Yaw-Yan", "Sikaran", "Buno", "Dumog", "Lua|Kapu Kuialua", "Mau Rakau", "Taiaha", "Jogo do Pau", "Canne de Combat|La Canne", "Quarterstaff", "Singlestick", "Destreza", "Kapap", "Keysi|KFM", "Okichitaw", "Rough and Tumble", "Huka-Huka", "Tinku", "Moraingy", "Nguni Stick Fighting", "Tahtib"]
+    }
+  },
+  {
+    "id": "world-currencies",
+    "pack": "everyday",
+    "prompt": "Name a currency used in the world today",
+    "hint": "Active official currencies (e.g., Yen, Euro, Baht, Zloty)",
+    "tiers": {
+      "1": ["Dollar|US Dollar|Canadian Dollar|Australian Dollar", "Euro", "Pound|Pound Sterling|British Pound", "Yen|Japanese Yen", "Peso|Mexican Peso"],
+      "2": ["Yuan|Renminbi|RMB", "Franc|Swiss Franc", "Rupee|Indian Rupee", "Won|South Korean Won", "Ruble|Russian Ruble", "Krone|Danish Krone|Norwegian Krone", "Krona|Swedish Krona|Icelandic Krona", "Lira|Turkish Lira", "Real|Brazilian Real"],
+      "3": ["Rand|South African Rand", "Baht|Thai Baht", "Dirham|UAE Dirham|Moroccan Dirham", "Dinar|Kuwaiti Dinar|Jordanian Dinar", "Riyal|Saudi Riyal|Qatari Riyal", "Shekel|New Israeli Shekel", "Dong|Vietnamese Dong", "Ringgit|Malaysian Ringgit", "Rupiah|Indonesian Rupiah", "Zloty|Polish Zloty"],
+      "4": ["Forint|Hungarian Forint", "Koruna|Czech Koruna", "Hryvnia|Ukrainian Hryvnia", "Leu|Romanian Leu|Moldovan Leu", "Lev|Bulgarian Lev", "Sol|Peruvian Sol", "Boliviano", "Guarani", "Quetzal", "Colon|Costa Rican Colon", "Cordoba", "Balboa", "Naira|Nigerian Naira", "Shilling|Kenyan Shilling|Tanzanian Shilling|Ugandan Shilling", "Cedi|Ghanaian Cedi", "Birr|Ethiopian Birr", "Taka|Bangladeshi Taka", "Tenge|Kazakhstani Tenge"],
+      "5": ["Lari|Georgian Lari", "Dram|Armenian Dram", "Manat|Azerbaijani Manat|Turkmenistani Manat", "Lek|Albanian Lek", "Denar|Macedonian Denar", "Convertible Mark|Bosnian Mark", "Rial|Iranian Rial|Omani Rial|Yemeni Rial", "Afghani", "Riel|Cambodian Riel", "Kip|Lao Kip", "Kyat|Myanmar Kyat", "Tugrik|Togrog|Mongolian Togrog", "Som|Kyrgyzstani Som|Uzbekistani Som", "Lempira", "Gourde", "Pula|Botswana Pula", "Kwacha|Zambian Kwacha|Malawian Kwacha", "Kwanza", "Metical", "Ariary|Malagasy Ariary"],
+      "6": ["Ngultrum|Bhutanese Ngultrum", "Rufiyaa|Maldivian Rufiyaa", "Pataca|Macanese Pataca", "Somoni|Tajikistani Somoni", "Kina|Papua New Guinean Kina", "Vatu|Vanuatu Vatu", "Tala|Samoan Tala", "Pa anga|Tongan Paanga", "Dalasi|Gambian Dalasi", "Ouguiya|Mauritanian Ouguiya", "Nakfa|Eritrean Nakfa", "Lilangeni|Swazi Lilangeni", "Loti|Lesotho Loti", "Leone|Sierra Leonean Leone", "Dobra|Sao Tome Dobra", "Escudo|Cape Verdean Escudo", "Florin|Aruban Florin", "Guilder|Antillean Guilder"]
+    }
+  },
+  {
+    "id": "herbs-spices",
+    "pack": "everyday",
+    "prompt": "Name a culinary herb or spice",
+    "hint": "Kitchen seasonings from fresh leaves to dried seeds, barks, and roots",
+    "tiers": {
+      "1": ["Salt|Sea Salt", "Pepper|Black Pepper", "Cinnamon", "Garlic|Garlic Powder", "Basil", "Oregano", "Vanilla"],
+      "2": ["Paprika", "Cumin", "Thyme", "Rosemary", "Parsley", "Cilantro|Coriander", "Mint|Peppermint", "Ginger", "Turmeric", "Chili Powder|Cayenne"],
+      "3": ["Nutmeg", "Cloves|Clove", "Sage", "Dill", "Chives", "Bay Leaf|Bay Leaves", "Cardamom", "Saffron", "Allspice", "Mustard Seed", "Onion Powder", "Red Pepper Flakes|Crushed Red Pepper", "Tarragon", "Fennel|Fennel Seed"],
+      "4": ["Star Anise", "Anise", "Caraway", "Fenugreek", "Marjoram", "Lemongrass", "Wasabi", "Horseradish", "Sumac", "Zaatar|Za atar", "Garam Masala", "Five Spice|Chinese Five Spice", "Herbes de Provence", "Smoked Paprika", "White Pepper", "Sichuan Pepper|Sichuan Peppercorn", "Juniper Berry|Juniper", "Mace", "Poppy Seed", "Sesame Seed"],
+      "5": ["Asafoetida|Hing", "Nigella|Nigella Seed|Kalonji", "Galangal", "Kaffir Lime Leaf|Makrut Lime", "Curry Leaf", "Savory|Summer Savory", "Chervil", "Lovage", "Sorrel", "Epazote", "Annatto|Achiote", "Urfa Biber", "Aleppo Pepper", "Berbere", "Ras el Hanout", "Dukkah", "Shichimi Togarashi", "Furikake", "Tamarind", "Ajwain", "Amchur|Mango Powder"],
+      "6": ["Grains of Paradise", "Long Pepper", "Cubeb|Java Pepper", "Mahleb|Mahlab", "Sansho|Sansho Pepper", "Tasmanian Pepperberry", "Lemon Myrtle", "Wattleseed", "Borage", "Angelica", "Hyssop", "Rue", "Bergamot", "Horehound", "Woodruff|Sweet Woodruff", "Zedoary", "Kokum", "Kalpasi|Stone Flower", "Radhuni", "Panch Phoron", "Smen", "Niter Kibbeh", "Mitmita", "Khmeli Suneli", "Advieh", "Baharat", "Golpar", "Mastiha|Mastic", "Tonka Bean", "Vanilla Pompona", "Culantro|Recao", "Huacatay|Black Mint", "Pipicha", "Papalo", "Hoja Santa", "Shiso|Perilla", "Mitsuba", "Myoga", "Pandan|Pandan Leaf", "Candlenut", "Kencur"]
+    }
+  },
+  {
+    "id": "breads-pastries",
+    "pack": "everyday",
+    "prompt": "Name a bread, roll, or pastry",
+    "hint": "Loaves, flatbreads, Viennoiserie, or baked goods from any culture",
+    "tiers": {
+      "1": ["White Bread|Sandwich Bread", "Sourdough", "Baguette", "Croissant", "Bagel", "Donut|Doughnut", "Muffin", "Pretzel"],
+      "2": ["Whole Wheat|Wheat Bread", "Rye|Rye Bread", "Pita", "Naan", "Tortilla", "Brioche", "Focaccia", "Ciabatta", "English Muffin", "Cornbread", "Biscuit", "Cinnamon Roll"],
+      "3": ["Pumpernickel", "Challah", "Multigrain", "Flatbread", "Lavash", "Roti|Chapati", "Scone", "Danish|Danish Pastry", "Eclair", "Pain au Chocolat", "Strudel|Apple Strudel", "Cannoli", "Baklava", "Churro|Churros", "Empanada", "Mochi"],
+      "4": ["Injera", "Arepa", "Pupusa", "Paratha", "Puri", "Dosa", "Bhatura", "Macaron", "Madeleine", "Profiterole|Cream Puff", "Beignet", "Palmier", "Canele", "Kouign-Amann", "Babka", "Panettone", "Stollen", "Pandesal", "Hokkaido Milk Bread|Shokupan", "Mantou", "Bao|Baozi", "Knish", "Soda Bread|Irish Soda Bread", "Bannock", "Matzo|Matzah", "Crumpet"],
+      "5": ["Khachapuri", "Shotis Puri", "Sangak", "Barbari", "Taftan", "Bazlama", "Simit", "Pide", "Lahmacun", "Laffa", "Samoon", "Kisra", "Msemen", "Baghrir", "Harcha", "Lefse", "Knackebrod|Crispbread", "Rugbrod", "Limpa", "Karelian Pie|Karjalanpiirakka", "Pulla", "Cardamom Bun|Kardemummabulle", "Semla", "Ensaimada", "Concha", "Bolillo", "Telera", "Rosca de Reyes", "Pao de Queijo", "Chipas", "Marraqueta", "Hallulla", "Tiger Bread|Dutch Crunch", "Anadama Bread"],
+      "6": ["Mille-Feuille|Napoleon", "Saint-Honore", "Paris-Brest", "Religieuse", "Financier", "Clafoutis", "Far Breton", "Fougasse", "Pain de Campagne", "Miche", "Pane Carasau", "Pane Toscano", "Taralli", "Grissini", "Sfogliatella", "Bomboloni", "Maritozzo", "Zopf", "Laugenbrezel", "Vinschger Paarl", "Obatzda Pretzel|Brezel", "Kolache", "Klobasnek", "Potica", "Povitica", "Kalach", "Karavai", "Borodinsky", "Pampushka", "Pirozhki", "Khinkali", "Qutab", "Tandyr Nan|Obi Non", "Katlama", "Baursak", "Boortsog", "Tunnbröd|Tunnbrod", "Julekake", "Vortbrod", "Aebleskiver", "Kransekake", "Vasilopita", "Tsoureki", "Koulouria", "Lagana", "Daktyla", "Bammy", "Festival", "Coco Bread", "Hard Dough Bread", "Rotti", "Bara Brith", "Lardy Cake", "Sally Lunn", "Stottie Cake", "Pan de Muerto"]
+    }
+  },
+  {
+    "id": "cat-breeds",
+    "pack": "everyday",
+    "prompt": "Name a domestic cat breed",
+    "hint": "Pedigree, natural, or well-known domestic cat breeds",
+    "tiers": {
+      "1": ["Siamese", "Persian", "Maine Coon", "Tabby|Domestic Shorthair", "Bengal", "Sphynx|Hairless Cat", "Ragdoll"],
+      "2": ["British Shorthair", "Scottish Fold", "Calico", "Tuxedo", "Russian Blue", "Abyssinian", "American Shorthair", "Orange Cat|Ginger Tabby"],
+      "3": ["Norwegian Forest Cat", "Siberian", "Birman", "Burmese", "Bombay", "Devon Rex", "Cornish Rex", "Munchkin", "Savannah", "Himalayan", "Exotic Shorthair", "Turkish Angora", "Manx"],
+      "4": ["Oriental Shorthair", "Tonkinese", "Balinese", "Somali", "Chartreux", "Korat", "Egyptian Mau", "Ocicat", "Ragamuffin", "American Curl", "Selkirk Rex", "Japanese Bobtail", "Turkish Van", "Snowshoe", "Nebelung", "Singapura"],
+      "5": ["Peterbald", "Donskoy|Don Sphynx", "Lykoi|Werewolf Cat", "Khao Manee", "Toyger", "Pixie-Bob", "LaPerm", "American Bobtail", "Kurilian Bobtail", "Havana Brown", "Chausie", "Cymric", "European Shorthair", "British Longhair", "Burmilla", "Chantilly-Tiffany", "Colorpoint Shorthair", "Javanese"],
+      "6": ["Sokoke", "Serengeti", "Cheetoh", "Dragon Li|Li Hua", "Aphrodite Giant", "Aegean", "Cyprus", "Karelian Bobtail", "Mekong Bobtail", "Thai|Wichien Maat", "Suphalak", "Raas", "Kuril Islands Bobtail", "Ukrainian Levkoy", "Dwelf", "Bambino", "Minskin", "Kinkalow", "Skookum", "Napoleon|Minuet", "Highlander", "Desert Lynx", "Foldex", "American Wirehair", "German Rex", "Ural Rex", "Tennesse Rex", "Oregon Rex", "York Chocolate", "Tiffany", "Ojos Azules", "Neva Masquerade", "Kanaani", "Arabian Mau", "Brazilian Shorthair", "Australian Mist", "Tiffanie|Asian Semi-Longhair"]
+    }
+  },
+  {
+    "id": "desserts-sweets",
+    "pack": "everyday",
+    "prompt": "Name a dessert, cake, or sweet treat",
+    "hint": "Cakes, pies, frozen desserts, confections, or regional sweets",
+    "tiers": {
+      "1": ["Ice Cream", "Cake|Chocolate Cake", "Cookie|Chocolate Chip Cookie", "Brownie", "Pie|Apple Pie", "Cheesecake", "Cupcake", "Candy|Chocolate"],
+      "2": ["Tiramisu", "Pudding", "Gelato", "Sorbet", "Fudge", "Creme Brulee", "Pumpkin Pie", "Red Velvet Cake", "Carrot Cake", "Smores|S mores", "Banana Split", "Popsicle"],
+      "3": ["Panna Cotta", "Mousse|Chocolate Mousse", "Flan|Creme Caramel", "Cobbler|Peach Cobbler", "Key Lime Pie", "Lemon Meringue Pie", "Pecan Pie", "Truffle|Chocolate Truffle", "Meringue", "Trifle", "Bread Pudding", "Rice Pudding", "Sundae", "Milkshake", "Frozen Yogurt|Froyo", "Tres Leches|Tres Leches Cake"],
+      "4": ["Pavlova", "Banoffee Pie", "Black Forest Cake|Schwarzwalder Kirschtorte", "Sachertorte", "Opera Cake", "Victoria Sponge", "Pound Cake", "Angel Food Cake", "Devils Food Cake", "Chiffon Cake", "Affogato", "Granita", "Semifreddo", "Zabaglione", "Gulab Jamun", "Jalebi", "Halva", "Kunafa|Knafeh", "Turkish Delight|Lokum", "Nougat", "Marzipan", "Toffee", "Brittle|Peanut Brittle", "Caramel"],
+      "5": ["Kulfi", "Rasmalai", "Kheer", "Payasam", "Barfi", "Ladoo|Laddu", "Ghevar", "Pastel de Nata", "Arroz con Leche", "Alfajor", "Dulce de Leche", "Brigadeiro", "Beijinho", "Pudim", "Quindim", "Suspiro a la Limena", "Chaja", "Halo-Halo", "Leche Flan", "Ube Halaya", "Bibingka", "Biko", "Mango Sticky Rice", "Bingsu|Patbingsu", "Kakigori", "Dorayaki", "Taiyaki", "Daifuku", "Matcha Parfait", "Castella", "Nian Gao", "Mooncake", "Egg Tart|Dan Tat", "Tangyuan"],
+      "6": ["Kaiserschmarrn", "Dampfnudel", "Bienenstich|Bee Sting Cake", "Prinzregententorte", "Baumkuchen", "Schwarzwälder|Donauwelle", "Rote Grutze", "Eton Mess", "Sticky Toffee Pudding", "Spotted Dick", "Syllabub", "Posset", "Bakewell Tart", "Banbury Cake", "Eccles Cake", "Cranachan", "Clootie Dumpling", "Tipsy Laird", "Kransekage", "Risengrød|Risalamande", "Kladdkaka", "Prinsesstarta|Princess Cake", "Spettekaka", "Krumkake", "Vaffel", "Mazurek", "Sernik", "Makowiec", "Paczki", "Kremowka", "Medovik", "Ptichye Moloko", "Syrniki", "Chak-Chak", "Churchkhela", "Pelamushi", "Qatayef", "Basbousa", "Umm Ali", "Muhallebi", "Asure", "Kazandibi", "Tavuk Gogsu", "Sutlac", "Galaktoboureko", "Loukoumades", "Bougatsa", "Revani", "Melomakarona", "Kourabiedes", "Cendol", "Kuih|Kueh", "Es Teler", "Klepon", "Martabak Manis", "Che Ba Mau"]
+    }
+  },
+  {
+    "id": "colors-shades",
+    "pack": "everyday",
+    "prompt": "Name a color or specific shade",
+    "hint": "Basic colors, named artist pigments, gemstone tones, or botanical hues",
+    "tiers": {
+      "1": ["Red", "Blue", "Green", "Yellow", "Orange", "Purple", "Pink", "Black", "White", "Brown", "Gray|Grey"],
+      "2": ["Violet", "Indigo", "Gold", "Silver", "Teal", "Turquoise", "Navy|Navy Blue", "Maroon", "Beige", "Tan", "Peach", "Lavender", "Magenta", "Cyan", "Crimson"],
+      "3": ["Scarlet", "Burgundy", "Olive", "Lime", "Mint", "Coral", "Salmon", "Ivory", "Cream", "Charcoal", "Bronze", "Copper", "Plum", "Lilac", "Aqua|Aquamarine", "Sky Blue", "Forest Green", "Emerald", "Amber", "Mustard", "Rose", "Fuchsia", "Khaki"],
+      "4": ["Cerulean", "Cobalt", "Azure", "Periwinkle", "Chartreuse", "Vermilion", "Carmine", "Mauve", "Taupe", "Ochre", "Sienna", "Umber", "Sepia", "Slate", "Jade", "Sage", "Seafoam", "Viridian", "Ultramarine", "Prussian Blue", "Terracotta", "Rust", "Chestnut", "Mahogany", "Ecru", "Champagne", "Eggplant|Aubergine", "Tangerine"],
+      "5": ["Puce", "Cinnabar", "Alizarin|Alizarin Crimson", "Cadmium Red", "Cadmium Yellow", "Phthalo Blue", "Phthalo Green", "Celadon", "Malachite", "Lapis Lazuli", "Tyrian Purple", "Wisteria", "Heliotrope", "Amethyst", "Byzantium", "Claret", "Oxblood", "Venetian Red", "Indian Red", "Naples Yellow", "Gamboge", "Saffron", "Aureolin", "Verdigris", "glaucous|Glaucous", "Cerise", "Amaranth", "Carnation", "Persimmon", "Onyx", "Obsidian", "Sable", "Jet", "Alabaster", "Bone", "Flax"],
+      "6": ["Vantablack", "International Klein Blue|IKB", "YInMn Blue", "Mummy Brown", "Caput Mortuum", "Razzmatazz", "Sarcoline", "Coquelicot", "Smaragdine", "Mikado", "Zaffre", "Wenge", "Falu Red", "Feldgrau", "Pompador", "Sang de Boeuf", "Nattier Blue", "Mountbatten Pink", "Baker-Miller Pink", "Cosmic Latte", "Eigenrau|Eigengrau", "Xanadu", "Zomp", "Fulvous", "Xanthic", "Porphyrous", "Cinerous|Cinereous", "Fuscous", "Rufous", "Testaceous", "Lurid", "Livid", "Hoary", "Gridelin", "Incarnadine", "Perse", "Watchet", "Puke", "Gingerline", "Orpiment", "Realgar", "Smalt", "Egyptian Blue", "Maya Blue", "Han Purple", "Kermes", "Cochineal", "Madder Lake", "Paynes Grey|Paynes Gray", "Davy Grey|Davys Grey", "Hookers Green", "Sap Green", "Quinacridone", "Dioxazine Purple", "Isabelline", "Drab"]
+    }
+  },
+  {
+    "id": "vehicles-transport",
+    "pack": "everyday",
+    "prompt": "Name a type of vehicle or mode of transport",
+    "hint": "Land, sea, air, rail, or specialized vehicles from any era",
+    "tiers": {
+      "1": ["Car|Automobile", "Bus", "Train", "Airplane|Plane", "Bicycle|Bike", "Motorcycle|Motorbike", "Boat", "Truck"],
+      "2": ["Helicopter", "Subway|Metro", "Ship|Cruise Ship", "Van", "Taxi|Cab", "Scooter", "Skateboard", "Tram|Streetcar|Trolley", "Ferry", "Yacht", "Rocket|Spaceship", "Ambulance", "Fire Truck", "SUV"],
+      "3": ["Sedan", "Pickup Truck|Pickup", "Limousine|Limo", "Convertible", "Tractor", "Bulldozer", "Forklift", "Kayak", "Canoe", "Sailboat", "Submarine", "Hot Air Balloon", "Blimp|Airship|Zeppelin", "Glider", "Jet|Fighter Jet", "Moped", "Golf Cart", "Snowmobile", "Jet Ski", "RV|Camper|Motorhome", "Semi Truck|18-Wheeler"],
+      "4": ["Gondola", "Rickshaw|Tuk-Tuk", "Carriage|Horse-Drawn Carriage", "Sled|Sleigh", "Wagon", "Cable Car|Funicular", "Monorail", "Bullet Train|Shinkansen|High-Speed Rail", "Maglev", "Hovercraft", "Hydrofoil", "Catamaran", "Trimaran", "Tugboat", "Barge", "Icebreaker", "Cargo Ship|Container Ship", "Tanker", "Biplane", "Seaplane", "Dune Buggy", "ATV|Quad Bike", "Go-Kart", "Unicycle", "Tandem Bike"],
+      "5": ["Sampan", "Junk|Junk Ship", "Dhow", "Felucca", "Outrigger|Outrigger Canoe", "Pirogue", "Coracle", "Umiak", "Punt", "Narrowboat", "Houseboat", "Schooner", "Brigantine", "Frigate", "Galleon", "Caravel", "Trireme", "Longship|Viking Longship", "Autogyro|Gyrocopter", "Ornithopter", "Tiltrotor", "Ekranoplan", "Snowcat", "Half-Track", "Amphibious Vehicle|DUKW", "Pedicab", "Velomobile", "Recumbent Bike", "Penny-Farthing", "Segway", "Sidecar", "Hearse"],
+      "6": ["Troika", "Droshky", "Hansom Cab", "Landau", "Barouche", "Phaeton", "Brougham", "Surrey", "Stagecoach", "Conestoga Wagon", "Chariot", "Palanquin|Sedan Chair|Litter", "Howdah", "Travois", "Currach", "Balsa|Totora Reed Boat", "Xebec", "Carrack", "Cog", "Fluyt", "Clipper|Clipper Ship", "Windjammer", "Dreadnought", "Monitor", "Bathyscaphe", "Bathysphere", "Submersible", "Dirigible", "Montgolfier", "Paramotor", "Gyroglider", "Space Shuttle", "Lunar Rover", "Mars Rover", "Draisienne|Velocipede", "Boneshaker", "Matatu", "Jeepney", "Chiva Bus", "Songthaew", "Marshrutka", "Colectivo", "Sled Dog Team|Dog Sled", "Kicksled", "Zamboni", "Railcar|Handcar", "Draisine"]
+    }
+  },
+  {
+    "id": "jobs-professions",
+    "pack": "everyday",
+    "prompt": "Name a job, career, or profession",
+    "hint": "Everyday jobs, skilled trades, arts, science, medicine, or historical occupations",
+    "tiers": {
+      "1": ["Doctor|Physician", "Teacher", "Engineer", "Nurse", "Lawyer|Attorney", "Police Officer|Cop", "Firefighter", "Chef|Cook", "Pilot"],
+      "2": ["Accountant", "Dentist", "Artist", "Musician", "Actor|Actress", "Writer|Author", "Journalist|Reporter", "Scientist", "Farmer", "Mechanic", "Electrician", "Plumber", "Carpenter", "Architect", "Soldier", "Cashier", "Waiter|Server|Waitress"],
+      "3": ["Pharmacist", "Veterinarian|Vet", "Psychologist", "Therapist", "Professor", "Librarian", "Photographer", "Designer|Graphic Designer", "Programmer|Software Developer|Coder", "Bartender", "Barista", "Baker", "Butcher", "Tailor|Seamstress", "Barber|Hairdresser|Stylist", "Flight Attendant", "Astronaut", "Judge", "Politician", "Banker"],
+      "4": ["Surgeon", "Paramedic|EMT", "Radiologist", "Physical Therapist", "Optometrist", "Chemist", "Biologist", "Physicist", "Geologist", "Astronomer", "Archaeologist", "Historian", "Economist", "Sociologist", "Translator|Interpreter", "Diplomat", "Ambassador", "Detective|Private Investigator", "Forensic Scientist", "Welder", "Machinist", "Locksmith", "Mason|Bricklayer", "Roofer", "Blacksmith", "Jeweler", "Florist", "Sommelier"],
+      "5": ["Actuary", "Underwriter", "Paralegal", "Notary|Notary Public", "Cartographer", "Meteorologist", "Oceanographer", "Paleontologist", "Entomologist", "Botanist", "Zoologist", "Ethnographer", "Curator", "Archivist", "Conservator|Art Restorer", "Luthiery|Luthier", "Horologist|Watchmaker", "Cobbler|Shoemaker", "Cooper", "Tanner", "Chandler", "Glazier", "Glassblower", "Potter|Ceramicist", "Foley Artist", "Gaffer", "Best Boy", "Colorist", "Choreographer", "Conductor", "Taxidermist"],
+      "6": ["Apothecary", "Alchemist", "Astrologer", "Cartomancer", "Phrenologist", "Vintner|Oenologist", "Cicerone", "Fromager", "Affineur", "Charcutier", "Patissier", "Chocolatier", "Confectioner", "Haberdasher", "Milliner", "Cordwainer", "Wheelwright", "Cartwright", "Wainwright", "Farrier", "Saddler", "Fletcher", "Bowyer", "Armorer", "Cutler", "Whitesmith", "Tinker", "Thatcher", "Stevedore|Longshoreman", "Lighterman", "Lockkeeper", "Lighthouse Keeper", "Signalman", "Brakeman", "Gandy Dancer", "Bellhop", "Concierge", "Majordomo", "Butler", "Valet", "Scullion", "Ostler", "Groom", "Gamekeeper", "Falconer", "Huntsman", "Verderer", "Reeve", "Bailiff", "Beadle", "Crier|Town Crier", "Scriveners|Scrivener", "Illuminator", "Bookbinder", "Typesetter|Compositor", "Dragoman", "Muezzin", "Rhapsode", "Troubadour", "Skald", "Griots|Griot"]
+    }
+  }
+]

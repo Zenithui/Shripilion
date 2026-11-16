@@ -1,17 +1,27 @@
 // SHRIMPLION — Authentic Krillion-Style Game Controller (Daily, Practice, Packs & Crew Modes)
 
 (function () {
-  const PROMPTS = window.SHRIMPLION_PROMPTS;
-  const TIERS = window.SHRIMPLION_TIERS;
-  const PACKS = window.SHRIMPLION_PACKS;
-  const ZONES = window.SHRIMPLION_ZONES;
+  let PROMPTS = window.SHRIMPLION_PROMPTS || [];
+  let TIERS = window.SHRIMPLION_TIERS;
+  let PACKS = window.SHRIMPLION_PACKS;
+  let ZONES = window.SHRIMPLION_ZONES;
+  let DAILY_SCHEDULE = window.SHRIMPLION_DAILY_SCHEDULE || {};
   const Matcher = window.ShrimplionMatcher;
   const AudioEngine = window.ShrimplionAudio;
   const Ocean = window.ShrimplionOcean;
 
   const RING_CIRC = 2 * Math.PI * 28; // r=28 => 175.93
 
-  PROMPTS.forEach(p => Matcher.compilePromptIndex(p));
+  function syncDatasetGlobals() {
+    PROMPTS = window.SHRIMPLION_PROMPTS || [];
+    TIERS = window.SHRIMPLION_TIERS;
+    PACKS = window.SHRIMPLION_PACKS;
+    ZONES = window.SHRIMPLION_ZONES;
+    DAILY_SCHEDULE = window.SHRIMPLION_DAILY_SCHEDULE || {};
+    PROMPTS.forEach(p => Matcher.compilePromptIndex(p));
+  }
+
+  syncDatasetGlobals();
 
   // =========================================================================
   // DAILY SEED & DECK BUILDERS
@@ -47,7 +57,34 @@
     return out;
   }
 
-  function getDailyPrompts(seed) {
+  function getDailyScheduleEntry(dateKey, fallbackDiveNum) {
+    const scheduled = DAILY_SCHEDULE && DAILY_SCHEDULE[dateKey];
+    if (scheduled && Array.isArray(scheduled.promptIds)) {
+      const promptMap = new Map(PROMPTS.map(p => [p.id, p]));
+      const resolved = scheduled.promptIds.map(id => promptMap.get(id)).filter(Boolean);
+      if (resolved.length === 7) {
+        return {
+          diveNumber: scheduled.diveNumber || fallbackDiveNum,
+          theme: scheduled.theme || 'Mariana Mixed Current',
+          subtitle: scheduled.subtitle || 'Balanced voyage across all packs',
+          prompts: resolved
+        };
+      }
+    }
+    const seed = Number(String(dateKey).replace(/-/g, '')) ^ 0x5f3759df;
+    return {
+      diveNumber: fallbackDiveNum || 1,
+      theme: 'Pelagic Drift',
+      subtitle: 'Balanced 7-signal dive across all 4 packs',
+      prompts: getDailyPrompts(seed)
+    };
+  }
+
+  function getDailyPrompts(seed, dateKey) {
+    if (dateKey && DAILY_SCHEDULE && DAILY_SCHEDULE[dateKey]) {
+      const entry = getDailyScheduleEntry(dateKey, 1);
+      if (entry.prompts && entry.prompts.length === 7) return entry.prompts;
+    }
     const rng = mulberry32(seed);
     const w = shuffleWith(PROMPTS.filter(p => p.pack === 'world'), rng);
     const s = shuffleWith(PROMPTS.filter(p => p.pack === 'science'), rng);
@@ -131,7 +168,7 @@
   // GAME STATE
   // =========================================================================
   const state = {
-    mode: 'daily',          // 'daily' | 'practice' | 'pack' | 'crew'
+    mode: 'daily',          // 'daily' | 'archive' | 'practice' | 'pack' | 'crew'
     packId: 'mixed',
     untimed: false,
     timerDuration: 25,
@@ -139,6 +176,9 @@
     sigIndex: 0,
     totalDepth: 0,
     results: [],
+    archiveDateKey: '',
+    archiveDiveNumber: 0,
+    archiveTheme: '',
     // Crew mode state
     crewNames: [],
     crewTurnIdx: 0,
@@ -146,6 +186,7 @@
     // Timer & Reveal
     timerEndMs: 0,
     rafId: null,
+    countdownTimerId: null,
     lastWholeSec: -1,
     inReveal: false,
     revealOpenedAt: 0,
@@ -186,32 +227,67 @@
     if (dot) dot.style.top = `${pct}%`;
   };
 
+  function updateDailyCountdown() {
+    const el = document.getElementById('daily-countdown');
+    if (!el) return;
+    const now = new Date();
+    const nextMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+    const diffSec = Math.max(0, Math.floor((nextMidnight - now) / 1000));
+    const h = String(Math.floor(diffSec / 3600)).padStart(2, '0');
+    const m = String(Math.floor((diffSec % 3600) / 60)).padStart(2, '0');
+    const s = String(diffSec % 60).padStart(2, '0');
+    el.textContent = `⏳ Next Daily Dive in ${h}:${m}:${s}`;
+  }
+
   // =========================================================================
   // LANDING SCREEN
   // =========================================================================
   function renderHome() {
     cancelAnimationFrame(state.rafId);
+    clearInterval(state.countdownTimerId);
     state.inReveal = false;
     Ocean.resetToSurfaceDock();
 
     const today = getTodayInfo();
     const stats = loadStats();
     const dailyRec = loadDailyRecord(today.dateKey);
+    const dailyEntry = getDailyScheduleEntry(today.dateKey, today.diveNumber);
+    const meta = window.ShrimplionDataset ? window.ShrimplionDataset.getMeta() : {
+      source: 'bundled',
+      totalPrompts: PROMPTS.length,
+      totalCanonicalAnswers: 0
+    };
 
     document.getElementById('streak-chip').textContent = `🔥 ${stats.dailyStreak}`;
+
+    const themeEl = document.getElementById('daily-theme-pill');
+    if (themeEl) {
+      themeEl.textContent = `🌊 Current: ${dailyEntry.theme}`;
+      themeEl.title = dailyEntry.subtitle || '';
+    }
+    const dsEl = document.getElementById('dataset-badge');
+    if (dsEl) {
+      const ansTxt = meta.totalCanonicalAnswers ? ` · ${meta.totalCanonicalAnswers.toLocaleString()} answers` : '';
+      const srcTxt = meta.source === 'json' ? 'JSON' : 'Offline';
+      dsEl.textContent = `📦 ${meta.totalPrompts || PROMPTS.length} prompts${ansTxt} (${srcTxt})`;
+    }
+
+    updateDailyCountdown();
+    state.countdownTimerId = setInterval(updateDailyCountdown, 1000);
+
     const playBtn = document.getElementById('btn-play-daily');
 
     if (dailyRec) {
       playBtn.textContent = `VIEW DAILY DIVE #${today.diveNumber} (${dailyRec.totalDepth.toLocaleString()}m)`;
       typeKrillSpeech(
         document.getElementById('home-krill-speech'),
-        `beep! You reached ${dailyRec.totalDepth.toLocaleString()}m on today’s dive. Try Practice, Packs, or Crew!`
+        `beep! You reached ${dailyRec.totalDepth.toLocaleString()}m on today’s dive (${dailyEntry.theme}). Try Archive, Practice, Packs, or Crew!`
       );
     } else {
       playBtn.textContent = `PLAY DAILY DIVE #${today.diveNumber}`;
       typeKrillSpeech(
         document.getElementById('home-krill-speech'),
-        'beep. Obvious answers float at the surface. Obscure truths sink us toward 7,000m!'
+        `beep. Today’s current is ${dailyEntry.theme} — obscure truths sink us toward 7,000m!`
       );
     }
 
@@ -250,7 +326,19 @@
       state.packId = 'mixed';
       state.untimed = false;
       state.timerDuration = 25;
-      state.prompts = getDailyPrompts(today.seed);
+      state.prompts = getDailyPrompts(today.seed, today.dateKey);
+      state.crewNames = [];
+    } else if (mode === 'archive') {
+      const targetKey = opts.dateKey || today.dateKey;
+      const entry = getDailyScheduleEntry(targetKey, today.diveNumber);
+      state.mode = 'archive';
+      state.packId = 'mixed';
+      state.untimed = false;
+      state.timerDuration = 25;
+      state.archiveDateKey = targetKey;
+      state.archiveDiveNumber = entry.diveNumber;
+      state.archiveTheme = entry.theme;
+      state.prompts = entry.prompts;
       state.crewNames = [];
     } else if (mode === 'practice') {
       state.mode = 'practice';
@@ -503,18 +591,19 @@
       return;
     }
 
-    // Standard Solo Plunge (Daily / Practice / Pack)
+    // Standard Solo Plunge (Daily / Archive / Practice / Pack)
     const tierInfo = TIERS[evalRes.tier];
     triggerPlungeReveal({
       displayAnswer: evalRes.canonical,
       tier: evalRes.tier,
       metersGained: tierInfo.meters,
       fuzzy: Boolean(evalRes.fuzzy),
+      correctedFrom: evalRes.correctedFrom || '',
       customQuip: null
     });
   }
 
-  function triggerPlungeReveal({ displayAnswer, tier, metersGained, fuzzy, customQuip }) {
+  function triggerPlungeReveal({ displayAnswer, tier, metersGained, fuzzy, correctedFrom, customQuip }) {
     state.inReveal = true;
     state.revealOpenedAt = performance.now();
 
@@ -558,7 +647,9 @@
 
     // 4. Populate Bottom Plunge Card + Krill Typewriter Reaction
     document.getElementById('plunge-answer-name').textContent = displayAnswer;
-    document.getElementById('plunge-fuzzy-tag').textContent = fuzzy ? '✨ Typo forgiven' : '';
+    document.getElementById('plunge-fuzzy-tag').textContent = fuzzy
+      ? (correctedFrom ? `✨ Spell-corrected (${correctedFrom})` : '✨ Typo forgiven')
+      : '';
 
     const quipPool = tierInfo.quips || [tierInfo.tagline];
     const chosenQuip = customQuip || quipPool[Math.floor(Math.random() * quipPool.length)];
@@ -631,7 +722,8 @@
     document.getElementById('streak-chip').textContent = `🔥 ${stats.dailyStreak}`;
 
     let label = `Daily Dive #${today.diveNumber}`;
-    if (state.mode === 'practice') label = 'Practice Dive';
+    if (state.mode === 'archive') label = `Archive · Daily Dive #${state.archiveDiveNumber} (${state.archiveTheme})`;
+    else if (state.mode === 'practice') label = 'Practice Dive';
     else if (state.mode === 'pack') label = PACKS[state.packId].name;
     else if (state.mode === 'crew') label = `Crew Dive (${state.crewNames.join(' & ')})`;
 
@@ -762,13 +854,57 @@
     document.getElementById('modal-stats').classList.add('open');
   }
 
+  function openArchive() {
+    const today = getTodayInfo();
+    const listEl = document.getElementById('archive-list');
+    listEl.innerHTML = '';
+
+    const availableKeys = Object.keys(DAILY_SCHEDULE || {})
+      .filter(k => k <= today.dateKey)
+      .sort()
+      .reverse()
+      .slice(0, 21);
+
+    if (availableKeys.length === 0) {
+      listEl.innerHTML = '<div style="font-size:0.82rem;color:#94a3b8;">No archived daily dives available yet.</div>';
+    } else {
+      availableKeys.forEach(dateKey => {
+        const entry = DAILY_SCHEDULE[dateKey];
+        const saved = loadDailyRecord(dateKey);
+        const isToday = dateKey === today.dateKey;
+        const row = document.createElement('div');
+        row.className = `archive-item${isToday ? ' is-today' : ''}`;
+        row.innerHTML = `
+          <div>
+            <div class="archive-title">#${entry.diveNumber} · ${escapeHtml(entry.theme)} ${isToday ? '<span style="color:#38bdf8;font-size:0.7rem;">(TODAY)</span>' : ''}</div>
+            <div class="archive-sub">${dateKey} · ${escapeHtml(entry.subtitle || '')}${saved ? ` · Saved: <strong>${saved.totalDepth.toLocaleString()}m</strong>` : ''}</div>
+          </div>
+          <button class="archive-play-btn" type="button">${isToday ? (saved ? 'View' : 'Play') : 'Replay →'}</button>
+        `;
+        row.querySelector('.archive-play-btn').addEventListener('click', () => {
+          document.getElementById('modal-archive').classList.remove('open');
+          launchDive(isToday ? 'daily' : 'archive', { dateKey });
+        });
+        listEl.appendChild(row);
+      });
+    }
+
+    document.getElementById('modal-archive').classList.add('open');
+  }
+
   function syncSoundBtn() {
     document.getElementById('btn-sound').textContent = AudioEngine.isMuted() ? '🔇' : '🔊';
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  document.addEventListener('DOMContentLoaded', async () => {
     Ocean.init(document.getElementById('ocean-canvas'));
     syncSoundBtn();
+
+    if (window.ShrimplionDataset) {
+      await window.ShrimplionDataset.load();
+      syncDatasetGlobals();
+    }
+
     renderHome();
 
     document.getElementById('btn-top-home').addEventListener('click', renderHome);
@@ -821,6 +957,7 @@
     document.getElementById('btn-back-surface').addEventListener('click', renderHome);
 
     // Modals & Sound
+    document.getElementById('btn-archive').addEventListener('click', openArchive);
     document.getElementById('btn-stats').addEventListener('click', openStats);
     document.getElementById('btn-help').addEventListener('click', () => {
       document.getElementById('modal-help').classList.add('open');

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "us-states",
+    "pack": "world",
+    "prompt": "Name a U.S. State",
+    "hint": "Any of the 50 states (D.C. & territories do not count!)",
+    "tiers": {
+      "1": ["California", "Texas", "New York", "Florida", "Hawaii", "Alaska"],
+      "2": ["Washington", "Illinois", "Colorado", "Ohio", "Georgia", "Nevada", "Massachusetts", "Pennsylvania", "Arizona", "Michigan"],
+      "3": ["Oregon", "Virginia", "North Carolina", "Tennessee", "New Jersey", "Louisiana", "Utah", "Minnesota", "Wisconsin", "Alabama", "Kentucky"],
+      "4": ["Maryland", "Indiana", "Missouri", "South Carolina", "Connecticut", "Maine", "Montana", "New Mexico", "Oklahoma", "Kansas"],
+      "5": ["Iowa", "Arkansas", "Mississippi", "Idaho", "West Virginia", "New Hampshire", "Nebraska", "Vermont"],
+      "6": ["Delaware", "Rhode Island", "Wyoming", "North Dakota", "South Dakota"]
+    }
+  },
+  {
+    "id": "european-countries",
+    "pack": "world",
+    "prompt": "Name a country in Europe",
+    "hint": "Sovereign European nations, including microstates & transcontinental states",
+    "tiers": {
+      "1": ["France", "Italy", "Spain", "Germany", "United Kingdom|UK|Great Britain|Britain", "Greece"],
+      "2": ["Ireland|Republic of Ireland", "Portugal", "Switzerland", "Netherlands|Holland", "Sweden", "Norway", "Poland", "Russia", "Ukraine"],
+      "3": ["Austria", "Belgium", "Denmark", "Finland", "Iceland", "Czechia|Czech Republic", "Hungary", "Croatia", "Turkey|Turkiye", "Romania"],
+      "4": ["Serbia", "Bulgaria", "Slovakia", "Slovenia", "Estonia", "Latvia", "Lithuania", "Luxembourg", "Malta", "Cyprus"],
+      "5": ["Albania", "Bosnia and Herzegovina|Bosnia", "Montenegro", "North Macedonia|Macedonia", "Belarus", "Moldova", "Monaco", "Vatican City|Vatican|Holy See", "Georgia", "Armenia"],
+      "6": ["Andorra", "Liechtenstein", "San Marino", "Kosovo", "Azerbaijan"]
+    }
+  },
+  {
+    "id": "african-countries",
+    "pack": "world",
+    "prompt": "Name a country in Africa",
+    "hint": "Any of the 54 African nations",
+    "tiers": {
+      "1": ["Egypt", "South Africa", "Nigeria", "Kenya", "Morocco", "Madagascar"],
+      "2": ["Ethiopia", "Ghana", "Tanzania", "Algeria", "Tunisia", "Uganda", "Zimbabwe", "Somalia", "Rwanda"],
+      "3": ["Senegal", "Cameroon", "Ivory Coast|Cote d Ivoire", "Democratic Republic of the Congo|DR Congo|DRC", "Sudan", "Libya", "Botswana", "Namibia", "Zambia", "Angola", "Mali"],
+      "4": ["Mozambique", "Malawi", "Niger", "Chad", "Burkina Faso", "Sierra Leone", "Liberia", "Mauritius", "Seychelles", "South Sudan"],
+      "5": ["Togo", "Benin", "Guinea", "Gabon", "Republic of the Congo|Congo Republic|Congo-Brazzaville|Congo", "Mauritania", "Eritrea", "Djibouti", "Gambia|The Gambia", "Burundi", "Lesotho"],
+      "6": ["Eswatini|Swaziland", "Cabo Verde|Cape Verde", "Comoros", "Sao Tome and Principe|Sao Tome", "Equatorial Guinea", "Guinea-Bissau", "Central African Republic|CAR"]
+    }
+  },
+  {
+    "id": "asian-countries",
+    "pack": "world",
+    "prompt": "Name a country in Asia",
+    "hint": "East, South, Southeast, Central, or West Asia",
+    "tiers": {
+      "1": ["Japan", "China", "India", "South Korea|Korea", "Thailand", "Vietnam"],
+      "2": ["Philippines", "Indonesia", "Singapore", "Malaysia", "Saudi Arabia", "Israel", "Iran", "Pakistan", "United Arab Emirates|UAE"],
+      "3": ["Taiwan", "North Korea", "Bangladesh", "Sri Lanka", "Nepal", "Cambodia", "Myanmar|Burma", "Iraq", "Qatar", "Jordan", "Turkey|Turkiye"],
+      "4": ["Mongolia", "Laos", "Afghanistan", "Lebanon", "Syria", "Kuwait", "Oman", "Yemen", "Kazakhstan", "Uzbekistan", "Maldives"],
+      "5": ["Bhutan", "Brunei", "Bahrain", "Palestine", "Georgia", "Armenia", "Azerbaijan", "Cyprus"],
+      "6": ["Timor-Leste|East Timor", "Kyrgyzstan", "Tajikistan", "Turkmenistan"]
+    }
+  },
+  {
+    "id": "americas-countries",
+    "pack": "world",
+    "prompt": "Name a country in the Americas or Caribbean",
+    "hint": "North, Central, South America, or Caribbean island nations",
+    "tiers": {
+      "1": ["United States|USA|US|United States of America|America", "Canada", "Mexico", "Brazil", "Argentina"],
+      "2": ["Colombia", "Peru", "Chile", "Cuba", "Jamaica", "Costa Rica", "Venezuela"],
+      "3": ["Panama", "Ecuador", "Bolivia", "Uruguay", "Dominican Republic", "Haiti", "Bahamas|The Bahamas", "Guatemala", "Honduras"],
+      "4": ["Paraguay", "El Salvador", "Nicaragua", "Trinidad and Tobago|Trinidad", "Barbados", "Belize"],
+      "5": ["Guyana", "Suriname", "Grenada", "Saint Lucia|St Lucia", "Antigua and Barbuda|Antigua"],
+      "6": ["Dominica", "Saint Kitts and Nevis|St Kitts and Nevis|St Kitts", "Saint Vincent and the Grenadines|St Vincent and the Grenadines|St Vincent"]
+    }
+  },
+  {
+    "id": "world-capitals",
+    "pack": "world",
+    "prompt": "Name a national capital city",
+    "hint": "Sovereign country capitals around the globe",
+    "tiers": {
+      "1": ["Paris", "London", "Tokyo", "Rome", "Washington D.C.|Washington DC|Washington", "Beijing", "Berlin", "Madrid", "Moscow", "Cairo"],
+      "2": ["Ottawa", "Mexico City", "Seoul", "Athens", "Dublin", "Amsterdam", "Bangkok", "New Delhi|Delhi", "Canberra", "Lisbon", "Vienna", "Brussels", "Stockholm", "Oslo", "Havana", "Buenos Aires"],
+      "3": ["Warsaw", "Prague", "Budapest", "Copenhagen", "Helsinki", "Reykjavik", "Bern", "Brasilia", "Lima", "Santiago", "Bogota", "Nairobi", "Jakarta", "Manila", "Hanoi", "Singapore", "Taipei", "Jerusalem", "Riyadh", "Ankara", "Kyiv|Kiev", "Wellington"],
+      "4": ["Bucharest", "Sofia", "Belgrade", "Zagreb", "Bratislava", "Ljubljana", "Tallinn", "Riga", "Vilnius", "Kuala Lumpur", "Kathmandu", "Dhaka", "Islamabad", "Tehran", "Baghdad", "Doha", "Abu Dhabi", "Amman", "Beirut", "Addis Ababa", "Accra", "Abuja", "Pretoria", "Cape Town", "Rabat", "Algiers", "Tunis", "Caracas", "Quito", "Montevideo", "Panama City", "San Jose", "Kingston"],
+      "5": ["Tirana", "Sarajevo", "Skopje", "Podgorica", "Chisinau", "Minsk", "Tbilisi", "Yerevan", "Baku", "Nicosia", "Valletta", "Phnom Penh", "Vientiane", "Naypyidaw", "Ulaanbaatar", "Kabul", "Muscat", "Kuwait City", "Manama", "Damascus", "Sanaa", "Astana|Nur-Sultan", "Tashkent", "Colombo", "Male", "Dakar", "Kampala", "Kigali", "Harare", "Lusaka", "Luanda", "Maputo", "Antananarivo", "Windhoek", "Gaborone", "La Paz", "Sucre", "Asuncion", "Georgetown", "San Salvador", "Tegucigalpa", "Managua", "Guatemala City", "Port-au-Prince", "Santo Domingo", "Nassau", "Bridgetown", "Port of Spain", "Suva"],
+      "6": ["Ngerulmud", "Sri Jayawardenepura Kotte|Kotte", "Yamoussoukro", "Bandar Seri Begawan", "Thimphu", "Dili", "Ashgabat", "Dushanbe", "Bishkek", "Vaduz", "San Marino", "Andorra la Vella", "Monaco", "Dodoma", "Gitega", "Juba", "Asmara", "Djibouti", "Nouakchott", "Bamako", "Niamey", "Ouagadougou", "N Djamena|Ndjamena", "Bangui", "Libreville", "Brazzaville", "Kinshasa", "Yaounde", "Malabo", "Sao Tome", "Praia", "Banjul", "Bissau", "Conakry", "Freetown", "Monrovia", "Lome", "Porto-Novo", "Lilongwe", "Mbabane", "Lobamba", "Maseru", "Moroni", "Victoria", "Port Louis", "Paramaribo", "Belmopan", "Basseterre", "Castries", "Kingstown", "Roseau", "Saint Georges|St Georges", "Saint Johns|St Johns", "Funafuti", "Tarawa|South Tarawa", "Majuro", "Palikir", "Yaren", "Apia", "Nukualofa", "Port Vila", "Honiara", "Port Moresby"]
+    }
+  },
+  {
+    "id": "oceans-seas-gulfs",
+    "pack": "world",
+    "prompt": "Name an ocean, sea, bay, or gulf",
+    "hint": "Major or minor marine bodies of water around the world",
+    "tiers": {
+      "1": ["Pacific Ocean|Pacific", "Atlantic Ocean|Atlantic", "Indian Ocean|Indian", "Arctic Ocean|Arctic", "Mediterranean Sea|Mediterranean", "Caribbean Sea|Caribbean"],
+      "2": ["Southern Ocean|Antarctic Ocean", "Red Sea", "Dead Sea", "Black Sea", "Gulf of Mexico", "North Sea", "Baltic Sea", "South China Sea", "Bering Sea"],
+      "3": ["Coral Sea", "Persian Gulf", "Aegean Sea", "Adriatic Sea", "Caspian Sea", "Arabian Sea", "Tasman Sea", "Sea of Japan|East Sea", "Hudson Bay", "Bay of Bengal"],
+      "4": ["Yellow Sea", "East China Sea", "Java Sea", "Andaman Sea", "Barents Sea", "Irish Sea", "Norwegian Sea", "Greenland Sea", "Bay of Biscay", "Gulf of Alaska", "Chesapeake Bay", "San Francisco Bay"],
+      "5": ["Sargasso Sea", "Weddell Sea", "Ross Sea", "Sea of Okhotsk", "Aral Sea", "Ionian Sea", "Tyrrhenian Sea", "Sea of Marmara", "Sea of Azov", "Celtic Sea", "Beaufort Sea", "Gulf of Aden", "Gulf of Oman", "Gulf of Guinea", "Gulf of Thailand", "Baffin Bay"],
+      "6": ["Chukchi Sea", "Laptev Sea", "Kara Sea", "White Sea", "East Siberian Sea", "Celebes Sea|Sulawesi Sea", "Sulu Sea", "Banda Sea", "Arafura Sea", "Timor Sea", "Flores Sea", "Molucca Sea", "Ceram Sea", "Halmahera Sea", "Savu Sea", "Solomon Sea", "Bismarck Sea", "Philippine Sea", "Scotia Sea", "Bellingshausen Sea", "Amundsen Sea", "Lincoln Sea", "Wandel Sea", "Pechora Sea", "Ligurian Sea", "Alboran Sea", "Balearic Sea", "Sea of Crete", "Myrtoan Sea", "Thracian Sea", "Levantine Sea", "Salton Sea", "Sea of Cortez|Gulf of California", "Gulf of Aqaba", "Gulf of Suez", "Gulf of Bothnia", "Gulf of Finland", "Gulf of Riga", "Gulf of Tonkin", "Gulf of Carpentaria", "Great Australian Bight"]
+    }
+  },
+  {
+    "id": "world-rivers",
+    "pack": "world",
+    "prompt": "Name a river anywhere in the world",
+    "hint": "Major, historic, or lesser-known rivers across every continent",
+    "tiers": {
+      "1": ["Nile|Nile River", "Amazon|Amazon River", "Mississippi|Mississippi River", "Thames|River Thames", "Yangtze|Yangtze River"],
+      "2": ["Danube", "Seine", "Ganges|Ganga", "Rio Grande", "Colorado|Colorado River", "Missouri|Missouri River", "Yellow River|Huang He", "Congo|Congo River"],
+      "3": ["Rhine", "Mekong", "Tigris", "Euphrates", "Tiber", "Volga", "Indus", "Niger|Niger River", "Zambezi", "Columbia|Columbia River", "Hudson|Hudson River", "Yukon|Yukon River"],
+      "4": ["Loire", "Rhone", "Po|Po River", "Elbe", "Oder", "Vistula", "Dnieper", "Don|Don River", "Jordan|Jordan River", "Brahmaputra", "Irrawaddy", "Murray|Murray River", "Darling|Darling River", "Orinoco", "Parana", "Mackenzie|Mackenzie River", "St Lawrence|Saint Lawrence", "Potomac", "Ohio|Ohio River"],
+      "5": ["Lena", "Ob|Ob River", "Yenisei", "Amur", "Salween", "Chao Phraya", "Red River", "Godavari", "Krishna|Krishna River", "Narmada", "Limpopo", "Okavango", "Orange River", "Senegal River", "Douro", "Tagus", "Ebro", "Guadalquivir", "Shannon|River Shannon", "Severn|River Severn", "Mersey", "Clyde|River Clyde", "Spree", "Main|Main River", "Neckar", "Inn|Inn River", "Sava", "Tisza", "Prut", "Dniester", "Bug|Southern Bug", "Kura", "Aras", "Syr Darya", "Amu Darya"],
+      "6": ["Purus", "Madeira|Madeira River", "Rio Negro", "Xingu", "Tapajos", "Tocantins", "Sao Francisco", "Uruguay River", "Pilcomayo", "Magdalena", "Atrato", "Kolyma", "Indigirka", "Pechora", "Northern Dvina", "Neva", "Narva", "Daugava", "Neman", "Torne", "Glomma", "Kemijoki", "Waikato", "Clutha", "Sepik", "Fly River", "Mahakam", "Kapuas", "Rajang", "Tarim", "Helmand", "Kabul River", "Panjshir", "Gomal", "Kasai", "Ubangi", "Chari", "Logone", "Ruvuma", "Tana River", "Jubba", "Shebelle", "Gambia River", "Volta", "Benue", "Kunene", "Kafue", "Shire River", "Snake River", "Platte", "Arkansas River", "Brazos", "Pecos", "Wabash", "Susquehanna", "Delaware River", "Merrimack", "Penobscot"]
+    }
+  },
+  {
+    "id": "mountain-peaks-ranges",
+    "pack": "world",
+    "prompt": "Name a mountain peak or mountain range",
+    "hint": "Famous summits, volcanoes, or ranges around the globe",
+    "tiers": {
+      "1": ["Mount Everest|Everest", "Alps|The Alps", "Rocky Mountains|Rockies", "Andes|The Andes", "Himalayas|Himalaya", "Mount Fuji|Fuji"],
+      "2": ["Mount Kilimanjaro|Kilimanjaro", "Mount Olympus|Olympus", "Appalachians|Appalachian Mountains", "Mount Rushmore", "Matterhorn", "Mount Vesuvius|Vesuvius", "Mount Etna|Etna", "Mount St Helens|St Helens"],
+      "3": ["Denali|Mount McKinley", "K2", "Mont Blanc", "Pyrenees", "Urals|Ural Mountains", "Sierra Nevada", "Cascades|Cascade Range", "Mount Rainier|Rainier", "Mauna Kea", "Mauna Loa", "Mount Whitney|Whitney", "Pikes Peak"],
+      "4": ["Aconcagua", "Elbrus|Mount Elbrus", "Annapurna", "Krakatoa", "Mount Hood|Hood", "Mount Shasta|Shasta", "Adirondacks", "Blue Ridge|Blue Ridge Mountains", "Ozarks", "Atlas Mountains|Atlas", "Caucasus|Caucasus Mountains", "Carpathians|Carpathian Mountains", "Apennines", "Dolomites", "Scottish Highlands", "Pennines", "Ben Nevis", "Snowdon|Yr Wyddfa", "Mount Kosciuszko|Kosciuszko", "Aoraki|Mount Cook", "Mount Erebus|Erebus"],
+      "5": ["Kangchenjunga", "Lhotse", "Makalu", "Cho Oyu", "Dhaulagiri", "Manaslu", "Nanga Parbat", "Gasherbrum", "Broad Peak", "Shishapangma", "Vinson Massif|Mount Vinson", "Puncak Jaya|Carstensz Pyramid", "Mount Kenya", "Mount Meru", "Drakensberg", "Zagros|Zagros Mountains", "Hindu Kush", "Karakoram", "Pamirs|Pamir Mountains", "Tian Shan", "Altai|Altai Mountains", "Kunlun|Kunlun Mountains", "Popocatepetl", "Cotopaxi", "Chimborazo", "Huascaran", "Fitz Roy", "Torres del Paine", "Mount Logan", "Mount Robson", "Katahdin|Mount Katahdin", "Mount Washington", "Tatra Mountains|Tatras", "Balkan Mountains", "Pindus", "Rhodope", "Taurus Mountains", "Pontic Mountains"],
+      "6": ["Jengish Chokusu", "Ismoil Somoni Peak", "Khan Tengri", "Mount Wilhelm", "Mount Kinabalu", "Mount Apo", "Hallasan", "Baekdu|Paektu", "Yu Shan", "Fansipan", "Doi Inthanon", "Gunung Tahan", "Mount Kerinci", "Mount Rinjani", "Semeru", "Bromo|Mount Bromo", "Kilauea", "Haleakala", "Mount Ararat", "Mount Damavand", "Jabal Toubkal|Toubkal", "Ras Dashen", "Mount Stanley", "Mount Cameroon", "Simien Mountains", "Rwenzori", "Tibesti", "Ahaggar|Hoggar", "Virunga", "Bale Mountains", "Sayan Mountains", "Stanovoy Range", "Verkhoyansk Range", "Chersky Range", "Koryak Mountains", "Sikhote-Alin", "Wuyi Mountains", "Qilian Mountains", "Qinling", "Hengduan", "Nilgiri Hills", "Western Ghats", "Eastern Ghats", "Aravalli", "Vindhya", "Satpura", "Cardamom Hills", "Owen Stanley Range", "Southern Alps", "Great Dividing Range", "Flinders Ranges", "MacDonnell Ranges", "Grampians", "Kjolen|Scandinavian Mountains", "Jotunheimen", "Galdhopiggen", "Kebnekaise", "Hvannadalshnukur", "Mulhacen", "Teide|Mount Teide", "Pico de Orizaba", "Iztaccihuatl", "Nevado del Ruiz", "Sajama", "Illimani", "Ojos del Salado", "Llullaillaco"]
+    }
+  },
+  {
+    "id": "islands-archipelagos",
+    "pack": "world",
+    "prompt": "Name an island or island chain",
+    "hint": "Oceanic islands, island nations, or archipelagos (excluding whole continents)",
+    "tiers": {
+      "1": ["Hawaii|Big Island", "Greenland", "Iceland", "Madagascar", "Ireland", "Great Britain|Britain", "Japan|Honshu", "Cuba", "Jamaica"],
+      "2": ["Sicily", "Bali", "Tahiti", "Puerto Rico", "Sri Lanka", "Taiwan", "Borneo", "Sumatra", "Java", "Crete", "Cyprus", "Corsica", "Sardinia", "Maui", "Oahu"],
+      "3": ["Tasmania", "Newfoundland", "Vancouver Island", "Long Island", "Manhattan", "Key West", "Bora Bora", "Fiji|Viti Levu", "Galapagos", "Canary Islands", "Azores", "Mallorca|Majorca", "Ibiza", "Rhodes", "Santorini", "Mykonos", "Malta", "Capri", "Zanzibar", "Mauritius"],
+      "4": ["Svalbard|Spitsbergen", "Faroe Islands", "Baffin Island", "Ellesmere Island", "Victoria Island", "Kodiak|Kodiak Island", "Aleutian Islands", "Kauai", "Molokai", "Lanai", "Cozumel", "Aruba", "Curacao", "Barbados", "Bermuda", "Falkland Islands", "Easter Island|Rapa Nui", "Guam", "Saipan", "Okinawa", "Hokkaido", "Kyushu", "Shikoku", "Luzon", "Mindanao", "Sulawesi", "New Guinea", "South Island", "North Island"],
+      "5": ["Socotra", "Reunion", "Seychelles|Mahe", "Comoros", "Mayotte", "Saint Helena|St Helena", "Ascension Island", "Madeira", "Tenerife", "Lanzarote", "Menorca", "Corfu", "Lesbos", "Naxos", "Gotland", "Bornholm", "Zealand", "Funen", "Isle of Man", "Isle of Wight", "Jersey", "Guernsey", "Orkney", "Shetland", "Hebrides|Isle of Skye", "Cape Breton", "Prince Edward Island", "Martha's Vineyard|Marthas Vineyard", "Nantucket", "Catalina Island", "Galveston", "Hispaniola", "Grand Cayman", "Martinique", "Guadeloupe", "Montserrat", "Tierra del Fuego", "Chiloe"],
+      "6": ["Tristan da Cunha", "Kerguelen", "South Georgia", "Bouvet Island", "Heard Island", "Macquarie Island", "Auckland Islands", "Campbell Island", "Chatham Islands", "Stewart Island|Rakiura", "Pitcairn|Pitcairn Island", "Henderson Island", "Niue", "Tokelau", "Wallis and Futuna", "Rotuma", "Tuvalu", "Nauru", "Banaba", "Yap", "Chuuk", "Pohnpei", "Kosrae", "Palau|Babeldaob", "Peleliu", "Biak", "Halmahera", "Seram", "Buru", "Timor", "Flores", "Sumba", "Sumbawa", "Lombok", "Nias", "Mentawai", "Andaman Islands", "Nicobar Islands", "Lakshadweep", "Diego Garcia", "Chagos", "Abd al Kuri", "Novaya Zemlya", "Severnaya Zemlya", "Wrangel Island", "New Siberian Islands", "Sakhalin", "Kuril Islands", "Commander Islands", "Jan Mayen", "Bear Island|Bjornoya", "Aland", "Saaremaa", "Hiiumaa", "Rugen", "Usedom", "Sylt", "Heligoland", "Texel", "Elba", "Ischia", "Stromboli", "Pantelleria", "Lampedusa", "Djerba", "Bazaruto", "Inhaca", "Bioko", "Principe", "Annobon", "Sal", "Boa Vista", "Santiago", "Fogo", "Goree", "Robben Island", "South Sandwich Islands", "Elephant Island", "Deception Island", "Ross Island"]
+    }
+  },
+  {
+    "id": "us-major-cities",
+    "pack": "world",
+    "prompt": "Name a U.S. city or town",
+    "hint": "Any incorporated city or town in the United States",
+    "tiers": {
+      "1": ["New York|New York City|NYC", "Los Angeles|LA", "Chicago", "Houston", "Miami", "San Francisco", "Boston", "Seattle", "Las Vegas", "Washington D.C.|Washington DC"],
+      "2": ["Dallas", "Austin", "Denver", "Atlanta", "Phoenix", "Philadelphia", "San Diego", "Detroit", "New Orleans", "Nashville", "Orlando", "Portland", "Minneapolis", "San Antonio", "Charlotte"],
+      "3": ["Salt Lake City", "Kansas City", "St. Louis|Saint Louis", "Pittsburgh", "Cleveland", "Cincinnati", "Columbus", "Indianapolis", "Milwaukee", "Baltimore", "Tampa", "Jacksonville", "Memphis", "Louisville", "Oklahoma City", "Raleigh", "Sacramento", "San Jose", "Honolulu", "Anchorage"],
+      "4": ["Boise", "Tucson", "Albuquerque", "El Paso", "Omaha", "Tulsa", "Wichita", "Des Moines", "Madison", "Spokane", "Tacoma", "Fresno", "Oakland", "Long Beach", "Bakersfield", "Reno", "Santa Fe", "Savannah", "Charleston", "Richmond", "Norfolk", "Knoxville", "Chattanooga", "Birmingham", "Baton Rouge", "Little Rock", "Lexington", "Buffalo", "Rochester", "Syracuse", "Albany", "Hartford", "New Haven", "Providence", "Portland Maine"],
+      "5": ["Burlington", "Montpelier", "Concord", "Manchester", "Augusta", "Bangor", "Fargo", "Bismarck", "Sioux Falls", "Rapid City", "Pierre", "Cheyenne", "Casper", "Billings", "Bozeman", "Missoula", "Helena", "Pocatello", "Provo", "Flagstaff", "Sedona", "Yuma", "Roswell", "Las Cruces", "Lubbock", "Amarillo", "Midland", "Corpus Christi", "Galveston", "Fayetteville", "Shreveport", "Jackson", "Biloxi", "Mobile", "Montgomery", "Huntsville", "Tallahassee", "Gainesville", "Pensacola", "Key West", "Asheville", "Wilmington", "Columbia", "Greenville", "Roanoke", "Charlottesville", "Dover", "Annapolis", "Erie", "Scranton", "Toledo", "Akron", "Dayton", "Fort Wayne", "South Bend", "Peoria", "Springfield", "Duluth", "St. Paul|Saint Paul", "Green Bay", "Cedar Rapids", "Davenport", "Lincoln", "Topeka", "Eugene", "Salem", "Bend", "Fairbanks", "Juneau"],
+      "6": ["Utqiagvik|Barrow", "Sitka", "Ketchikan", "Nome", "Walla Walla", "Yakima", "Bellingham", "Olympia", "Astoria", "Klamath Falls", "Eureka", "Modesto", "San Luis Obispo", "Pismo Beach", "Barstow", "Needles", "Elko", "Ely", "Winnemucca", "Moab", "St. George", "Logan", "Pueblo", "Durango", "Telluride", "Aspen", "Vail", "Leadville", "Grand Junction", "Truth or Consequences", "Taos", "Alamogordo", "Gallup", "Winslow", "Bisbee", "Tombstone", "Deadwood", "Wall", "Sturgis", "Minot", "Grand Forks", "Williston", "Kearney", "North Platte", "Scottsbluff", "Dodge City", "Abilene", "Nacogdoches", "Marfa", "Terlingua", "Luckenbach", "Paducah", "Bowling Green", "Bardstown", "Tupelo", "Oxford", "Natchez", "Natchitoches", "Houma", "Opelousas", "Hot Springs", "Eureka Springs", "Branson", "Hannibal", "Galena", "Nauvoo", "Kalamazoo", "Traverse City", "Marquette", "Mackinac Island", "Sault Ste Marie", "Sheboygan", "Eau Claire", "La Crosse", "Bemidji", "International Falls", "Hibbing", "Chillicothe", "Sandusky", "Athens Ohio", "Morgantown", "Harpers Ferry", "Beckley", "Staunton", "Williamsburg", "Beaufort", "Myrtle Beach", "Macon", "Valdosta", "St. Augustine", "Apalachicola", "Ithaca", "Cooperstown", "Saratoga Springs", "Lake Placid", "Brattleboro", "Stowe", "Bar Harbor", "Kennebunkport", "Mystic", "Newport", "Plymouth", "Salem Massachusetts", "Provincetown"]
+    }
+  },
+  {
+    "id": "deserts-arid",
+    "pack": "world",
+    "prompt": "Name a desert",
+    "hint": "Hot, cold, coastal, or polar deserts around the Earth",
+    "tiers": {
+      "1": ["Sahara|Sahara Desert", "Mojave|Mojave Desert", "Gobi|Gobi Desert", "Arabian Desert|Arabian"],
+      "2": ["Sonoran|Sonoran Desert", "Atacama|Atacama Desert", "Kalahari|Kalahari Desert", "Antarctica|Antarctic Desert", "Arctic Desert"],
+      "3": ["Chihuahuan|Chihuahuan Desert", "Great Basin|Great Basin Desert", "Namib|Namib Desert", "Thar|Thar Desert|Great Indian Desert", "Syrian Desert", "Patagonian Desert|Patagonia"],
+      "4": ["Great Victoria Desert", "Great Sandy Desert", "Gibson Desert", "Simpson Desert", "Tanami Desert", "Painted Desert", "Black Rock Desert", "Death Valley", "Negev|Negev Desert", "Sinai|Sinai Desert", "Rub al Khali|Empty Quarter", "Taklamakan|Taklamakan Desert", "Karakum|Karakum Desert", "Kyzylkum|Kyzylkum Desert"],
+      "5": ["Colorado Plateau", "Red Desert", "Owyhee Desert", "Yuma Desert", "Altar Desert|Gran Desierto de Altar", "Baja California Desert", "Vizcaino Desert", "Sechura Desert", "Monte Desert", "La Guajira", "An Nafud|Nafud", "Ad-Dahna|Dahna", "Dasht-e Kavir", "Dasht-e Lut", "Registan|Registan Desert", "Cholistan", "Thal Desert", "Ordos|Ordos Desert", "Badain Jaran", "Tengger Desert", "Mu Us", "Lop Desert", "Gurbantunggut", "Danakil|Danakil Desert", "Ogaden", "Karoo"],
+      "6": ["Ka u Desert|Kau Desert", "Carcross Desert", "Tabernas Desert", "Accona Desert", "Bledow Desert", "Oleshky Sands", "Deliblato Sands", "Ryn Desert", "Ustyurt", "Betpak-Dala", "Moyunkum", "Saryesik-Atyrau", "Aralkum", "Taukum", "Khongoryn Els", "Monegros", "Bardenas Reales", "Cabo de Gata", "El Medano", "Lencois Maranhenses", "Jalapao", "Tatacoa", "Medanos de Coro", "Dunes of Bani", "Tanezrouft", "Tenere", "Erg Chebbi", "Erg Chigaga", "Grand Erg Oriental", "Grand Erg Occidental", "Bayuda", "Nubian Desert", "Libyan Desert", "Qattara", "Chalbi Desert", "Nyiri Desert", "Kaisut", "Tirari Desert", "Strzelecki Desert", "Sturt Stony Desert", "Pedirka Desert", "Little Sandy Desert", "Nullarbor", "Rangipo Desert"]
+    }
+  },
+  {
+    "id": "world-landmarks",
+    "pack": "world",
+    "prompt": "Name a famous world landmark or monument",
+    "hint": "Iconic towers, temples, ruins, bridges, palaces, or natural wonders",
+    "tiers": {
+      "1": ["Eiffel Tower", "Statue of Liberty", "Great Wall of China|Great Wall", "Pyramids of Giza|Great Pyramid|Pyramids", "Taj Mahal", "Colosseum", "Big Ben", "Golden Gate Bridge"],
+      "2": ["Machu Picchu", "Stonehenge", "Leaning Tower of Pisa|Tower of Pisa", "Sydney Opera House", "Mount Rushmore", "Christ the Redeemer", "Acropolis|Parthenon", "Petra", "Sphinx|Great Sphinx"],
+      "3": ["Angkor Wat", "Chichen Itza", "Notre Dame|Notre-Dame", "Louvre", "Buckingham Palace", "Tower Bridge", "Empire State Building", "Burj Khalifa", "Sagrada Familia", "Alhambra", "Hagia Sophia", "Neuschwanstein|Neuschwanstein Castle", "Brandenburg Gate", "St Basils Cathedral|Saint Basils Cathedral", "Kremlin"],
+      "4": ["Pompeii", "Teotihuacan", "Tikal", "Palenque", "Easter Island|Moai", "Uluru|Ayers Rock", "Grand Canyon", "Niagara Falls", "Victoria Falls", "Mount Fuji", "Forbidden City", "Terracotta Army", "Fushimi Inari", "Kinkaku-ji", "Gyeongbokgung", "St Peters Basilica|Vatican", "Sistine Chapel", "Trevi Fountain", "Pantheon", "Versailles|Palace of Versailles", "Mont Saint-Michel", "Edinburgh Castle", "Tower of London", "Westminster Abbey", "Brooklyn Bridge", "Space Needle", "Gateway Arch", "Lincoln Memorial", "Washington Monument", "Alcatraz"],
+      "5": ["Persepolis", "Borobudur", "Prambanan", "Bagan", "Shwedagon Pagoda", "Potala Palace", "Lalibela", "Great Zimbabwe", "Ait Benhaddou", "Timbuktu", "Karnak", "Luxor Temple", "Abu Simbel", "Valley of the Kings", "Baalbek", "Palmyra", "Ephesus", "Knossos", "Delphi", "Meteora", "Cappadocia", "Pamukkale", "Carcassonne", "Pont du Gard", "Alcazar of Segovia", "Mezquita of Cordoba", "Park Guell", "Duomo di Milano", "St Marks Basilica", "Doges Palace", "Schonbrunn Palace", "Prague Castle", "Charles Bridge", "Wawel Castle", "Bran Castle", "Bled Castle", "Kizhi Pogost", "Hermitage"],
+      "6": ["Gobekli Tepe", "Catalhoyuk", "Derinkuyu", "Mohenjo-daro", "Harappa", "Ellora Caves", "Ajanta Caves", "Hampi", "Khajuraho", "Konark Sun Temple", "Brihadeeswarar Temple", "Sigiriya", "Polonnaruwa", "Anuradhapura", "Nan Madol", "Skara Brae", "Newgrange", "Rock of Cashel", "Cliffs of Moher", "Giants Causeway", "Fingals Cave", "Avebury", "Maiden Castle", "Hadrians Wall", "Vindolanda", "Carnac Stones", "Lascaux", "Altamira", "Chauvet Cave", "Piazza Armerina", "Paestum", "Herculaneum", "Volubilis", "Leptis Magna", "Sabratha", "Cyrene", "Carthage", "El Jem", "Meroe", "Axum", "Gondar", "Kilwa Kisiwani", "Djenne|Great Mosque of Djenne", "Chinguetti", "Dogon Country", "Samarkand|Registan", "Itchan Kala", "Merv", "Bamiyan", "Takht-e Soleyman", "Naqsh-e Jahan", "Chogha Zanbil", "Ur|Ziggurat of Ur", "Hatra", "Samarra", "Masada", "Qumran", "Jerash", "Wadi Rum", "Madain Saleh|Hegra", "Shibam", "Marib Dam", "Caral", "Chan Chan", "Nazca Lines", "Sacsayhuaman", "Ollantaytambo", "Tiwanaku", "Monte Alban", "El Tajin", "Copan", "Calakmul", "Uxmal", "Cahokia", "Mesa Verde", "Chaco Canyon", "Serpent Mound", "Poverty Point", "Bru na Boinne"]
+    }
+  },
+  {
+    "id": "world-languages",
+    "pack": "world",
+    "prompt": "Name a human language",
+    "hint": "Spoken, sign, or classical historical human languages",
+    "tiers": {
+      "1": ["English", "Spanish", "French", "German", "Mandarin|Chinese", "Japanese", "Arabic", "Hindi", "Italian", "Portuguese"],
+      "2": ["Russian", "Korean", "Dutch", "Greek", "Turkish", "Polish", "Swedish", "Vietnamese", "Thai", "Hebrew", "Latin", "Swahili"],
+      "3": ["Norwegian", "Danish", "Finnish", "Czech", "Hungarian", "Romanian", "Ukrainian", "Indonesian", "Malay", "Tagalog|Filipino", "Urdu", "Bengali", "Persian|Farsi", "Cantonese", "Punjabi", "Tamil", "Irish|Gaelic", "Welsh", "ASL|American Sign Language"],
+      "4": ["Catalan", "Basque", "Icelandic", "Estonian", "Latvian", "Lithuanian", "Serbian", "Croatian", "Bulgarian", "Slovak", "Slovenian", "Albanian", "Armenian", "Georgian", "Azerbaijani", "Kazakh", "Uzbek", "Mongolian", "Nepali", "Sinhala", "Burmese", "Khmer", "Lao", "Telugu", "Marathi", "Gujarati", "Malayalam", "Kannada", "Amharic", "Zulu", "Afrikaans", "Yoruba", "Igbo", "Hausa", "Maori", "Hawaiian", "Samoan", "Sanskrit", "Ancient Greek", "Yiddish", "Esperanto"],
+      "5": ["Scottish Gaelic", "Breton", "Galician", "Maltese", "Luxembourgish", "Faroese", "Macedonian", "Belarusian", "Kurdish", "Pashto", "Tajik", "Kyrgyz", "Turkmen", "Tibetan", "Dzongkha", "Hokkien", "Hakka", "Wu|Shanghainese", "Javanese", "Sundanese", "Cebuano", "Ilocano", "Malagasy", "Somali", "Oromo", "Tigrinya", "Shona", "Xhosa", "Tswana", "Wolof", "Akan|Twi", "Lingala", "Kinyarwanda", "Quechua", "Guarani", "Nahuatl", "Navajo", "Cherokee", "Inuktitut", "Cree", "Ojibwe", "Haitian Creole", "Tok Pisin", "Bislama", "Fijian", "Tongan", "BSL|British Sign Language", "Auslan"],
+      "6": ["Romansh", "Sardinian", "Occitan", "Corsican", "Friulian", "Ladin", "Aragonese", "Asturian", "Mirandese", "Scots", "Manx", "Cornish", "Frisian|West Frisian", "Sorbian", "Kashubian", "Silesian", "Rusyn", "Sami|Northern Sami", "Veps", "Karelian", "Mari", "Udmurt", "Komi", "Chuvash", "Tatar", "Bashkir", "Yakut|Sakha", "Tuvan", "Buryat", "Kalmyk", "Chechen", "Avar", "Lezgian", "Abkhaz", "Ossetian", "Syriac|Aramaic", "Coptic", "Ge ez|Geez", "Berber|Tamazight", "Tuareg", "Bambara", "Fula|Fulani", "Ewe", "Fon", "Sango", "Kirundi", "Luganda", "Kikuyu", "Maasai", "Khoekhoe|Nama", "Taa", "Hadza", "Sandawe", "Ainu", "Okinawan|Ryukyuan", "Manchu", "Uyghur", "Brahui", "Santali", "Mundari", "Khasi", "Manipuri|Meitei", "Bodo", "Dogri", "Konkani", "Odia", "Assamese", "Kashmiri", "Sindhi", "Balochi", "Dhivehi|Maldivian", "Tetum", "Chamorro", "Palauan", "Marshallese", "Nauruan", "Rotuman", "Rapa Nui", "Tahitian", "Yucatec Maya", "Kiche", "Aymara", "Mapudungun", "Piraha", "Xavante", "Yanomami", "Lakota", "Dakota", "Mohawk", "Haida", "Tlingit", "Yupik", "Kalaallisut|Greenlandic", "Old Norse", "Gothic", "Old English", "Sumerian", "Akkadian", "Hittite", "Etruscan", "Linear B|Mycenaean Greek", "Pali", "Avestan", "Classical Nahuatl", "Toki Pona", "Lojban", "Ithkuil", "Klingon", "Quenya", "Sindarin"]
+    }
+  }
+]

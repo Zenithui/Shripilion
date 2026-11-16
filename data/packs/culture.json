@@ -1,0 +1,198 @@
+[
+  {
+    "id": "shakespeare-plays",
+    "pack": "culture",
+    "prompt": "Name a play written by William Shakespeare",
+    "hint": "Any of Shakespeare’s 38 tragedies, comedies, histories, or romances",
+    "tiers": {
+      "1": ["Romeo and Juliet", "Hamlet", "Macbeth", "Othello", "A Midsummer Nights Dream|Midsummer Nights Dream", "Julius Caesar"],
+      "2": ["King Lear", "The Tempest|Tempest", "The Merchant of Venice|Merchant of Venice", "Much Ado About Nothing", "Twelfth Night", "The Taming of the Shrew|Taming of the Shrew"],
+      "3": ["Richard III", "Henry V", "As You Like It", "Antony and Cleopatra", "The Comedy of Errors|Comedy of Errors", "Titus Andronicus"],
+      "4": ["Measure for Measure", "The Winters Tale|Winters Tale", "Coriolanus", "Alls Well That Ends Well", "Loves Labours Lost", "The Merry Wives of Windsor|Merry Wives of Windsor", "Richard II", "Henry IV Part 1|Henry IV"],
+      "5": ["Cymbeline", "Troilus and Cressida", "The Two Gentlemen of Verona|Two Gentlemen of Verona", "King John", "Henry VIII", "Henry IV Part 2", "Henry VI Part 1|Henry VI"],
+      "6": ["Timon of Athens", "Pericles|Pericles Prince of Tyre", "The Two Noble Kinsmen|Two Noble Kinsmen", "Henry VI Part 2", "Henry VI Part 3"]
+    }
+  },
+  {
+    "id": "us-presidents",
+    "pack": "culture",
+    "prompt": "Name a U.S. President",
+    "hint": "Any of the 45 individuals who served as President of the United States",
+    "tiers": {
+      "1": ["George Washington|Washington", "Abraham Lincoln|Lincoln", "Barack Obama|Obama", "Donald Trump|Trump", "Joe Biden|Biden", "John F. Kennedy|JFK|Kennedy", "Thomas Jefferson|Jefferson"],
+      "2": ["Franklin D. Roosevelt|FDR", "Theodore Roosevelt|Teddy Roosevelt|Roosevelt", "Ronald Reagan|Reagan", "Bill Clinton|Clinton", "George W. Bush|Bush", "Richard Nixon|Nixon", "Jimmy Carter|Carter"],
+      "3": ["John Adams|Adams", "Andrew Jackson|Jackson", "Ulysses S. Grant|Grant", "Woodrow Wilson|Wilson", "Dwight D. Eisenhower|Eisenhower", "Harry S. Truman|Truman", "Lyndon B. Johnson|LBJ", "George H. W. Bush|George HW Bush", "Gerald Ford|Ford"],
+      "4": ["James Madison|Madison", "James Monroe|Monroe", "John Quincy Adams", "Andrew Johnson|Johnson", "Herbert Hoover|Hoover", "Calvin Coolidge|Coolidge", "William Howard Taft|Taft", "William McKinley|McKinley", "Grover Cleveland|Cleveland", "James K. Polk|Polk"],
+      "5": ["Martin Van Buren|Van Buren", "William Henry Harrison", "John Tyler|Tyler", "Zachary Taylor|Taylor", "James Buchanan|Buchanan", "Rutherford B. Hayes|Hayes", "James A. Garfield|Garfield", "Benjamin Harrison|Harrison", "Warren G. Harding|Harding"],
+      "6": ["Millard Fillmore|Fillmore", "Franklin Pierce|Pierce", "Chester A. Arthur|Arthur"]
+    }
+  },
+  {
+    "id": "programming-languages",
+    "pack": "culture",
+    "prompt": "Name a programming language",
+    "hint": "Mainstream, systems, academic, historical, or esoteric languages (not HTML/CSS)",
+    "tiers": {
+      "1": ["Python", "JavaScript|JS", "Java", "C++", "C", "C#|C Sharp"],
+      "2": ["TypeScript|TS", "Rust", "Go|Golang", "Swift", "Kotlin", "PHP", "Ruby", "SQL", "R"],
+      "3": ["Dart", "Scala", "Perl", "Lua", "Haskell", "Elixir", "Objective-C", "MATLAB", "Bash|Shell", "Assembly|ASM", "Visual Basic|VBA|VB"],
+      "4": ["Clojure", "Erlang", "F#|F Sharp", "OCaml", "Julia", "Zig", "Nim", "Fortran", "COBOL", "Pascal|Delphi", "Lisp|Common Lisp", "Scheme", "Racket", "Prolog", "Groovy", "Scratch", "Solidity", "GDScript", "PowerShell", "Apex"],
+      "5": ["Ada", "APL", "Smalltalk", "Forth", "D|Dlang", "Crystal", "Gleam", "V|Vlang", "Odin", "Mojo", "Verilog", "VHDL", "Tcl", "AWK", "ActionScript", "ColdFusion", "ABAP", "SAS", "FoxPro", "Logo", "BASIC|QBasic", "PureScript", "Elm", "ReasonML|ReScript", "Hack", "Chapel"],
+      "6": ["Brainfuck", "Malbolge", "Piet", "Whitespace", "Befunge", "INTERCAL", "LOLCODE", "Shakespeare|SPL", "Rockstar", "HolyC", "Idris", "Agda", "Coq|Rocq", "Lean", "Mercury", "BQN", "J", "K", "Q|kdb", "Factor", "Joy", "Unison", "Pony", "Red", "Rebol", "Io", "Self", "Eiffel", "Modula-2", "Oberon", "ALGOL", "Simula", "SNOBOL", "Icon", "PL/I", "MUMPS", "RPG", "Haxe", "Vala", "Ballerina", "Ring", "Wren", "Fennel", "Janet"]
+    }
+  },
+  {
+    "id": "web-browsers",
+    "pack": "culture",
+    "prompt": "Name a web browser",
+    "hint": "Desktop, mobile, indie, terminal, or classic historical browsers",
+    "tiers": {
+      "1": ["Google Chrome|Chrome", "Safari", "Firefox|Mozilla Firefox", "Microsoft Edge|Edge"],
+      "2": ["Internet Explorer|IE", "Opera|Opera GX", "Brave", "Tor Browser|Tor", "DuckDuckGo"],
+      "3": ["Arc", "Vivaldi", "Samsung Internet", "Chromium", "Netscape|Netscape Navigator", "UC Browser"],
+      "4": ["Zen|Zen Browser", "Ladybird", "Orion", "Waterfox", "Pale Moon", "LibreWolf", "Mullvad Browser", "Yandex Browser", "Maxthon", "Silk|Amazon Silk", "Dolphin", "Puffin", "Aloha"],
+      "5": ["Mosaic|NCSA Mosaic", "Lynx", "Konqueror", "Epiphany|GNOME Web", "SeaMonkey", "Floorp", "Midori", "Falkon|QupZilla", "qutebrowser", "Min", "Phoenix", "Camino", "OmniWeb", "iCab", "RockMelt", "Flock"],
+      "6": ["WorldWideWeb|Nexus", "ViolaWWW", "Erwise", "Cello", "Arena", "Amaya", "w3m", "ELinks", "Links", "Browsh", "Dillo", "NetSurf", "Nyxt", "Uzbl", "Luakit", "Surf", "K-Meleon", "Avant Browser", "SlimBrowser", "Basilisk", "Otter Browser", "Dooble", "Galeon", "Arora", "Rekonq", "HotJava", "Cyberdog", "Classilla", "TenFourFox", "Polypane", "SigmaOS", "Sidekick"]
+    }
+  },
+  {
+    "id": "musical-instruments",
+    "pack": "culture",
+    "prompt": "Name a musical instrument",
+    "hint": "Strings, woodwinds, brass, percussion, keyboards, or world instruments",
+    "tiers": {
+      "1": ["Piano", "Guitar|Acoustic Guitar|Electric Guitar", "Violin|Fiddle", "Drums|Drum Kit|Drum Set", "Flute", "Trumpet"],
+      "2": ["Cello", "Saxophone", "Clarinet", "Bass Guitar|Bass", "Harp", "Ukulele", "Trombone", "Harmonica", "Tambourine", "Xylophone"],
+      "3": ["Viola", "Double Bass|Upright Bass", "Oboe", "Bassoon", "French Horn", "Tuba", "Banjo", "Mandolin", "Accordion", "Bagpipes", "Organ|Pipe Organ", "Synthesizer|Synth", "Triangle", "Bongos", "Maracas", "Recorder"],
+      "4": ["Piccolo", "Cornet", "Euphonium", "Baritone", "Harpsichord", "Marimba", "Vibraphone", "Glockenspiel", "Timpani|Kettledrum", "Snare Drum", "Cymbals", "Gong", "Cowbell", "Congas", "Djembe", "Cajon", "Kalimba|Thumb Piano", "Sitar", "Tabla", "Didgeridoo", "Theremin", "Ocarina", "Pan Flute|Panpipes", "Kazoo", "Lute", "Zither", "Dulcimer", "Steelpan|Steel Drum", "Melodica"],
+      "5": ["English Horn|Cor Anglais", "Contrabassoon", "Sousaphone", "Flugelhorn", "Bugle", "Celesta", "Clavichord", "Concertina", "Bandoneon", "Balalaika", "Bouzouki", "Oud", "Koto", "Shamisen", "Erhu", "Guzheng", "Pipa", "Shakuhachi", "Taiko", "Gamelan", "Mbira", "Berimbau", "Charango", "Cuatro", "Guiro", "Claves", "Castanets", "Bodhran", "Tin Whistle|Pennywhistle", "Autoharp", "Hurdy-Gurdy", "Hang|Handpan", "Jaw Harp|Jews Harp", "Vuvuzela", "Otamatone", "Stylophone"],
+      "6": ["Nyckelharpa", "Glass Armonica|Glass Harmonica", "Ondes Martenot", "Trautonium", "Waterphone", "Pyrophone", "Zeusaphone", "Yaybahar", "Wheelharp", "Chapman Stick", "Harpejji", "Theorbo", "Archlute", "Viola da Gamba|Viol", "Baryton", "Crwth", "Rebec", "Vihuela", "Hardanger Fiddle", "Crumhorn", "Shawm", "Rackett", "Cornett|Zink", "Serpent", "Ophicleide", "Sarrusophone", "Heckelphone", "Subcontrabass Flute", "Octobass", "Daxophone", "Duduk", "Ney", "Kaval", "Fujara", "Bansuri", "Shehnai", "Sarangi", "Sarod", "Veena", "Mridangam", "Ghatam", "Santoor|Santur", "Qanun", "Kora", "Ngoni", "Balafon", "Talking Drum", "Udu", "Txalaparta", "Alboka", "Gaita", "Uilleann Pipes", "Northumbrian Smallpipes", "Morin Khuur", "Gayageum", "Haegeum", "Dan Bau", "Khene", "Angklung", "Kulintang", "Nose Flute"]
+    }
+  },
+  {
+    "id": "greek-mythology",
+    "pack": "culture",
+    "prompt": "Name a Greek god, goddess, or Titan",
+    "hint": "Olympians, primordial deities, minor gods, or Titans (Greek names!)",
+    "tiers": {
+      "1": ["Zeus", "Poseidon", "Hades", "Athena", "Apollo", "Aphrodite", "Ares", "Hermes"],
+      "2": ["Hera", "Artemis", "Demeter", "Dionysus", "Hephaestus", "Persephone", "Cronus|Kronos", "Atlas"],
+      "3": ["Hestia", "Hecate", "Nike", "Eros", "Pan", "Gaia|Gaea", "Nyx", "Prometheus", "Helios", "Nemesis", "Thanatos", "Hypnos", "Morpheus", "Iris"],
+      "4": ["Uranus|Ouranos", "Rhea", "Selene", "Eos", "Eris", "Tyche", "Asclepius", "Triton", "Oceanus", "Themis", "Mnemosyne", "Hyperion", "Phoebe", "Tethys", "Epimetheus", "Leto", "Hebe", "Phobos", "Deimos", "Chaos", "Tartarus", "Erebus"],
+      "5": ["Coeus|Koios", "Crius|Krios", "Iapetus", "Theia", "Amphitrite", "Proteus", "Nereus", "Styx", "Boreas", "Zephyrus", "Notus", "Eurus", "Hygieia", "Harmonia", "Eileithyia", "Kratos|Cratus", "Bia", "Zelus", "Plutus", "Priapus", "Momus", "Charon", "Aeolus", "Circe"],
+      "6": ["Asteria", "Lelantos", "Pallas", "Perses", "Astraeus", "Clymene", "Asia", "Dione", "Metis", "Eurynome", "Ophion", "Ananke", "Chronos", "Phanes", "Aether", "Hemera", "Pontus", "Thalassa", "Ourea", "Nesoi", "Thaumas", "Phorcys", "Ceto", "Eurybia", "Leucothea", "Palaemon", "Glaucus", "Doris", "Electra", "Galatea", "Thetis", "Achelous", "Alpheus", "Asopus", "Aristaeus", "Britomartis", "Zagreus", "Melinoe", "Macaria", "Despoina", "Angelos", "Peitho", "Eunomia", "Dike", "Eirene", "Aglaea", "Euphrosyne", "Thalia", "Clotho", "Lachesis", "Atropos", "Alecto", "Megaera", "Tisiphone", "Geras", "Apate", "Oizys", "Philotes", "Comus", "Hymenaios|Hymenaeus", "Ganymede", "Iacchus", "Triptolemus", "Enialius|Enyalius", "Enyo"]
+    }
+  },
+  {
+    "id": "board-games",
+    "pack": "culture",
+    "prompt": "Name a classic or modern board game",
+    "hint": "Tabletop board games (excluding standard playing-card games like Poker)",
+    "tiers": {
+      "1": ["Monopoly", "Chess", "Checkers|Draughts", "Scrabble", "Clue|Cluedo", "Risk", "Connect Four|Connect 4"],
+      "2": ["Catan|Settlers of Catan", "Battleship", "The Game of Life|Life", "Sorry", "Candy Land|Candyland", "Chutes and Ladders|Snakes and Ladders", "Trivial Pursuit", "Backgammon", "Yahtzee", "Operation", "Jenga", "Twister"],
+      "3": ["Ticket to Ride", "Pandemic", "Pictionary", "Boggle", "Trouble", "Mouse Trap|Mousetrap", "Guess Who", "Mastermind", "Othello|Reversi", "Go|Weiqi|Baduk", "Mahjong", "Stratego", "Chinese Checkers", "Parcheesi|Ludo", "Cranium", "Scattergories", "Taboo", "Balderdash", "Axis and Allies"],
+      "4": ["Carcassonne", "Codenames", "Azul", "Wingspan", "Terraforming Mars", "Gloomhaven", "Scythe", "Root", "Splendor", "Dominion", "7 Wonders", "Dixit", "King of Tokyo", "Betrayal at House on the Hill", "Secret Hitler", "Mancala", "Dominoes", "Rummikub", "Sequence", "Blokus", "Quirkle|Qwirkle", "Bananagrams", "Coup", "The Resistance|Avalon", "Sheriff of Nottingham", "Munchkin"],
+      "5": ["Twilight Imperium", "Spirit Island", "Brass Birmingham|Brass", "Ark Nova", "Dune Imperium|Dune", "Everdell", "Agricola", "Puerto Rico", "The Castles of Burgundy|Castles of Burgundy", "Patchwork", "Cascadia", "Calico", "Flamecraft", "Heat Pedal to the Metal", "Clank", "Cosmic Encounter", "Diplomacy", "Power Grid", "Small World", "Sushi Go", "Love Letter", "Hive", "Santorini", "Quoridor", "Tak", "Crokinole", "Subbuteo", "Blood Bowl", "HeroQuest", "Scotland Yard", "Labyrinth", "Survive Escape from Atlantis"],
+      "6": ["Tigris and Euphrates", "El Grande", "Hansa Teutonica", "Concordia", "Great Western Trail", "A Feast for Odin", "Caverna", "Le Havre", "Tzolkin", "Teotihuacan", "Barrage", "Gaia Project", "Terra Mystica", "Through the Ages", "Mage Knight", "Twilight Struggle", "War of the Ring", "Star Wars Rebellion", "Eclipse", "Nemesis", "Kingdom Death Monster", "Frosthaven", "Oath", "Pax Pamir", "John Company", "Food Chain Magnate", "1830", "Acquire", "Ra", "Modern Art", "Inis", "Kemet", "Cyclades", "Blood Rage", "Rising Sun", "Ankh", "Viticulture", "Lost Ruins of Arnak", "Sky Team", "Dorfromantik", "Senet", "Royal Game of Ur", "Hnefatafl", "Nine Mens Morris", "Fanorona", "Bagh-Chal", "Shogi", "Xiangqi"]
+    }
+  },
+  {
+    "id": "norse-egyptian-myth",
+    "pack": "culture",
+    "prompt": "Name a Norse or Egyptian god or goddess",
+    "hint": "Deities from Norse (Asgard/Vanir) or Ancient Egyptian pantheons",
+    "tiers": {
+      "1": ["Thor", "Odin", "Loki", "Ra", "Anubis", "Isis"],
+      "2": ["Freya|Freyja", "Horus", "Osiris", "Set|Seth", "Heimdall", "Bastet|Bast"],
+      "3": ["Thoth", "Hathor", "Baldur|Balder", "Tyr", "Frigg|Frigga", "Hel|Hela", "Freyr|Frey", "Sobek", "Sekhmet"],
+      "4": ["Skadi", "Njord", "Bragi", "Idunn|Idun", "Sif", "Ptah", "Khonsu", "Maat", "Nut", "Geb", "Nephthys", "Amun|Amon", "Khepri", "Aten"],
+      "5": ["Ullr", "Vidar", "Vali", "Hodr|Hod", "Forseti", "Eir", "Ran", "Aegir", "Mimir", "Taweret", "Bes", "Hapi", "Khnum", "Anhur", "Neith", "Serapis", "Shu", "Tefnut", "Mut", "Wadjet", "Nekhbet"],
+      "6": ["Modi", "Magni", "Kvasir", "Hermod", "Nanna", "Syn", "Var", "Vor", "Gefjon", "Sol|Sunna", "Mani", "Dellingr", "Nott", "Jord", "Fulla", "Hlín|Hlin", "Snotra", "Gna", "Lofn", "Sjofn", "Vili", "Ve", "Ymir", "Apep|Apophis", "Imhotep", "Seshat", "Min", "Montu", "Nefertem", "Sopdu", "Babi", "Heqet", "Meshkenet", "Renenutet", "Shai", "Sia", "Hu", "Tatenen", "Mafdet", "Pakhet", "Satet", "Anuket", "Serket|Selket", "Meretseger", "Sobek-Ra|Ammit"]
+    }
+  },
+  {
+    "id": "video-games",
+    "pack": "culture",
+    "prompt": "Name a video game or video game series",
+    "hint": "Classic arcade, console, PC, or indie video games",
+    "tiers": {
+      "1": ["Minecraft", "Mario|Super Mario|Super Mario Bros", "Fortnite", "Tetris", "Pokemon", "Grand Theft Auto|GTA", "Call of Duty|COD", "Roblox"],
+      "2": ["Zelda|The Legend of Zelda", "Pac-Man|Pac Man", "Sonic|Sonic the Hedgehog", "Halo", "The Sims|Sims", "FIFA|EA FC", "Skyrim|Elder Scrolls", "League of Legends|LoL", "Overwatch", "Apex Legends"],
+      "3": ["Animal Crossing", "Mario Kart", "Super Smash Bros|Smash Bros", "Pokemon Go", "Valorant", "Counter-Strike|CSGO|CS2", "World of Warcraft|WoW", "Final Fantasy", "God of War", "The Last of Us", "Red Dead Redemption", "Portal", "Doom", "Street Fighter", "Mortal Kombat", "Donkey Kong", "Space Invaders", "Pong", "Fallout"],
+      "4": ["Stardew Valley", "Hollow Knight", "Hades", "Undertale", "Terraria", "Among Us", "Rocket League", "Elden Ring", "Dark Souls", "Cyberpunk 2077", "The Witcher|Witcher 3", "Mass Effect", "BioShock", "Half-Life", "Team Fortress 2|TF2", "Left 4 Dead", "Metal Gear Solid", "Resident Evil", "Silent Hill", "Kingdom Hearts", "Persona", "Metroid", "Kirby", "Mega Man", "Castlevania", "Crash Bandicoot", "Spyro", "Subnautica", "Celeste", "Cuphead"],
+      "5": ["Chrono Trigger", "Earthbound|Mother", "Disco Elysium", "Outer Wilds", "Return of the Obra Dinn|Obra Dinn", "Balatro", "Slay the Spire", "Dead Cells", "Factorio", "RimWorld", "Dwarf Fortress", "Kerbal Space Program|KSP", "Satisfactory", "Deep Rock Galactic", "Control", "Alan Wake", "Nier Automata", "Yakuza|Like a Dragon", "Monster Hunter", "Fire Emblem", "Xenoblade Chronicles", "Splatoon", "Pikmin", "F-Zero", "Star Fox", "Banjo-Kazooie", "Psychonauts", "Okami", "Shadow of the Colossus", "Journey", "Limbo", "Inside", "Katamari Damacy", "Grim Fandango", "Monkey Island"],
+      "6": ["Planescape Torment", "Caves of Qud", "Rain World", "Fear and Hunger", "Signalis", "Tunic", "Baba Is You", "Noita", "Spelunky", "Kenshi", "Starsector", "Cataclysm Dark Days Ahead|CDDA", "NetHack", "Rogue", "Angband", "Tales of Maj Eyal|ToME", "Pathologic", "Lisa the Painful|LISA", "OFF", "Yume Nikki", "Hylics", "Cruelty Squad", "Ultrakill", "Dusk", "Thief", "System Shock", "Deus Ex", "Vampire the Masquerade Bloodlines", "Arcanum", "Gothic", "Morrowind", "Daggerfall", "Suikoden", "Breath of Fire", "Golden Sun", "Valkyrie Profile", "Vagrant Story", "Panzer Dragoon", "Ikaruga", "Radiant Silvergun", "Rez", "Vib-Ribbon", "Parappa the Rapper", "Ghost Trick", "999|Zero Escape", "Umineko", "Steins Gate", "CrossCode", "Environmental Station Alpha", "La-Mulana", "Chants of Sennaar", "Lorelei and the Laser Eyes"]
+    }
+  },
+  {
+    "id": "music-genres",
+    "pack": "culture",
+    "prompt": "Name a music genre or subgenre",
+    "hint": "Mainstream genres, regional folk styles, electronic subgenres, or avant-garde scenes",
+    "tiers": {
+      "1": ["Pop", "Rock", "Hip Hop|Rap", "Jazz", "Classical", "Country", "R&B|Rhythm and Blues"],
+      "2": ["Metal|Heavy Metal", "Blues", "Electronic|EDM", "Reggae", "Folk", "Punk|Punk Rock", "Soul", "Funk", "Disco", "Indie|Indie Rock"],
+      "3": ["Techno", "House", "Dubstep", "Trance", "Grunge", "Alternative|Alt Rock", "Gospel", "Bluegrass", "Ska", "Latin|Salsa", "K-Pop|KPop", "Ambient", "Opera", "Emo", "Lo-Fi|Lofi"],
+      "4": ["Drum and Bass|DnB", "Bossa Nova", "Flamenco", "Swing", "Bebop", "Ragtime", "Synthpop", "New Wave", "Post-Punk", "Hardcore", "Thrash Metal", "Death Metal", "Black Metal", "Doom Metal", "Progressive Rock|Prog Rock", "Psychedelic Rock", "Garage Rock", "Shoegaze", "Afrobeat", "Reggaeton", "Cumbia", "Tango", "Mariachi", "Calypso", "Dub", "Trap", "Grime", "Drill", "UK Garage"],
+      "5": ["Math Rock", "Post-Rock", "Dream Pop", "Synthwave", "Vaporwave", "Chiptune", "Breakbeat", "Jungle", "Hardstyle", "Gabber", "IDM", "Trip Hop", "Chillwave", "City Pop", "J-Pop", "Samba", "Merengue", "Bachata", "Fado", "Klezmer", "Zydeco", "Cajun", "Polka", "Balkan Brass", "Raga|Hindustani Classical", "Carnatic", "Qawwali", "Bhangra", "Gamelan", "Krautrock", "Glam Rock", "Stoner Rock", "Sludge Metal", "Power Metal", "Folk Metal", "Djent", "Midwest Emo", "Screamo", "Boom Bap"],
+      "6": ["Zeuhl", "Dungeon Synth", "Breakcore", "Hyperpop", "Witch House", "Seapunk", "Plunderphonics", "Musique Concrete", "Spectralism", "Minimalism", "Microtonal", "Noise|Harsh Noise", "Industrial|EBM", "Darkwave", "Coldwave", "Gothabilly", "Psychobilly", "Skiffle", "Merseybeat", "C86", "Twee Pop", "Slowcore", "Sadcore", "No Wave", "Riot Grrrl", "Crust Punk", "D-Beat", "Grindcore", "Goregrind", "Funeral Doom", "Atmospheric Black Metal", "Depressive Suicidal Black Metal|DSBM", "Nintendocore", "Pirate Metal", "Lowercase", "Onkyo", "Footwork|Juke", "Gqom", "Amapiano", "Kwaito", "Soukous", "Highlife", "Juju", "Mbalax", "Gnawa", "Rai", "Rebetiko", "Laiko", "Choro", "Forro", "Axe", "MPB", "Tropicalia", "Vallenato", "Ranchera", "Norteno", "Corrido", "Son Jarocho", "Huayno", "Gagaku", "Enka", "Trot", "Pansori", "Khoomei|Throat Singing", "Morna", "Sega", "Maloya"]
+    }
+  },
+  {
+    "id": "famous-artists",
+    "pack": "culture",
+    "prompt": "Name a famous painter or sculptor",
+    "hint": "Historical or contemporary fine artists from around the world",
+    "tiers": {
+      "1": ["Leonardo da Vinci|Da Vinci", "Pablo Picasso|Picasso", "Vincent van Gogh|Van Gogh", "Claude Monet|Monet", "Michelangelo", "Salvador Dali|Dali"],
+      "2": ["Andy Warhol|Warhol", "Frida Kahlo|Kahlo", "Rembrandt", "Banksy", "Bob Ross", "Raphael", "Donatello", "Johannes Vermeer|Vermeer"],
+      "3": ["Edvard Munch|Munch", "Henri Matisse|Matisse", "Gustav Klimt|Klimt", "Jackson Pollock|Pollock", "Georgia O Keeffe|Georgia O'Keeffe|O Keeffe", "Edgar Degas|Degas", "Pierre-Auguste Renoir|Renoir", "Paul Cezanne|Cezanne", "Sandro Botticelli|Botticelli", "Edward Hopper|Hopper", "Norman Rockwell|Rockwell"],
+      "4": ["Caravaggio", "Francisco Goya|Goya", "Diego Velazquez|Velazquez", "Titian", "Peter Paul Rubens|Rubens", "Jan van Eyck|Van Eyck", "Hieronymus Bosch|Bosch", "Pieter Bruegel|Bruegel", "Albrecht Durer|Durer", "El Greco", "Eugene Delacroix|Delacroix", "J. M. W. Turner|Turner", "John Constable|Constable", "Mary Cassatt|Cassatt", "Wassily Kandinsky|Kandinsky", "Piet Mondrian|Mondrian", "Rene Magritte|Magritte", "Joan Miro|Miro", "Marc Chagall|Chagall", "Mark Rothko|Rothko", "Jean-Michel Basquiat|Basquiat", "Keith Haring|Haring", "Auguste Rodin|Rodin", "Katsushika Hokusai|Hokusai", "Yayoi Kusama|Kusama"],
+      "5": ["Artemisia Gentileschi|Gentileschi", "Paul Gauguin|Gauguin", "Georges Seurat|Seurat", "Henri de Toulouse-Lautrec|Toulouse-Lautrec", "Paul Klee|Klee", "Egon Schiele|Schiele", "Amedeo Modigliani|Modigliani", "Gustave Courbet|Courbet", "Edouard Manet|Manet", "Camille Pissarro|Pissarro", "Berthe Morisot|Morisot", "Jean-Auguste-Dominique Ingres|Ingres", "Jacques-Louis David|David", "Gian Lorenzo Bernini|Bernini", "Antonio Canova|Canova", "Constantin Brancusi|Brancusi", "Alberto Giacometti|Giacometti", "Alexander Calder|Calder", "Henry Moore|Moore", "Willem de Kooning|De Kooning", "Roy Lichtenstein|Lichtenstein", "Jasper Johns|Johns", "David Hockney|Hockney", "Francis Bacon|Bacon", "Lucian Freud|Freud", "Diego Rivera|Rivera", "Utagawa Hiroshige|Hiroshige", "Ai Weiwei"],
+      "6": ["Hilma af Klint|Af Klint", "Sofonisba Anguissola|Anguissola", "Judith Leyster|Leyster", "Elisabeth Vigee Le Brun|Vigee Le Brun", "Rosa Bonheur|Bonheur", "Tamara de Lempicka|Lempicka", "Leonora Carrington|Carrington", "Remedios Varo|Varo", "Dorothea Tanning|Tanning", "Lee Krasner|Krasner", "Helen Frankenthaler|Frankenthaler", "Joan Mitchell|Mitchell", "Louise Bourgeois|Bourgeois", "Bridget Riley|Riley", "Agnes Martin|Martin", "Kara Walker|Walker", "Zdzislaw Beksinski|Beksinski", "Ivan Aivazovsky|Aivazovsky", "Ilya Repin|Repin", "Caspar David Friedrich|Friedrich", "Arnold Bocklin|Bocklin", "Odilon Redon|Redon", "Gustave Moreau|Moreau", "Pierre Bonnard|Bonnard", "Edouard Vuillard|Vuillard", "Kazimir Malevich|Malevich", "El Lissitzky|Lissitzky", "Vladimir Tatlin|Tatlin", "Umberto Boccioni|Boccioni", "Giacomo Balla|Balla", "Giorgio de Chirico|De Chirico", "Yves Klein|Klein", "Cy Twombly|Twombly", "Anselm Kiefer|Kiefer", "Gerhard Richter|Richter", "Jean Dubuffet|Dubuffet", "Yves Tanguy|Tanguy", "Max Ernst|Ernst", "Hans Arp|Jean Arp", "Kurt Schwitters|Schwitters", "Giotto|Giotto di Bondone", "Cimabue", "Masaccio", "Fra Angelico", "Paolo Uccello|Uccello", "Andrea Mantegna|Mantegna", "Tintoretto", "Veronese", "Tiepolo", "Canaletto", "Arcimboldo|Giuseppe Arcimboldo", "Hans Holbein|Holbein", "Lucas Cranach|Cranach", "Matthias Grunewald|Grunewald", "Qi Baishi", "Xu Beihong", "Raja Ravi Varma", "Amrita Sher-Gil"]
+    }
+  },
+  {
+    "id": "classic-novels",
+    "pack": "culture",
+    "prompt": "Name a famous novel or classic book",
+    "hint": "World literature classics, epics, or landmark modern novels",
+    "tiers": {
+      "1": ["1984|Nineteen Eighty-Four", "The Great Gatsby|Great Gatsby", "To Kill a Mockingbird", "Pride and Prejudice", "Harry Potter", "The Lord of the Rings|Lord of the Rings", "The Hobbit|Hobbit"],
+      "2": ["Moby Dick|Moby-Dick", "Frankenstein", "Dracula", "The Odyssey|Odyssey", "The Catcher in the Rye|Catcher in the Rye", "Animal Farm", "Alice in Wonderland|Alices Adventures in Wonderland", "The Hunger Games", "Dune", "Little Women"],
+      "3": ["Brave New World", "Fahrenheit 451", "Jane Eyre", "Wuthering Heights", "Don Quixote", "Crime and Punishment", "The Iliad|Iliad", "The Adventures of Huckleberry Finn|Huckleberry Finn", "The Adventures of Tom Sawyer|Tom Sawyer", "Oliver Twist", "A Tale of Two Cities", "Great Expectations", "A Christmas Carol", "The Grapes of Wrath", "Of Mice and Men", "Lord of the Flies", "The Outsiders", "The Giver"],
+      "4": ["War and Peace", "Anna Karenina", "The Brothers Karamazov|Brothers Karamazov", "The Count of Monte Cristo|Count of Monte Cristo", "Les Miserables", "The Three Musketeers", "The Picture of Dorian Gray|Dorian Gray", "Heart of Darkness", "Slaughterhouse-Five", "Catch-22", "One Flew Over the Cuckoos Nest", "The Bell Jar", "Beloved", "Invisible Man", "Things Fall Apart", "One Hundred Years of Solitude", "The Stranger", "The Metamorphosis", "Lolita", "Ulysses", "The Scarlet Letter", "Sense and Sensibility", "Emma", "Dr Jekyll and Mr Hyde", "Treasure Island", "Robinson Crusoe", "Gullivers Travels"],
+      "5": ["The Master and Margarita|Master and Margarita", "The Trial", "Madame Bovary", "The Red and the Black", "Gargantua and Pantagruel", "Candide", "Middlemarch", "Tess of the d Urbervilles", "Jude the Obscure", "Bleak House", "David Copperfield", "Vanity Fair", "The Sun Also Rises", "For Whom the Bell Tolls", "The Sound and the Fury", "As I Lay Dying", "Blood Meridian", "Gravitys Rainbow", "Infinite Jest", "The Name of the Rose", "If on a Winters Night a Traveler", "Invisible Cities", "Ficciones", "Pedro Paramo", "The Tin Drum", "Steppenwolf", "Siddhartha", "Norwegian Wood", "Kafka on the Shore", "The Tale of Genji|Tale of Genji", "Journey to the West", "Romance of the Three Kingdoms"],
+      "6": ["Tristram Shandy", "Clarissa", "Tom Jones", "Moll Flanders", "The Sorrows of Young Werther", "Faust", "The Magic Mountain", "Death in Venice", "The Man Without Qualities", "Berlin Alexanderplatz", "Fathers and Sons", "Dead Souls", "Eugene Onegin", "Oblomov", "A Hero of Our Time", "The Idiot", "Demons|The Possessed", "Doctor Zhivago", "In Search of Lost Time|Swanns Way", "Nausea", "The Plague", "Journey to the End of the Night", "Germinal", "Nana", "The Charterhouse of Parma", "The Leopard|Il Gattopardo", "Zeno s Conscience|Zenos Conscience", "The Tartar Steppe", "The Shadow of the Wind", "Hopscotch", "2666", "The Savage Detectives", "The Posthumous Memoirs of Bras Cubas", "Dom Casmurro", "Dream of the Red Chamber", "Water Margin", "Snow Country", "Kokoro", "Rashomon", "The Makioka Sisters", "Gormenghast|Titus Groan", "The Book of the New Sun|Shadow of the Torturer", "Piranesi", "Finnegans Wake", "Pale Fire", "Ada or Ardor", "The Recognitions", "JR", "Mason and Dixon", "House of Leaves", "Dhalgren", "Mumbo Jumbo", "Cane", "Passing"]
+    }
+  },
+  {
+    "id": "mythical-creatures",
+    "pack": "culture",
+    "prompt": "Name a mythical creature or legendary monster",
+    "hint": "Beasts, spirits, and monsters from world folklore & mythology",
+    "tiers": {
+      "1": ["Dragon", "Unicorn", "Phoenix", "Mermaid|Merman", "Vampire", "Werewolf", "Ghost", "Fairy"],
+      "2": ["Griffin|Gryphon", "Pegasus", "Minotaur", "Centaur", "Cyclops", "Bigfoot|Sasquatch", "Yeti|Abominable Snowman", "Loch Ness Monster|Nessie", "Kraken", "Zombie", "Goblin", "Troll", "Elf"],
+      "3": ["Hydra", "Sphinx", "Medusa|Gorgon", "Cerberus", "Chimera", "Basilisk", "Siren", "Harpy", "Banshee", "Leprechaun", "Genie|Djinn|Jinn", "Ogre", "Dwarf", "Gnome", "Gargoyle", "Chupacabra", "Mothman"],
+      "4": ["Manticore", "Wyvern", "Cockatrice", "Leviathan", "Behemoth", "Kitsune", "Wendigo", "Kelpie", "Selkie", "Nymph", "Dryad", "Satyr|Faun", "Imp", "Gremlin", "Golem", "Wraith", "Poltergeist", "Roc", "Thunderbird", "Jackalope", "Jersey Devil"],
+      "5": ["Quetzalcoatl", "Jormungandr", "Fenrir", "Sleipnir", "Valkyrie", "Draugr", "Nuckelavee", "Bunyip", "Drop Bear", "Kappa", "Tengu", "Oni", "Tanuki", "Baku", "Qilin|Kirin", "Huli Jing", "Nian", "Simurgh", "Garuda", "Naga", "Rakshasa", "Peryton", "Hippogriff", "Orthrus", "Echidna", "Typhon", "Scylla", "Charybdis", "Skinwalker", "Leshy", "Rusalka", "Domovoi", "Kikimora", "Vodyanoy", "Striga|Strzyga", "Dullahan", "Puca|Pooka", "Redcap", "Barghest", "Black Shuck", "Will-o-the-Wisp"],
+      "6": ["Tarrasque", "Ammit", "Bennu", "Serpopard", "Uroboros|Ouroboros", "Anzu", "Lamassu", "Shedu", "Pazuzu", "Humbaba", "Asag", "Al-Miraj", "Bahamut", "Kujata", "Dandan", "Zaratan", "Aspidochelone", "Bonnacon", "Catoblepas", "Questing Beast", "Yale", "Caladrius", "Monoceros", "Cinnamon Bird", "Senmurv", "Chamrosh", "Huma", "Shahmaran", "Alkonost", "Sirin", "Gamayun", "Zhar-Ptitsa|Firebird", "Indrik", "Zilant", "Lindworm", "Tatzelwurm", "Wolpertinger", "Elwetritsch", "Dahut", "Glaistig", "Each-Uisge", "Boobrie", "Cait Sith", "Cu Sith", "Afanc", "Gwyllgi", "Tylwyth Teg", "Abaia", "Mokele-Mbembe", "Kongamato", "Grootslang", "Inkanyamba", "Impundulu", "Tikoloshe|Tokoloshe", "Adze", "Asanbosam", "Mapinguari", "Encantado", "Curupira", "Cadejo", "Ahuizotl", "Cipactli", "Camazotz", "Cherufe", "Mishipeshu|Underwater Panther", "Piasa", "Snallygaster", "Hodag", "Hidebehind", "Squonk", "Flatwoods Monster", "Fresno Nightcrawler", "Amabie", "Noppera-bo", "Gashadokuro", "Ushi-oni", "Kamaitachi", "Nue", "Umibozu", "Mokumokuren", "Tsuchinoko", "Yatagarasu", "Chollima", "Bulgasari", "Haetae", "Barong", "Rangda", "Manananggal", "Tikbalang", "Aswang", "Penanggalan", "Pontianak"]
+    }
+  },
+  {
+    "id": "chess-terms-openings",
+    "pack": "culture",
+    "prompt": "Name a Chess piece, rule, term, or opening",
+    "hint": "Pieces, tactical motifs, rules, or famous named openings & variations",
+    "tiers": {
+      "1": ["King", "Queen", "Pawn", "Rook|Castle", "Bishop", "Knight|Horse", "Checkmate|Mate", "Check"],
+      "2": ["Stalemate", "Castling", "Promotion", "Opening", "Endgame", "Gambit", "Draw", "Fork", "Pin"],
+      "3": ["En Passant", "Queens Gambit", "Sicilian Defense|Sicilian", "French Defense", "Ruy Lopez|Spanish Opening", "Italian Game", "Kings Gambit", "Skewer", "Discovered Attack", "Blunder", "Fianchetto", "Blitz", "Bullet", "Grandmaster|GM"],
+      "4": ["Caro-Kann", "Kings Indian|Kings Indian Defense", "London System", "Slav Defense", "Scandinavian Defense", "Dutch Defense", "English Opening", "Vienna Game", "Scotch Game", "Petrov Defense|Russian Game", "Pirc Defense", "Grunfeld Defense", "Nimzo-Indian", "Benoni", "Zugzwang", "Zwischenzug", "Back Rank Mate", "Smothered Mate", "Perpetual Check", "Threefold Repetition", "Fifty-Move Rule", "Outpost", "Passed Pawn", "Isolated Pawn"],
+      "5": ["Alekhine Defense", "Philidor Defense", "Catalan|Catalan Opening", "Reti Opening", "Birds Opening", "Trompowsky|Trompowsky Attack", "Evans Gambit", "Fried Liver|Fried Liver Attack", "Stafford Gambit", "Budapest Gambit", "Benko Gambit", "Albin Countergambit", "Najdorf|Sicilian Najdorf", "Sicilian Dragon|Dragon Variation", "Sveshnikov", "Taimanov", "Accelerated Dragon", "Smith-Morra Gambit", "Alapin|Sicilian Alapin", "Bongcloud", "Fools Mate", "Scholars Mate", "Lucena Position", "Philidor Position", "Opposition", "Triangulation", "Windmill", "Desperado", "Deflection", "Decoy", "Clearance", "Overloading", "Battery", "X-Ray", "Tempo", "Prophylaxis"],
+      "6": ["Grob|Grobs Attack", "Sokolsky|Orangutan Opening", "Polish Opening", "Larsens Opening|Nimzo-Larsen Attack", "Van Geet|Dunst Opening", "Amar Opening", "Sodium Attack|Durkin Opening", "Ware Opening", "Corn Stalk Defense", "Barnes Opening", "Clemenz Opening", "Mieses Opening", "Saragossa Opening", "Englund Gambit", "Latvian Gambit", "Elephant Gambit", "Blackmar-Diemer Gambit", "Halloween Gambit", "Traxler Counterattack", "Jerome Gambit", "Muzio Gambit", "Allgaier Gambit", "Kieseritzky Gambit", "Rousseau Gambit", "Marshall Attack", "Berlin Defense", "Riga Variation", "Arkhangelsk", "Breyer", "Chigorin", "Saemisch", "Four Pawns Attack", "Averbakh", "Tarrasch Defense", "Chigorin Defense", "Baltic Defense", "Symmetrical English", "Botvinnik System", "Hedgehog", "Maroczy Bind", "Kalashnikov", "Richter-Rauzer", "Scheveningen", "Poisoned Pawn", "Boden Mate", "Lolli Mate", "Damiano Mate", "Anastasias Mate", "Opera Mate", "Legal Trap", "Noah s Ark Trap|Noahs Ark Trap", "Lasker Trap", "Siberian Trap", "Elephant Trap", "Rubinstein Trap", "Novotny", "Plachutta", "Grimshaw", "Turton Doubling", "Excelsior", "Saavedra Position", "Reti Endgame Study", "Vancura Position", "Kling and Horwitz", "Stamma"]
+    }
+  }
+]
