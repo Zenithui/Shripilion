@@ -38,6 +38,7 @@
         <button id="btn-archive" class="mini-pill-btn" type="button">📅 Archive</button>
         <button id="btn-stats" class="mini-pill-btn" type="button">📊 Stats</button>
         <button id="btn-help" class="mini-pill-btn" type="button">❓ Rules</button>
+        <button id="btn-ambience" class="mini-pill-btn" type="button" title="Toggle Underwater Audio Bed">🌊</button>
         <button id="btn-sound" class="mini-pill-btn" type="button" aria-label="Toggle Sound">🔊</button>
       </div>
     </header>
@@ -84,6 +85,9 @@
         <!-- Primary Play Daily Dive CTA -->
         <button id="btn-play-daily" class="main-play-btn" type="button">
           PLAY DAILY DIVE
+        </button>
+        <button id="btn-reset-daily" class="reset-daily-btn" type="button" style="display:none;">
+          🔄 Reset Today’s Daily Dive
         </button>
 
         <!-- Authentic 3 Secondary Modes: Practice · Packs · Crew -->
@@ -160,6 +164,7 @@
       <div class="play-hud-bar">
         <div id="signal-dots" class="signal-dots"></div>
         <div class="live-depth-box">
+          <span id="combo-pill" class="combo-pill" style="display:none;">⚡ ×2 COMBO</span>
           <span id="live-zone-tag" class="zone-tag">☀️ Sunlight Zone</span>
           <span id="live-odometer" class="odometer-depth">0m</span>
         </div>
@@ -201,9 +206,15 @@
             />
             <button class="dive-submit-btn" type="submit">DIVE ↵</button>
           </div>
+          <div id="spell-preview-bar" class="spell-preview-bar" aria-live="polite"></div>
+          <div id="sonar-hint-box" class="sonar-hint-box" style="display:none;"></div>
           <div class="reject-pill">
             <span id="reject-text" class="reject-text" role="alert"></span>
-            <button id="btn-pass" class="pass-link" type="button">Pass / Surface (0m)</button>
+            <div class="prompt-tools-row">
+              <button id="btn-toggle-autospell" class="tool-chip-btn active" type="button" title="Toggle Automatic Spell-Check">🪄 Auto-Spell: ON</button>
+              <button id="btn-sonar-hint" class="tool-chip-btn" type="button" title="Use your once-per-dive Sonar Hint Buoy">📡 Hint (1)</button>
+              <button id="btn-pass" class="pass-link" type="button">Pass / Surface (0m)</button>
+            </div>
           </div>
         </form>
       </div>
@@ -255,6 +266,7 @@
 
         <div class="results-actions">
           <button id="btn-share" class="share-action-btn" type="button">📋 Share Dive</button>
+          <button id="btn-reset-daily-summary" class="mode-btn" type="button" style="display:none;">🔄 Reset Daily Dive</button>
           <button id="btn-again-practice" class="mode-btn" type="button">🤿 Practice Dive</button>
           <button id="btn-back-surface" class="mode-btn" type="button">⛵ Surface</button>
         </div>
@@ -278,6 +290,11 @@
       <div style="display:flex;justify-content:space-between;align-items:center;">
         <h2 style="font-size:1.1rem;font-weight:900;">📊 Diver Logbook</h2>
         <button data-close type="button" style="background:none;border:none;color:#94a3b8;font-size:1.3rem;cursor:pointer;">✕</button>
+      </div>
+      <div id="st-rank" class="diver-rank-banner">🛟 Callsign Rank: Surface Cadet</div>
+      <div class="audio-vol-row">
+        <label for="audio-volume-slider">🔊 Master Volume</label>
+        <input id="audio-volume-slider" type="range" min="0" max="100" value="85" />
       </div>
       <div class="kpi-row">
         <div class="kpi-cell"><div id="st-dives" class="kpi-num">0</div><div class="kpi-txt">Dives</div></div>
@@ -303,7 +320,9 @@
       </div>
       <div style="font-size:0.86rem;line-height:1.58;color:#cbd5e1;display:flex;flex-direction:column;gap:10px;">
         <p><strong>7 Signals · 25 Seconds:</strong> Every signal is an open-ended prompt. Common answers keep you near the surface boat; rare, obscure valid answers plunge your sub deeper toward the <strong>7,000m Hadal Trench</strong>.</p>
-        <p><strong>No Strike Penalty:</strong> Unrecognized answers don’t end the round — keep typing new guesses until oxygen runs out! Minor typos are forgiven automatically.</p>
+        <p><strong>No Strike Penalty & Auto Spell-Check:</strong> Keep guessing until oxygen runs out! Live Auto Spell-Check automatically rescues phonetic spellings &amp; minor typos (or press <code>Tab</code> / tap suggestion chips).</p>
+        <p><strong>⚡ Sonar Combo &amp; 📡 Hint Buoy:</strong> String together consecutive <strong>Rare+</strong> (🟣/🟠/💎) answers for up to <strong>+150m Combo Bonus</strong>! Use your 1-per-dive <strong>📡 Hint Buoy</strong> for a starting letter &amp; length lead.</p>
+        <p><strong>🔄 Daily Reset &amp; 🌊 Hydrophone Audio:</strong> Replay or reset today’s Daily Dive anytime, or toggle depth-reactive underwater hydrophone ambience from the top bar.</p>
         <p><strong>The 6 Rarity Tiers (1 pt = 10m):</strong><br/>
           🟢 <strong>Plankton</strong> (+100m) — Obvious first thought<br/>
           🩵 <strong>Too Clever</strong> (+150m) — The trap dodge thousands of others also try!<br/>

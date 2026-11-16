@@ -141,6 +141,22 @@
     try { localStorage.setItem(`shrimplion_daily_${dateKey}`, JSON.stringify(rec)); } catch (_) {}
   }
 
+  function removeDailyRecord(dateKey) {
+    try { localStorage.removeItem(`shrimplion_daily_${dateKey}`); } catch (_) {}
+  }
+
+  function loadAutoSpellPref() {
+    try { return localStorage.getItem('shrimplion_autospell') !== 'false'; } catch (_) { return true; }
+  }
+
+  function getDiverRank(totalMeters) {
+    if (totalMeters >= 50000) return '👑 Hadal Trench Legend';
+    if (totalMeters >= 25000) return '🦑 Abyssal Submarine Captain';
+    if (totalMeters >= 12000) return '🧭 Pelagic Navigator';
+    if (totalMeters >= 4000) return '🤿 Deep-Reef Scout';
+    return '🛟 Surface Cadet';
+  }
+
   function getZoneForDepth(m) {
     for (let i = ZONES.length - 1; i >= 0; i--) {
       if (m >= ZONES[i].min) return ZONES[i];
@@ -176,6 +192,11 @@
     sigIndex: 0,
     totalDepth: 0,
     results: [],
+    rareCombo: 0,
+    hintsLeft: 1,
+    hintUsedOnSignal: false,
+    autoSpell: loadAutoSpellPref(),
+    activeSuggestion: '',
     archiveDateKey: '',
     archiveDiveNumber: 0,
     archiveTheme: '',
@@ -246,6 +267,7 @@
     cancelAnimationFrame(state.rafId);
     clearInterval(state.countdownTimerId);
     state.inReveal = false;
+    AudioEngine.stopAmbience();
     Ocean.resetToSurfaceDock();
 
     const today = getTodayInfo();
@@ -276,15 +298,18 @@
     state.countdownTimerId = setInterval(updateDailyCountdown, 1000);
 
     const playBtn = document.getElementById('btn-play-daily');
+    const resetDailyBtn = document.getElementById('btn-reset-daily');
 
     if (dailyRec) {
       playBtn.textContent = `VIEW DAILY DIVE #${today.diveNumber} (${dailyRec.totalDepth.toLocaleString()}m)`;
+      if (resetDailyBtn) resetDailyBtn.style.display = 'block';
       typeKrillSpeech(
         document.getElementById('home-krill-speech'),
-        `beep! You reached ${dailyRec.totalDepth.toLocaleString()}m on today’s dive (${dailyEntry.theme}). Try Archive, Practice, Packs, or Crew!`
+        `beep! You reached ${dailyRec.totalDepth.toLocaleString()}m on today’s dive (${dailyEntry.theme}). Try Archive, Practice, or Reset Today!`
       );
     } else {
       playBtn.textContent = `PLAY DAILY DIVE #${today.diveNumber}`;
+      if (resetDailyBtn) resetDailyBtn.style.display = 'none';
       typeKrillSpeech(
         document.getElementById('home-krill-speech'),
         `beep. Today’s current is ${dailyEntry.theme} — obscure truths sink us toward 7,000m!`
@@ -292,6 +317,33 @@
     }
 
     showScreen('home');
+  }
+
+  function resetDailyDive(startFresh = false) {
+    const today = getTodayInfo();
+    const prevRec = loadDailyRecord(today.dateKey);
+    if (!prevRec) {
+      showToast('No completed Daily Dive for today yet!');
+      return;
+    }
+
+    removeDailyRecord(today.dateKey);
+    const stats = loadStats();
+    if (stats.lastDailyDate === today.dateKey) {
+      stats.lastDailyDate = prevRec.prevLastDailyDate !== undefined ? prevRec.prevLastDailyDate : null;
+      stats.dailyStreak = prevRec.prevDailyStreak !== undefined
+        ? prevRec.prevDailyStreak
+        : Math.max(0, (stats.dailyStreak || 1) - 1);
+      saveStats(stats);
+    }
+
+    AudioEngine.resetSplash();
+    showToast(`🔄 Daily Dive #${today.diveNumber} reset! Dive again.`);
+    if (startFresh) {
+      launchDive('daily');
+    } else {
+      renderHome();
+    }
   }
 
   function toggleHomeDrawer(drawerName) {
@@ -368,14 +420,129 @@
     state.sigIndex = 0;
     state.totalDepth = 0;
     state.results = [];
+    state.rareCombo = 0;
+    state.hintsLeft = 1;
+    state.hintUsedOnSignal = false;
+    state.activeSuggestion = '';
     state.crewTurnIdx = 0;
     state.crewRoundPicks = [];
     state.inReveal = false;
 
+    renderComboPill();
     AudioEngine.sonarPing();
+    AudioEngine.startAmbience(0);
     Ocean.triggerLaunchSplash();
     showScreen('play');
     startSignal();
+  }
+
+  function renderComboPill() {
+    const pill = document.getElementById('combo-pill');
+    if (!pill) return;
+    if (state.rareCombo >= 2) {
+      pill.style.display = 'inline-block';
+      pill.textContent = `⚡ ×${state.rareCombo} COMBO`;
+    } else {
+      pill.style.display = 'none';
+    }
+  }
+
+  function syncAutoSpellBtn() {
+    const btn = document.getElementById('btn-toggle-autospell');
+    if (!btn) return;
+    btn.classList.toggle('active', state.autoSpell);
+    btn.textContent = state.autoSpell ? '🪄 Auto-Spell: ON' : '🪄 Auto-Spell: OFF';
+  }
+
+  function syncHintBtn() {
+    const btn = document.getElementById('btn-sonar-hint');
+    if (!btn) return;
+    btn.disabled = state.hintsLeft <= 0 || state.hintUsedOnSignal || state.mode === 'crew';
+    btn.textContent = state.mode === 'crew'
+      ? '📡 Hint (Solo)'
+      : (state.hintsLeft > 0 ? `📡 Hint (${state.hintsLeft})` : '📡 Hint (0)');
+  }
+
+  function applySuggestion(term, autoSubmit = false) {
+    const input = document.getElementById('dive-input');
+    input.value = term;
+    AudioEngine.uiClick();
+    updateSpellPreview();
+    if (autoSubmit) {
+      onSubmitAnswer();
+    } else {
+      input.focus();
+    }
+  }
+
+  function updateSpellPreview() {
+    const bar = document.getElementById('spell-preview-bar');
+    if (!bar) return;
+    const raw = document.getElementById('dive-input').value;
+    const promptObj = state.prompts[state.sigIndex];
+    state.activeSuggestion = '';
+    bar.innerHTML = '';
+
+    if (!promptObj || !Matcher.suggestSpelling) return;
+    const info = Matcher.suggestSpelling(promptObj, raw);
+
+    if (info.status === 'exact') {
+      bar.innerHTML = `<span class="spell-preview-pill is-exact">✓ Sonar lock ready: ${escapeHtml(info.canonical)}</span>`;
+      return;
+    }
+
+    if (info.status === 'autocorrect') {
+      state.activeSuggestion = info.canonical;
+      if (state.autoSpell) {
+        bar.innerHTML = `<span class="spell-preview-pill">🪄 Auto-spell: <strong>${escapeHtml(info.canonical)}</strong> (Enter locks in)</span>`;
+      } else {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'spell-suggest-chip';
+        chip.textContent = `Did you mean ${info.canonical}? (Tab)`;
+        chip.addEventListener('click', () => applySuggestion(info.canonical, true));
+        bar.appendChild(chip);
+      }
+      return;
+    }
+
+    if (info.status === 'suggest' && info.suggestions && info.suggestions.length > 0) {
+      state.activeSuggestion = info.suggestions[0];
+      const lbl = document.createElement('span');
+      lbl.textContent = '💡 Did you mean:';
+      bar.appendChild(lbl);
+      info.suggestions.forEach(term => {
+        const chip = document.createElement('button');
+        chip.type = 'button';
+        chip.className = 'spell-suggest-chip';
+        chip.textContent = term;
+        chip.addEventListener('click', () => applySuggestion(term, true));
+        bar.appendChild(chip);
+      });
+    }
+  }
+
+  function triggerSonarHint() {
+    if (state.inReveal || state.hintsLeft <= 0 || state.hintUsedOnSignal || state.mode === 'crew') return;
+    const promptObj = state.prompts[state.sigIndex];
+    const compiled = Matcher.compilePromptIndex(promptObj);
+    const pool = [...(compiled.byTier[4] || []), ...(compiled.byTier[5] || []), ...(compiled.byTier[6] || [])];
+    if (pool.length === 0) return;
+
+    const pick = pool[Math.floor(Math.random() * pool.length)];
+    const cleanLen = pick.replace(/\s+/g, '').length;
+    const firstChar = pick[0].toUpperCase();
+    const wordCount = pick.trim().split(/\s+/).length;
+
+    state.hintsLeft -= 1;
+    state.hintUsedOnSignal = true;
+    syncHintBtn();
+
+    const box = document.getElementById('sonar-hint-box');
+    box.style.display = 'block';
+    box.innerHTML = `📡 <strong>Sonar Lead:</strong> Rare+ signal spotted — starts with <strong>"${escapeHtml(firstChar)}"</strong> (${cleanLen} letters${wordCount > 1 ? `, ${wordCount} words` : ''}).`;
+    AudioEngine.hintSonar();
+    document.getElementById('dive-input').focus();
   }
 
   // =========================================================================
@@ -405,6 +572,8 @@
   function startSignal() {
     cancelAnimationFrame(state.rafId);
     state.inReveal = false;
+    state.hintUsedOnSignal = false;
+    state.activeSuggestion = '';
 
     document.getElementById('oxygen-vignette').classList.remove('urgent');
     document.getElementById('plunge-stamp-wrap').classList.remove('show');
@@ -412,6 +581,16 @@
     document.getElementById('prompt-card').classList.remove('diving-minimized');
 
     renderSignalDots();
+    syncAutoSpellBtn();
+    syncHintBtn();
+
+    const hintBox = document.getElementById('sonar-hint-box');
+    if (hintBox) {
+      hintBox.style.display = 'none';
+      hintBox.textContent = '';
+    }
+    const spellBar = document.getElementById('spell-preview-bar');
+    if (spellBar) spellBar.innerHTML = '';
 
     const promptObj = state.prompts[state.sigIndex];
     const packInfo = PACKS[promptObj.pack] || PACKS.mixed;
@@ -503,13 +682,14 @@
 
     const input = document.getElementById('dive-input');
     const promptObj = state.prompts[state.sigIndex];
-    const evalRes = Matcher.evaluateAnswer(promptObj, input.value);
+    const evalRes = Matcher.evaluateAnswer(promptObj, input.value, { autoSpell: state.autoSpell });
 
     if (!evalRes.matched) {
       if (evalRes.empty) return;
       AudioEngine.rejectBuzz();
       Ocean.triggerRejectShake();
       document.getElementById('reject-text').textContent = `✕ ${evalRes.reason}`;
+      updateSpellPreview();
       input.classList.remove('shake');
       void input.offsetWidth;
       input.classList.add('shake');
@@ -609,19 +789,42 @@
 
     const promptObj = state.prompts[state.sigIndex];
     const tierInfo = TIERS[tier];
-    state.totalDepth = Math.min(7000, state.totalDepth + metersGained);
+    const prevZone = getZoneForDepth(state.totalDepth);
+
+    // Rare+ Combo Streak Bonus (only in solo modes when landing Tier 4+ consecutively)
+    let comboBonus = 0;
+    if (state.mode !== 'crew') {
+      if (tier >= 4) {
+        state.rareCombo += 1;
+        if (state.rareCombo >= 2) {
+          comboBonus = Math.min(150, (state.rareCombo - 1) * 50);
+        }
+      } else {
+        state.rareCombo = 0;
+      }
+    }
+    renderComboPill();
+
+    const totalGain = Math.min(7000 - state.totalDepth, metersGained + comboBonus);
+    state.totalDepth = Math.min(7000, state.totalDepth + totalGain);
+    const nextZone = getZoneForDepth(state.totalDepth);
 
     state.results.push({
       promptId: promptObj.id,
       promptText: promptObj.prompt,
       answer: displayAnswer,
       tier,
-      meters: metersGained,
+      meters: totalGain,
+      comboBonus,
       fuzzy
     });
 
-    // 1. Trigger Pixel Ocean Plunge & Web Audio!
+    // 1. Trigger Pixel Ocean Plunge & Layered Submarine Web Audio!
     AudioEngine.diveScore(tier);
+    if (fuzzy) AudioEngine.spellCorrectChime();
+    if (comboBonus > 0) AudioEngine.comboChime(state.rareCombo);
+    if (nextZone.name !== prevZone.name) AudioEngine.zoneTransitionFanfare();
+    AudioEngine.updateAmbienceDepth(state.totalDepth);
     Ocean.plungeToDepth(state.totalDepth, tier);
     renderSignalDots(state.results.length - 1);
 
@@ -638,7 +841,9 @@
     stampBadge.style.color = tierInfo.color;
     stampBadge.style.borderColor = tierInfo.color;
 
-    metersPop.textContent = `+${metersGained.toLocaleString()}m`;
+    metersPop.textContent = comboBonus > 0
+      ? `+${totalGain.toLocaleString()}m (⚡ +${comboBonus}m Combo)`
+      : `+${totalGain.toLocaleString()}m`;
     metersPop.style.color = tierInfo.color;
 
     stampWrap.classList.remove('show');
@@ -648,11 +853,16 @@
     // 4. Populate Bottom Plunge Card + Krill Typewriter Reaction
     document.getElementById('plunge-answer-name').textContent = displayAnswer;
     document.getElementById('plunge-fuzzy-tag').textContent = fuzzy
-      ? (correctedFrom ? `✨ Spell-corrected (${correctedFrom})` : '✨ Typo forgiven')
+      ? (correctedFrom ? `✨ Auto spell-checked (${correctedFrom})` : '✨ Typo forgiven')
       : '';
 
     const quipPool = tierInfo.quips || [tierInfo.tagline];
-    const chosenQuip = customQuip || quipPool[Math.floor(Math.random() * quipPool.length)];
+    let chosenQuip = customQuip || quipPool[Math.floor(Math.random() * quipPool.length)];
+    if (comboBonus > 0 && !customQuip) {
+      chosenQuip = `⚡ ×${state.rareCombo} SONAR COMBO (+${comboBonus}m bonus)! ${chosenQuip}`;
+    } else if (nextZone.name !== prevZone.name && !customQuip) {
+      chosenQuip = `${nextZone.badge} Entered ${nextZone.name}! ${chosenQuip}`;
+    }
     typeKrillSpeech(document.getElementById('plunge-krill-speech'), chosenQuip);
 
     const compiled = Matcher.compilePromptIndex(promptObj);
@@ -702,6 +912,8 @@
     const emojis = state.results.map(r => TIERS[r.tier].emoji).join('');
 
     if (state.mode === 'daily') {
+      const prevLastDailyDate = stats.lastDailyDate;
+      const prevDailyStreak = stats.dailyStreak;
       const y = new Date();
       y.setDate(y.getDate() - 1);
       const yKey = `${y.getFullYear()}-${String(y.getMonth() + 1).padStart(2, '0')}-${String(y.getDate()).padStart(2, '0')}`;
@@ -712,6 +924,8 @@
       saveDailyRecord(today.dateKey, {
         diveNumber: today.diveNumber,
         dateKey: today.dateKey,
+        prevLastDailyDate,
+        prevDailyStreak,
         totalDepth: state.totalDepth,
         emojis,
         results: state.results
@@ -729,6 +943,7 @@
 
     renderSummary({
       label,
+      isDailyToday: state.mode === 'daily',
       totalDepth: state.totalDepth,
       emojis,
       results: state.results
@@ -736,10 +951,17 @@
   }
 
   function renderSummary(data) {
+    AudioEngine.stopAmbience();
     const zone = getZoneForDepth(data.totalDepth);
     document.getElementById('res-mode-label').textContent = data.label;
     document.getElementById('res-zone-badge').textContent = `${zone.badge} ${zone.name} (${zone.sci})`;
     document.getElementById('res-depth-big').textContent = `${data.totalDepth.toLocaleString()}m`;
+    const resetSumBtn = document.getElementById('btn-reset-daily-summary');
+    if (resetSumBtn) {
+      const hasToday = Boolean(loadDailyRecord(getTodayInfo().dateKey));
+      const isDailyLabel = data.isDailyToday || /^Daily Dive #/i.test(String(data.label || ''));
+      resetSumBtn.style.display = hasToday && isDailyLabel ? 'inline-flex' : 'none';
+    }
 
     // Animated 7-bar Dive Trajectory Chart
     const chart = document.getElementById('dive-bars-chart');
@@ -829,11 +1051,17 @@
   // =========================================================================
   function openStats() {
     const st = loadStats();
+    document.getElementById('st-rank').textContent = `🎖️ Callsign Rank: ${getDiverRank(st.totalMeters)}`;
     document.getElementById('st-dives').textContent = String(st.divesPlayed);
     document.getElementById('st-streak').textContent = String(st.dailyStreak);
     document.getElementById('st-best').textContent = `${st.bestDepth.toLocaleString()}m`;
     const avg = st.divesPlayed ? Math.round(st.totalMeters / st.divesPlayed) : 0;
     document.getElementById('st-avg').textContent = `${avg.toLocaleString()}m`;
+
+    const volSlider = document.getElementById('audio-volume-slider');
+    if (volSlider && AudioEngine.getVolume) {
+      volSlider.value = String(Math.round(AudioEngine.getVolume() * 100));
+    }
 
     const dist = document.getElementById('st-dist');
     dist.innerHTML = '';
@@ -896,9 +1124,18 @@
     document.getElementById('btn-sound').textContent = AudioEngine.isMuted() ? '🔇' : '🔊';
   }
 
+  function syncAmbienceBtn() {
+    const btn = document.getElementById('btn-ambience');
+    if (!btn || !AudioEngine.isAmbientEnabled) return;
+    const on = AudioEngine.isAmbientEnabled();
+    btn.textContent = on ? '🌊' : '🔕';
+    btn.title = on ? 'Hydrophone Ocean Ambience: ON' : 'Hydrophone Ocean Ambience: OFF';
+  }
+
   document.addEventListener('DOMContentLoaded', async () => {
     Ocean.init(document.getElementById('ocean-canvas'));
     syncSoundBtn();
+    syncAmbienceBtn();
 
     if (window.ShrimplionDataset) {
       await window.ShrimplionDataset.load();
@@ -907,13 +1144,15 @@
 
     renderHome();
 
-    document.getElementById('btn-top-home').addEventListener('click', renderHome);
+    document.getElementById('btn-top-home').addEventListener('click', () => { AudioEngine.uiClick(); renderHome(); });
     document.getElementById('btn-play-daily').addEventListener('click', () => launchDive('daily'));
+    document.getElementById('btn-reset-daily').addEventListener('click', () => resetDailyDive(false));
+    document.getElementById('btn-reset-daily-summary').addEventListener('click', () => resetDailyDive(true));
 
     // Mode drawers
-    document.getElementById('btn-mode-practice').addEventListener('click', () => toggleHomeDrawer('practice'));
-    document.getElementById('btn-mode-packs').addEventListener('click', () => toggleHomeDrawer('packs'));
-    document.getElementById('btn-mode-crew').addEventListener('click', () => toggleHomeDrawer('crew'));
+    document.getElementById('btn-mode-practice').addEventListener('click', () => { AudioEngine.uiClick(); toggleHomeDrawer('practice'); });
+    document.getElementById('btn-mode-packs').addEventListener('click', () => { AudioEngine.uiClick(); toggleHomeDrawer('packs'); });
+    document.getElementById('btn-mode-crew').addEventListener('click', () => { AudioEngine.uiClick(); toggleHomeDrawer('crew'); });
 
     document.getElementById('btn-launch-practice-timed').addEventListener('click', () => launchDive('practice', { untimed: false }));
     document.getElementById('btn-launch-practice-untimed').addEventListener('click', () => launchDive('practice', { untimed: true }));
@@ -929,7 +1168,30 @@
       launchDive('crew', { crewNames: names.length >= 2 ? names : ['Diver 1', 'Diver 2'] });
     });
 
-    // Gameplay
+    // Gameplay & Auto Spell-Check + Sonar Hint
+    const diveInput = document.getElementById('dive-input');
+    diveInput.addEventListener('input', () => {
+      AudioEngine.keystrokeTick();
+      updateSpellPreview();
+    });
+    diveInput.addEventListener('keydown', e => {
+      if (e.key === 'Tab' && state.activeSuggestion) {
+        e.preventDefault();
+        applySuggestion(state.activeSuggestion, false);
+      }
+    });
+
+    document.getElementById('btn-toggle-autospell').addEventListener('click', () => {
+      state.autoSpell = !state.autoSpell;
+      try { localStorage.setItem('shrimplion_autospell', String(state.autoSpell)); } catch (_) {}
+      AudioEngine.uiClick();
+      syncAutoSpellBtn();
+      updateSpellPreview();
+      showToast(state.autoSpell ? '🪄 Auto Spell-Check enabled!' : '🪄 Auto Spell-Check switched to manual suggestions');
+      diveInput.focus();
+    });
+
+    document.getElementById('btn-sonar-hint').addEventListener('click', triggerSonarHint);
     document.getElementById('dive-form').addEventListener('submit', onSubmitAnswer);
     document.getElementById('btn-pass').addEventListener('click', onPassSignal);
     document.getElementById('btn-next-signal').addEventListener('click', advanceSignal);
@@ -956,10 +1218,11 @@
     document.getElementById('btn-again-practice').addEventListener('click', () => launchDive('practice', { untimed: false }));
     document.getElementById('btn-back-surface').addEventListener('click', renderHome);
 
-    // Modals & Sound
-    document.getElementById('btn-archive').addEventListener('click', openArchive);
-    document.getElementById('btn-stats').addEventListener('click', openStats);
+    // Modals & Audio controls
+    document.getElementById('btn-archive').addEventListener('click', () => { AudioEngine.uiClick(); openArchive(); });
+    document.getElementById('btn-stats').addEventListener('click', () => { AudioEngine.uiClick(); openStats(); });
     document.getElementById('btn-help').addEventListener('click', () => {
+      AudioEngine.uiClick();
       document.getElementById('modal-help').classList.add('open');
     });
     document.querySelectorAll('[data-close]').forEach(b => {
@@ -968,9 +1231,19 @@
     document.querySelectorAll('.modal-overlay').forEach(ov => {
       ov.addEventListener('click', e => { if (e.target === ov) ov.classList.remove('open'); });
     });
+    document.getElementById('btn-ambience').addEventListener('click', () => {
+      AudioEngine.toggleAmbience();
+      syncAmbienceBtn();
+    });
     document.getElementById('btn-sound').addEventListener('click', () => {
       AudioEngine.toggleMute();
       syncSoundBtn();
     });
+    const volSlider = document.getElementById('audio-volume-slider');
+    if (volSlider) {
+      volSlider.addEventListener('input', e => {
+        AudioEngine.setVolume(Number(e.target.value) / 100);
+      });
+    }
   });
 })();

@@ -6,7 +6,7 @@ A full-featured, offline-ready browser game inspired by **Krillion** (`krillion.
 
 - **Living 60fps Pixel-Art Ocean Column (`js/pixel-ocean.js`)**: Starts at `0m` with a pixel sun, drifting clouds, flapping seagulls, rippling waves, and the bobbing *S.S. KRILL* research boat. Each valid answer physically plunges your yellow pixel bathysphere (with blinking **Krill** captain & spinning propeller) downward through dithered ocean strata populated by pixel sea turtles, pulsing jellyfish, giant squid, bioluminescent anglerfish, and a rocky **7,000m Hadal Trench floor** with hydrothermal vents and a glowing pearl clam.
 - **Authentic Modes (`Daily Dive`, `Practice`, `Packs`, `Crew`)**:
-  - **Daily Dive & Archive**: 365-day pre-generated themed daily challenge schedule (`data/daily.json`, covering `2026-11-01` to `2027-10-31`) with `25s` oxygen ring timer, live next-dive countdown, daily streak tracking, and a **📅 Daily Archive** modal to replay past themed dives without affecting today's streak.
+  - **Daily Dive, Reset & Archive**: 365-day pre-generated themed daily challenge schedule (`data/daily.json`, covering `2026-11-01` to `2027-10-31`) with `25s` oxygen ring timer, live next-dive countdown, **🔄 Reset Today's Daily Dive** (restoring prior streak cleanly), and the **📅 Daily Archive** modal to replay past themed dives.
   - **Practice**: Unlimited random signals with **25s Timed** or **∞ Untimed** modes.
   - **Packs**: 4 expanded themed expedition packs (*Geography & World*, *Science & Space*, *Culture & Tech*, *Food & Everyday* — 14 prompts each).
   - **Crew**: 2–4 local divers coordinate turns — unique valid answers earn a **+150m Crew Sync Bonus**, while duplicate answers collide for **0m**.
@@ -17,8 +17,9 @@ A full-featured, offline-ready browser game inspired by **Krillion** (`krillion.
   - 🟣 **Rare** (`+600m`)
   - 🟠 **Deep Cut** (`+850m`)
   - 💎 **One in a Shrimplion** (`+1,000m`)
-- **Phonetic & Fuzzy Spell-Check Engine (`js/matcher.js`)**: Accent-insensitive, article-tolerant, spaceless-aware (`Newyork`), middle-initial tolerant (`John Kennedy`), and forgiving of phonetic misspellings (`Filippines`, `Chiwawa`, `Flourine`, `Gnocci`) and short-word unambiguous typos (`Irak` → `Iraq`) with `"Close! Did you mean ...?"` near-miss hints and `"✨ Spell-corrected"` badges.
-- **Dynamic Ocean Descent & Procedural Submarine Audio**: Live HTML5 canvas bubbles & bioluminescence, 5 ocean depth zones (*Sunlight → Twilight → Midnight → The Abyss → Hadal Trench*), and synthesized Web Audio sonar/chimes (zero external assets required).
+- **Auto Spell-Check Engine (`js/matcher.js`)**: Live inline `suggestSpelling()` preview + automatic phonetic & fuzzy correction (`Filippines` → `Philippines`, `Chiwawa` → `Chihuahua`, `Flourine` → `Fluorine`, `Newyork` → `New York`, `John Kennedy` → `John F. Kennedy`), `Tab`/click suggestion chips, and an in-round `🪄 Auto-Spell: ON/OFF` toggle.
+- **Sonar Combo Streaks, Hint Buoy & Diver Ranks**: Consecutive Rare+ answers earn up to `+150m` **⚡ Sonar Combo** bonus; each solo dive includes a 1-time **📡 Hint Buoy** (`first letter + length`); cumulative depth unlocks Submarine Callsign Ranks in Stats.
+- **Procedural Submarine Audio & Hydrophone Bed (`js/audio.js`)**: Pure Web Audio depth-reactive underwater hydrophone soundscape (`🌊` toggle), master volume slider, mechanical keystroke sonar ticks, spell-correct shimmer, combo chords, zone transition fanfare, and dive reset splash.
 - **Complete Post-Dive Answer Encyclopedia**: Expand any prompt in your Dive Log after finishing a run to inspect every accepted answer across all 6 tiers.
 
 ## 🚀 Running Locally & Rebuilding Dataset

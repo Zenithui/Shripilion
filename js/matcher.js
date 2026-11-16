@@ -205,7 +205,20 @@
     return 0;
   }
 
-  function evaluateAnswer(promptObj, userRawInput) {
+  function resolveFuzzyCandidate(record, rawInput, autoSpell) {
+    if (autoSpell) {
+      return formatMatch(record, true, rawInput.trim());
+    }
+    return {
+      matched: false,
+      suggestion: record.canonical,
+      suggestions: [record.canonical],
+      reason: `Close! Did you mean "${record.canonical}"?`
+    };
+  }
+
+  function evaluateAnswer(promptObj, userRawInput, opts = {}) {
+    const autoSpell = opts.autoSpell !== false;
     const idx = compilePromptIndex(promptObj);
     const cleaned = normalizeTokenString(userRawInput);
     if (!cleaned) {
@@ -234,7 +247,7 @@
     const spacelessQuery = cleaned.replace(/\s+/g, '');
     if (spacelessQuery.length >= 4 && idx.spacelessMap.has(spacelessQuery)) {
       const hit = idx.spacelessMap.get(spacelessQuery);
-      return formatMatch(hit, true, userRawInput.trim());
+      return resolveFuzzyCandidate(hit, userRawInput, autoSpell);
     }
 
     // Never fuzz short 1-3 character codes/symbols (e.g., "C", "Go", "Io", "K2")
@@ -250,7 +263,7 @@
     if (queryPhonetic.length >= 5 && idx.phoneticMap.has(queryPhonetic)) {
       const matches = idx.phoneticMap.get(queryPhonetic);
       if (matches.length === 1) {
-        return formatMatch(matches[0], true, userRawInput.trim());
+        return resolveFuzzyCandidate(matches[0], userRawInput, autoSpell);
       }
       // If multiple share a phonetic skeleton, pick strictly closest raw spelling if unique
       let bestDist = Infinity;
@@ -265,7 +278,7 @@
         }
       }
       if (bestList.length === 1) {
-        return formatMatch(bestList[0], true, userRawInput.trim());
+        return resolveFuzzyCandidate(bestList[0], userRawInput, autoSpell);
       }
     }
 
@@ -320,12 +333,13 @@
         return {
           matched: false,
           suggestion: top.entry.canonical,
+          suggestions: [top.entry.canonical, runnerUp.entry.canonical],
           reason: `Close! Did you mean "${top.entry.canonical}" or "${runnerUp.entry.canonical}"?`
         };
       }
 
       if (top.effDist <= 3) {
-        return formatMatch(top.entry, true, userRawInput.trim());
+        return resolveFuzzyCandidate(top.entry, userRawInput, autoSpell);
       }
     }
 
@@ -346,6 +360,7 @@
       return {
         matched: false,
         suggestion: hintBest.canonical,
+        suggestions: [hintBest.canonical],
         reason: `Close! Did you mean "${hintBest.canonical}"?`
       };
     }
@@ -356,10 +371,35 @@
     };
   }
 
+  function suggestSpelling(promptObj, userRawInput) {
+    const cleaned = normalizeTokenString(userRawInput);
+    if (!cleaned || cleaned.length < 4) return { status: 'none' };
+    const res = evaluateAnswer(promptObj, userRawInput, { autoSpell: true });
+    if (res.matched && !res.fuzzy) {
+      return { status: 'exact', canonical: res.canonical };
+    }
+    if (res.matched && res.fuzzy) {
+      return {
+        status: 'autocorrect',
+        canonical: res.canonical,
+        correctedFrom: res.correctedFrom || userRawInput.trim()
+      };
+    }
+    if (res.suggestions && res.suggestions.length > 0) {
+      return {
+        status: 'suggest',
+        suggestions: res.suggestions,
+        reason: res.reason
+      };
+    }
+    return { status: 'none' };
+  }
+
   global.ShrimplionMatcher = {
     normalizeTokenString,
     phoneticSkeleton,
     compilePromptIndex,
-    evaluateAnswer
+    evaluateAnswer,
+    suggestSpelling
   };
 })(window);
