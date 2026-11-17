@@ -150,13 +150,47 @@
   const SETTINGS_KEY = 'shrimplion_settings_v1';
   const PROMPT_BESTS_KEY = 'shrimplion_prompt_bests_v1';
 
+  const BUDDY_CONFIG = {
+    krill: { name: 'THE KRILL', src: 'assets/krill.svg', goldSrc: 'assets/krill-gold.svg' },
+    schooler: { name: 'SCHOOLER FISH', src: 'assets/schooler.svg' },
+    rare: { name: 'RARE SQUID', src: 'assets/rare.svg' },
+    deepcut: { name: 'DEEP CUT ANGLER', src: 'assets/deepcut.svg' },
+    evil: { name: 'EVIL KRILL', src: 'assets/evil.svg' }
+  };
+
+  const TIER_ICONS = {
+    0: '',
+    1: 'assets/plankton.svg',
+    2: 'assets/tooclever.svg',
+    3: 'assets/schooler.svg',
+    4: 'assets/rare.svg',
+    5: 'assets/deepcut.svg',
+    6: 'assets/krill-gold.svg'
+  };
+
+  const BEARING_BANDS = [
+    { min: 0, max: 1500, label: '🟢 Plankton Bearing · Plenty of ocean left down there' },
+    { min: 1501, max: 2500, label: '🔵 Schooler Bearing · Swimming briskly below sunlight' },
+    { min: 2501, max: 3500, label: '🟣 Rare Bearing · Below the thermocline, nice dive' },
+    { min: 3501, max: 4499, label: '🟠 Deep Cut Bearing · Seriously deep abyssal voyage' },
+    { min: 4500, max: 7001, label: '💎 One in a Shrimplion Bearing · Trench dweller' }
+  ];
+
+  function getBearingBand(meters) {
+    return [...BEARING_BANDS].reverse().find(b => meters >= b.min) || BEARING_BANDS[0];
+  }
+
   function loadSettings() {
     const legacyAuto = localStorage.getItem('shrimplion_autospell');
     const defaults = {
       autoSpell: legacyAuto !== 'false',
+      clearRejected: false,
       timerSeconds: 25,
       keyTicks: true,
       subSkin: 'gold',
+      buddy: 'krill',
+      colorblind: false,
+      crt: true,
       reducedMotion: false
     };
     try {
@@ -174,9 +208,34 @@
     } catch (_) {}
   }
 
+  function syncBuddyVisuals() {
+    const buddyId = state.settings.buddy || 'krill';
+    const b = BUDDY_CONFIG[buddyId] || BUDDY_CONFIG.krill;
+    const hasGold = state.results.some(r => r.tier === 6);
+    const src = (buddyId === 'krill' && hasGold && b.goldSrc) ? b.goldSrc : b.src;
+
+    const homeImg = document.getElementById('home-buddy-img');
+    const plungeImg = document.getElementById('plunge-buddy-img');
+    const nameEl = document.getElementById('home-buddy-name');
+    const boopBtn = document.getElementById('btn-boop-buddy');
+
+    if (homeImg) { homeImg.src = src; homeImg.alt = b.name; }
+    if (plungeImg) { plungeImg.src = src; plungeImg.alt = b.name; }
+    if (nameEl) nameEl.textContent = `${b.name} // DEEP-SEA GUIDE`;
+    if (boopBtn) boopBtn.classList.toggle('is-gold', hasGold && buddyId === 'krill');
+  }
+
   function applyVisualSettings(stObj) {
     if (Ocean.setSubSkin) Ocean.setSubSkin(stObj.subSkin || 'gold');
     if (Ocean.setReducedMotion) Ocean.setReducedMotion(Boolean(stObj.reducedMotion));
+    if (document.body && document.body.classList) {
+      document.body.classList.toggle('colorblind', Boolean(stObj.colorblind));
+    }
+    const crtEl = document.getElementById('crt-scanlines');
+    if (crtEl && crtEl.classList) {
+      crtEl.classList.toggle('hidden-crt', stObj.crt === false);
+    }
+    syncBuddyVisuals();
   }
 
   function loadPromptBests() {
@@ -629,6 +688,11 @@
     document.getElementById('plunge-stamp-wrap').classList.remove('show');
     document.getElementById('plunge-card').classList.remove('active');
     document.getElementById('prompt-card').classList.remove('diving-minimized');
+    const fallEl = document.getElementById('falling-answer');
+    if (fallEl) { fallEl.classList.remove('active'); fallEl.textContent = ''; }
+    const ladderEl = document.getElementById('tier-ladder');
+    if (ladderEl) { ladderEl.classList.remove('active'); ladderEl.innerHTML = ''; }
+    syncBuddyVisuals();
 
     renderSignalDots();
     syncAutoSpellBtn();
@@ -739,11 +803,14 @@
       AudioEngine.rejectBuzz();
       Ocean.triggerRejectShake();
       document.getElementById('reject-text').textContent = `✕ ${evalRes.reason}`;
+      if (state.settings.clearRejected) {
+        input.value = '';
+      }
       updateSpellPreview();
       input.classList.remove('shake');
       void input.offsetWidth;
       input.classList.add('shake');
-      input.select();
+      if (!state.settings.clearRejected) input.select();
       return;
     }
 
@@ -869,14 +936,45 @@
       fuzzy
     });
 
-    // 1. Trigger Pixel Ocean Plunge & Layered Submarine Web Audio!
+    // 1. Trigger Pixel Ocean Plunge, Falling Answer + Tier Ladder Gates & Audio!
     AudioEngine.diveScore(tier);
+    if (tier >= 4 && AudioEngine.oceanSurge) AudioEngine.oceanSurge();
     if (fuzzy) AudioEngine.spellCorrectChime();
     if (comboBonus > 0) AudioEngine.comboChime(state.rareCombo);
     if (nextZone.name !== prevZone.name) AudioEngine.zoneTransitionFanfare();
     AudioEngine.updateAmbienceDepth(state.totalDepth);
     Ocean.plungeToDepth(state.totalDepth, tier);
     renderSignalDots(state.results.length - 1);
+    syncBuddyVisuals();
+
+    const fallEl = document.getElementById('falling-answer');
+    const ladderEl = document.getElementById('tier-ladder');
+    if (fallEl) {
+      fallEl.textContent = displayAnswer ? `“${displayAnswer}”` : '';
+      fallEl.style.color = tierInfo.color;
+      fallEl.classList.remove('active');
+      void fallEl.offsetWidth;
+      fallEl.classList.add('active');
+    }
+    if (ladderEl) {
+      ladderEl.innerHTML = '';
+      for (let t = 1; t <= 6; t++) {
+        const ti = TIERS[t];
+        const gate = document.createElement('div');
+        gate.className = 'tier-gate-line';
+        gate.style.color = ti.color;
+        gate.innerHTML = `<span>${ti.emoji} ${ti.name.toUpperCase()}</span><span>+${ti.meters}m</span>`;
+        ladderEl.appendChild(gate);
+        if (tier >= t) {
+          setTimeout(() => {
+            if (!state.inReveal) return;
+            gate.classList.add('lit');
+            if (AudioEngine.tierGate) AudioEngine.tierGate(t);
+          }, (t - 1) * 115);
+        }
+      }
+      ladderEl.classList.add('active');
+    }
 
     // 2. Hide prompt card so player watches the sub rocket down through the pixel ocean!
     document.getElementById('prompt-card').classList.add('diving-minimized');
@@ -912,7 +1010,16 @@
       }
     }
 
-    // 4. Populate Bottom Plunge Card + Krill Typewriter Reaction
+    // 4. Populate Bottom Plunge Card + Krill Typewriter Reaction + Tier SVG
+    const tierIconEl = document.getElementById('plunge-tier-icon');
+    if (tierIconEl) {
+      if (TIER_ICONS[tier]) {
+        tierIconEl.src = TIER_ICONS[tier];
+        tierIconEl.style.display = 'inline-block';
+      } else {
+        tierIconEl.style.display = 'none';
+      }
+    }
     document.getElementById('plunge-answer-name').textContent = displayAnswer;
     const pbTag = document.getElementById('plunge-pb-tag');
     if (pbTag) pbTag.style.display = isNewPB ? 'inline-block' : 'none';
@@ -1020,6 +1127,8 @@
     document.getElementById('res-mode-label').textContent = data.label;
     document.getElementById('res-zone-badge').textContent = `${zone.badge} ${zone.name} (${zone.sci})`;
     document.getElementById('res-depth-big').textContent = `${data.totalDepth.toLocaleString()}m`;
+    const bearingEl = document.getElementById('res-bearing-badge');
+    if (bearingEl) bearingEl.textContent = getBearingBand(data.totalDepth).label;
     const resetSumBtn = document.getElementById('btn-reset-daily-summary');
     if (resetSumBtn) {
       const hasToday = Boolean(loadDailyRecord(getTodayInfo().dateKey));
@@ -1175,6 +1284,7 @@
     const validTimers = ['15', '25', '35', '0'];
     const tStr = String(state.settings.timerSeconds);
     document.getElementById('set-autospell').checked = Boolean(state.autoSpell);
+    document.getElementById('set-clear-rejected').checked = Boolean(state.settings.clearRejected);
     document.getElementById('set-timer-sec').value = validTimers.includes(tStr) ? tStr : '25';
     const volPct = typeof AudioEngine.getVolume === 'function' ? Math.round(AudioEngine.getVolume() * 100) : 85;
     document.getElementById('audio-volume-slider').value = String(volPct);
@@ -1182,13 +1292,16 @@
     document.getElementById('set-muted').checked = typeof AudioEngine.isMuted === 'function' ? AudioEngine.isMuted() : false;
     document.getElementById('set-ambience').checked = typeof AudioEngine.isAmbientEnabled === 'function' ? AudioEngine.isAmbientEnabled() : true;
     document.getElementById('set-keyticks').checked = state.settings.keyTicks !== false;
+    document.getElementById('set-buddy').value = state.settings.buddy || 'krill';
     document.getElementById('set-sub-skin').value = state.settings.subSkin || 'gold';
+    document.getElementById('set-colorblind').checked = Boolean(state.settings.colorblind);
+    document.getElementById('set-crt').checked = state.settings.crt !== false;
     document.getElementById('set-reduced-motion').checked = Boolean(state.settings.reducedMotion);
 
     const wipeBtn = document.getElementById('btn-wipe-stats');
     if (wipeBtn) {
       wipeBtn.dataset.armed = '0';
-      wipeBtn.textContent = '🗑️ Reset All Stats';
+      wipeBtn.textContent = '🗑️ Clear Stats';
     }
   }
 
@@ -1367,6 +1480,16 @@
       syncSoundBtn();
     });
 
+    document.getElementById('btn-boop-buddy').addEventListener('click', () => {
+      const btn = document.getElementById('btn-boop-buddy');
+      if (AudioEngine.blub) AudioEngine.blub();
+      btn.classList.remove('poked');
+      void btn.offsetWidth;
+      btn.classList.add('poked');
+      clearTimeout(btn._pokeTid);
+      btn._pokeTid = setTimeout(() => btn.classList.remove('poked'), 950);
+    });
+
     // Settings Modal Controls
     document.getElementById('set-autospell').addEventListener('change', e => {
       state.autoSpell = e.target.checked;
@@ -1376,6 +1499,12 @@
       updateSpellPreview();
       AudioEngine.uiClick();
       showToast(state.autoSpell ? '🪄 Auto Spell-Check: ON' : '🪄 Auto Spell-Check: OFF');
+    });
+    document.getElementById('set-clear-rejected').addEventListener('change', e => {
+      state.settings.clearRejected = e.target.checked;
+      saveSettings(state.settings);
+      AudioEngine.uiClick();
+      showToast(state.settings.clearRejected ? '🧹 Clear Wrong Answer: ON' : '🧹 Clear Wrong Answer: OFF');
     });
     document.getElementById('set-timer-sec').addEventListener('change', e => {
       state.settings.timerSeconds = Number(e.target.value);
@@ -1408,6 +1537,13 @@
       AudioEngine.uiClick();
       showToast(state.settings.keyTicks ? '⌨️ Keystroke Ticks: ON' : '⌨️ Keystroke Ticks: OFF');
     });
+    document.getElementById('set-buddy').addEventListener('change', e => {
+      state.settings.buddy = e.target.value;
+      saveSettings(state.settings);
+      applyVisualSettings(state.settings);
+      if (AudioEngine.blub) AudioEngine.blub();
+      showToast(`🦐 Companion switched: ${e.target.options[e.target.selectedIndex].text}`);
+    });
     document.getElementById('set-sub-skin').addEventListener('change', e => {
       state.settings.subSkin = e.target.value;
       saveSettings(state.settings);
@@ -1415,12 +1551,50 @@
       AudioEngine.uiClick();
       showToast(`🤿 Hull repainted: ${e.target.options[e.target.selectedIndex].text}`);
     });
+    document.getElementById('set-colorblind').addEventListener('change', e => {
+      state.settings.colorblind = e.target.checked;
+      saveSettings(state.settings);
+      applyVisualSettings(state.settings);
+      AudioEngine.uiClick();
+      showToast(state.settings.colorblind ? '🎨 Colorblind High Contrast: ON' : '🎨 Colorblind High Contrast: OFF');
+    });
+    document.getElementById('set-crt').addEventListener('change', e => {
+      state.settings.crt = e.target.checked;
+      saveSettings(state.settings);
+      applyVisualSettings(state.settings);
+      AudioEngine.uiClick();
+      showToast(state.settings.crt ? '📺 CRT Scanlines: ON' : '📺 CRT Scanlines: OFF');
+    });
     document.getElementById('set-reduced-motion').addEventListener('change', e => {
       state.settings.reducedMotion = e.target.checked;
       saveSettings(state.settings);
       applyVisualSettings(state.settings);
       AudioEngine.uiClick();
       showToast(state.settings.reducedMotion ? '🎞️ Reduced Screen Shake: ON' : '🎞️ Full Impact Shake: ON');
+    });
+    document.getElementById('btn-export-history').addEventListener('click', () => {
+      const dailyRuns = {};
+      try {
+        for (let i = 0; i < localStorage.length; i++) {
+          const k = localStorage.key(i);
+          if (k && k.startsWith('shrimplion_daily_')) {
+            dailyRuns[k.replace('shrimplion_daily_', '')] = JSON.parse(localStorage.getItem(k));
+          }
+        }
+      } catch (_) {}
+      const payload = { exportedAt: new Date().toISOString(), stats: loadStats(), promptBests: loadPromptBests(), dailyRuns };
+      try {
+        const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'shrimplion-history.json';
+        a.click();
+        URL.revokeObjectURL(url);
+        showToast('📥 Downloaded shrimplion-history.json!');
+      } catch (_) {
+        showToast('📥 Export prepared');
+      }
     });
     document.getElementById('btn-settings-reset-daily').addEventListener('click', () => {
       document.getElementById('modal-settings').classList.remove('open');
@@ -1430,7 +1604,7 @@
       const btn = e.currentTarget;
       if (btn.dataset.armed !== '1') {
         btn.dataset.armed = '1';
-        btn.textContent = '⚠️ Click Again to Confirm';
+        btn.textContent = '⚠️ Confirm Wipe?';
         return;
       }
       localStorage.removeItem(STATS_KEY);

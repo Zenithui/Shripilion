@@ -11,6 +11,7 @@
   <div class="ocean-viewport">
     <canvas id="ocean-canvas"></canvas>
   </div>
+  <div id="crt-scanlines" class="crt-scanlines" aria-hidden="true"></div>
 
   <!-- Low-Oxygen Red Edge Pulse -->
   <div id="oxygen-vignette" class="oxygen-vignette"></div>
@@ -59,24 +60,14 @@
         </div>
         <div id="daily-countdown" class="daily-countdown" aria-live="off"></div>
 
-        <!-- Pixel Mascot "Krill" Comms Strip -->
+        <!-- Pixel Mascot "Krill" Comms Strip (click mascot to boop!) -->
         <div class="krill-comms-box">
-          <div class="krill-avatar" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 14 14" shape-rendering="crispEdges">
-              <rect x="4" y="2" width="6" height="2" fill="#FDA4AF"/>
-              <rect x="3" y="4" width="8" height="4" fill="#F472B6"/>
-              <rect x="4" y="5" width="2" height="2" fill="#020617"/>
-              <rect x="8" y="5" width="2" height="2" fill="#020617"/>
-              <rect x="4" y="5" width="1" height="1" fill="#FFFFFF"/>
-              <rect x="8" y="5" width="1" height="1" fill="#FFFFFF"/>
-              <rect x="4" y="8" width="6" height="3" fill="#FB7185"/>
-              <rect x="5" y="11" width="4" height="2" fill="#F43F5E"/>
-              <rect x="2" y="1" width="2" height="1" fill="#FDE047"/>
-              <rect x="10" y="1" width="2" height="1" fill="#FDE047"/>
-            </svg>
-          </div>
+          <button id="btn-boop-buddy" class="buddy-boop-btn" type="button" title="Poke your ocean buddy!">
+            <img id="home-buddy-img" src="assets/krill.svg" alt="The Krill" width="38" height="38" />
+            <span id="buddy-blub-bubble" class="blub-bubble" aria-hidden="true">blub!</span>
+          </button>
           <div>
-            <div class="krill-name-tag">KRILL // DEEP-SEA GUIDE</div>
+            <div id="home-buddy-name" class="krill-name-tag">KRILL // DEEP-SEA GUIDE</div>
             <p id="home-krill-speech" class="krill-speech">
               beep. Obvious answers float at the surface. Obscure truths sink us toward 7,000m!
             </p>
@@ -176,8 +167,10 @@
         </div>
       </div>
 
-      <!-- Open Submersible Viewport Window + Spring-Slam Tier Stamp during Plunges! -->
+      <!-- Open Submersible Viewport Window + Tier Gate Ladder + Spring-Slam Stamp -->
       <div class="sub-stage-window">
+        <div id="falling-answer" class="falling-answer" aria-hidden="true"></div>
+        <div id="tier-ladder" class="tier-ladder" aria-hidden="true"></div>
         <div id="plunge-stamp-wrap" class="plunge-stamp-wrap">
           <div id="tier-stamp-badge" class="tier-stamp-badge">💎 ONE IN A SHRIMPLION</div>
           <div id="floating-meters-pop" class="floating-meters-pop">+1,000m</div>
@@ -228,6 +221,7 @@
       <!-- Bottom Plunge Comms Card (leaves ocean plunge clearly visible above!) -->
       <div id="plunge-card" class="plunge-card">
         <div class="plunge-answer-row">
+          <img id="plunge-tier-icon" class="plunge-tier-icon" src="assets/plankton.svg" alt="" width="34" height="34" />
           <span id="plunge-answer-name" class="plunge-answer-name">Ytterbium</span>
           <span id="plunge-pb-tag" class="plunge-pb-tag" style="display:none;">🏆 PERSONAL BEST</span>
           <span id="plunge-fuzzy-tag" style="font-size:0.76rem;color:#fef08a;font-weight:700;"></span>
@@ -235,14 +229,7 @@
 
         <div class="krill-comms-box" style="margin-bottom:10px;">
           <div class="krill-avatar" aria-hidden="true">
-            <svg width="26" height="26" viewBox="0 0 14 14" shape-rendering="crispEdges">
-              <rect x="4" y="2" width="6" height="2" fill="#FDA4AF"/>
-              <rect x="3" y="4" width="8" height="4" fill="#F472B6"/>
-              <rect x="4" y="5" width="2" height="2" fill="#020617"/>
-              <rect x="8" y="5" width="2" height="2" fill="#020617"/>
-              <rect x="4" y="8" width="6" height="3" fill="#FB7185"/>
-              <rect x="5" y="11" width="4" height="2" fill="#F43F5E"/>
-            </svg>
+            <img id="plunge-buddy-img" src="assets/krill.svg" alt="The Krill" width="32" height="32" />
           </div>
           <div>
             <div class="krill-name-tag">KRILL // SONAR LOG</div>
@@ -267,6 +254,7 @@
         <div id="res-zone-badge" style="font-size:0.84rem;font-weight:700;color:#bae6fd;">
           🐡 The Abyss (Abyssopelagic)
         </div>
+        <div id="res-bearing-badge" class="res-bearing-badge"></div>
 
         <!-- Animated 7-Bar Vertical Plunge Chart -->
         <div id="dive-bars-chart" class="dive-bars-chart"></div>
@@ -376,6 +364,14 @@
           <input id="set-autospell" type="checkbox" checked />
         </label>
 
+        <label class="setting-row">
+          <div>
+            <strong>🧹 Clear Wrong Answer</strong>
+            <span>Automatically clear text box after an unrecognized guess</span>
+          </div>
+          <input id="set-clear-rejected" type="checkbox" />
+        </label>
+
         <div class="setting-row">
           <div>
             <strong>⏱️ Practice / Packs Timer</strong>
@@ -425,8 +421,22 @@
         </label>
       </div>
 
-      <div class="settings-section-title">Visuals &amp; Vessel</div>
+      <div class="settings-section-title">Visuals, Color &amp; Companion Buddy</div>
       <div class="settings-list">
+        <div class="setting-row">
+          <div>
+            <strong>🦐 Companion Buddy Wardrobe</strong>
+            <span>Choose your submarine co-pilot sprite</span>
+          </div>
+          <select id="set-buddy" class="setting-select">
+            <option value="krill">🦐 The Krill</option>
+            <option value="schooler">🐟 Schooler</option>
+            <option value="rare">🦑 Rare Squid</option>
+            <option value="deepcut">🏮 Deep Cut Angler</option>
+            <option value="evil">😈 Evil Krill</option>
+          </select>
+        </div>
+
         <div class="setting-row">
           <div>
             <strong>🤿 Bathysphere Hull Paint</strong>
@@ -442,6 +452,22 @@
 
         <label class="setting-row">
           <div>
+            <strong>🎨 Colorblind High Contrast</strong>
+            <span>Higher-contrast amber/cyan palette &amp; softer scanlines</span>
+          </div>
+          <input id="set-colorblind" type="checkbox" />
+        </label>
+
+        <label class="setting-row">
+          <div>
+            <strong>📺 Retro CRT Scanlines</strong>
+            <span>Subtle arcade underwater monitor lines</span>
+          </div>
+          <input id="set-crt" type="checkbox" checked />
+        </label>
+
+        <label class="setting-row">
+          <div>
             <strong>🎞️ Reduce Screen Shake</strong>
             <span>Skip heavy impact shake on 850m–1,000m plunges</span>
           </div>
@@ -450,9 +476,10 @@
       </div>
 
       <div class="settings-section-title">Data &amp; Daily Dive</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
-        <button id="btn-settings-reset-daily" class="mode-btn" type="button">🔄 Reset Today’s Daily</button>
-        <button id="btn-wipe-stats" class="mode-btn danger-outline" type="button">🗑️ Reset All Stats</button>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:6px;">
+        <button id="btn-export-history" class="mode-btn" type="button">📥 Export JSON</button>
+        <button id="btn-settings-reset-daily" class="mode-btn" type="button">🔄 Reset Daily</button>
+        <button id="btn-wipe-stats" class="mode-btn danger-outline" type="button">🗑️ Clear Stats</button>
       </div>
     </div>
   </div>

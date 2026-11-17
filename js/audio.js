@@ -71,6 +71,35 @@
     }
   }
 
+  function playNoiseSurge(duration, lowpass, sweep, gainPeak, startOffset = 0) {
+    const c = ensureContext();
+    if (!c || !masterGain) return;
+    try {
+      const t = c.currentTime + startOffset;
+      const src = c.createBufferSource();
+      const buf = c.createBuffer(1, Math.ceil(c.sampleRate * (duration + 0.05)), c.sampleRate);
+      const data = buf.getChannelData(0);
+      for (let i = 0; i < data.length; i++) data[i] = Math.random() * 2 - 1;
+      src.buffer = buf;
+
+      const filter = c.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.setValueAtTime(lowpass || 1200, t);
+      if (sweep) filter.frequency.exponentialRampToValueAtTime(Math.max(40, sweep), t + duration);
+
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.linearRampToValueAtTime(gainPeak || 0.06, t + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + duration);
+
+      src.connect(filter);
+      filter.connect(g);
+      g.connect(masterGain);
+      src.start(t);
+      src.stop(t + duration + 0.04);
+    } catch (_) {}
+  }
+
   function buildBrownNoiseBuffer(c) {
     const len = c.sampleRate * 3;
     const buf = c.createBuffer(1, len, c.sampleRate);
@@ -226,6 +255,19 @@
     sonarPing() {
       playTone(1046.5, 'sine', 0, 0.42, 0.07, 1020);
       playTone(2093, 'sine', 0.01, 0.22, 0.02, 2040);
+    },
+    blub() {
+      const v = 0.85 + Math.random() * 0.45;
+      playTone(260 * v, 'sine', 0, 0.13, 0.08, 720 * v);
+      playNoiseSurge(0.06, 1800, 700, 0.035);
+    },
+    tierGate(idx = 1) {
+      const base = 700 + idx * 140;
+      playTone(base, 'triangle', 0, 0.07, 0.055, base * 1.65);
+    },
+    oceanSurge() {
+      playNoiseSurge(0.9, 1600, 220, 0.06);
+      playTone(110, 'sine', 0, 0.8, 0.06, 48);
     },
     rejectBuzz() {
       playTone(175, 'triangle', 0, 0.11, 0.08, 125);

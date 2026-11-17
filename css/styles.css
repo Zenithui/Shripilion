@@ -1,5 +1,13 @@
 /* SHRIMPLION — Authentic Krillion-Style Pixel Ocean + Minimalist UI & Animations */
 
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../assets/vt323-latin-400-normal.woff2') format('woff2');
+}
+
 :root {
   --bg-deep: #060d1f;
   --card-surface: rgba(7, 15, 34, 0.84);
@@ -29,12 +37,38 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Pixel Font Utility (crisp blocky arcade look without external CDN dependency) */
-.pixel-text {
-  font-family: 'Courier New', ui-monospace, 'SFMono-Regular', Menlo, Monaco, Consolas, monospace;
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+/* Pixel Font Utility powered by local VT323 */
+.pixel-text,
+.game-logo-title,
+.odometer-depth,
+.results-depth-big,
+.tier-stamp-badge,
+.falling-answer {
+  font-family: 'VT323', 'Courier New', ui-monospace, monospace;
+}
+
+.crt-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 25;
+  pointer-events: none;
+  opacity: 0.34;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.22) 0 1px, transparent 1px 3px);
+}
+
+.crt-scanlines.hidden-crt {
+  display: none;
+}
+
+body.colorblind {
+  --text-muted: #cbd5e1;
+  --cyan: #67e8f9;
+  --pearl: #fb923c;
+  --gold: #fde047;
+}
+
+body.colorblind .crt-scanlines {
+  opacity: 0.14;
 }
 
 /* Fullscreen Pixel-Art Ocean World Canvas */
@@ -1517,6 +1551,154 @@ html, body {
 .danger-outline:hover {
   background: rgba(244, 63, 94, 0.22) !important;
   border-color: #fb7185 !important;
+}
+
+/* OpenKrillion-inspired Buddy Boop, Plunge Falling Word & Tier Gates */
+.buddy-boop-btn {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid rgba(244, 114, 182, 0.45);
+  background: rgba(15, 23, 42, 0.85);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.14s ease, border-color 0.14s ease;
+}
+
+.buddy-boop-btn:hover {
+  transform: scale(1.06);
+  border-color: #f472b6;
+}
+
+.buddy-boop-btn img {
+  image-rendering: pixelated;
+  width: 34px;
+  height: 34px;
+}
+
+.buddy-boop-btn.is-gold {
+  border-color: #facc15;
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.55));
+}
+
+.buddy-boop-btn.poked img {
+  animation: krillRoll 0.72s ease-in-out;
+}
+
+@keyframes krillRoll {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(190deg) scale(1.18); }
+  100% { transform: rotate(360deg) scale(1); }
+}
+
+.blub-bubble {
+  position: absolute;
+  top: -18px;
+  right: -12px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: #081226;
+  border: 1px solid rgba(244, 114, 182, 0.65);
+  color: #f9a8d4;
+  font-family: 'VT323', ui-monospace, monospace;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.buddy-boop-btn.poked .blub-bubble {
+  opacity: 1;
+  transform: translateY(-4px);
+}
+
+.sub-stage-window {
+  position: relative;
+}
+
+.falling-answer {
+  position: absolute;
+  left: 50%;
+  top: 12%;
+  transform: translateX(-50%);
+  font-size: 1.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #f8fafc;
+  text-shadow: 0 0 14px rgba(56, 189, 248, 0.85);
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 4;
+}
+
+.falling-answer.active {
+  animation: plungeWordDrop 0.95s ease-in forwards;
+}
+
+@keyframes plungeWordDrop {
+  0% { opacity: 0; transform: translate(-50%, -10px) scale(0.9); }
+  18% { opacity: 1; transform: translate(-46%, 12px) scale(1.06) rotate(-3deg); }
+  55% { opacity: 0.95; transform: translate(-54%, 46px) rotate(3deg); }
+  100% { opacity: 0; transform: translate(-50%, 84px) scale(0.82); }
+}
+
+.tier-ladder {
+  position: absolute;
+  inset: 6px 10px;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 2;
+}
+
+.tier-ladder.active {
+  opacity: 1;
+}
+
+.tier-gate-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px dashed rgba(148, 163, 184, 0.26);
+  padding-top: 2px;
+  font-family: 'VT323', ui-monospace, monospace;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  opacity: 0.32;
+  transition: opacity 0.16s ease, transform 0.16s ease;
+}
+
+.tier-gate-line.lit {
+  opacity: 1;
+  transform: translateX(3px);
+  text-shadow: 0 0 10px currentColor;
+}
+
+.plunge-tier-icon {
+  image-rendering: pixelated;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.45));
+}
+
+.res-bearing-badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(250, 204, 21, 0.45);
+  color: #fde68a;
+  font-size: 0.76rem;
+  font-weight: 800;
 }
 
 @media (max-width: 560px) {

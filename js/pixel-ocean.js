@@ -441,7 +441,8 @@
       drawTrenchFloor(floorY);
     }
 
-    // 6. RENDER SEA CREATURES IN VIEWPORT
+    // 6. RENDER OCEAN DEPTH LANDMARKS, 3,800m TITANIC WRECK & SEA CREATURES
+    drawLandmarksAndWreck(surfaceY);
     drawCreatures(surfaceY);
 
     // 7. RENDER AMBIENT BUBBLES / BIOLUMINESCENT SNOW & RUSH STREAKS
@@ -777,6 +778,49 @@
       }
       ctx.fillStyle = d.color;
       ctx.fillRect(Math.round(d.x), Math.round(d.y), 2, 2);
+    }
+  }
+
+  const OCEAN_LANDMARKS = [
+    [60, 'light begins to fade'],
+    [200, 'most sunlight stops here'],
+    [332, 'deepest scuba dive ever — 332m'],
+    [385, 'sperm whales hunt below here'],
+    [535, 'emperor penguins dive this deep'],
+    [800, 'siphonophore drift zone'],
+    [1040, 'THE MIDNIGHT ZONE'],
+    [1550, 'sperm whales duel giant squid'],
+    [2150, 'colossal squid eyes: football-sized'],
+    [3000, 'THE ABYSSAL ZONE'],
+    [3800, 'the Titanic rests here — 3,800m'],
+    [4900, 'the abyssal plain stretches out'],
+    [5500, 'deeper than most subs survive'],
+    [6000, 'THE HADAL ZONE'],
+    [6500, 'named for Hades. fitting.']
+  ];
+
+  function drawLandmarksAndWreck(surfaceY) {
+    // 3,800m sunken ship hull silhouette (pixel homage to Titanic wreck)
+    const wreckY = Math.round(surfaceY + 3800 * PX_PER_METER);
+    if (wreckY > -24 && wreckY < vh + 24) {
+      const wx = Math.round(vw * 0.52);
+      ctx.fillStyle = 'rgba(2, 6, 16, 0.85)';
+      ctx.fillRect(wx - 42, wreckY - 3, 52, 9);
+      ctx.fillRect(wx - 34, wreckY - 8, 4, 5);
+      ctx.fillRect(wx - 22, wreckY - 8, 4, 5);
+      ctx.fillRect(wx - 10, wreckY - 8, 4, 5);
+      ctx.fillRect(wx + 18, wreckY - 1, 24, 7);
+    }
+
+    if (typeof ctx.fillText !== 'function') return;
+    ctx.font = '7px VT323, ui-monospace, monospace';
+    ctx.textAlign = 'left';
+    for (const [m, label] of OCEAN_LANDMARKS) {
+      const ly = Math.round(surfaceY + m * PX_PER_METER);
+      if (ly < 10 || ly > vh - 10) continue;
+      ctx.fillStyle = 'rgba(125, 147, 184, 0.34)';
+      ctx.fillRect(6, ly - 2, 10, 1);
+      ctx.fillText(label, 19, ly);
     }
   }
 
