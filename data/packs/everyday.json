@@ -194,5 +194,33 @@
       "5": ["Actuary", "Underwriter", "Paralegal", "Notary|Notary Public", "Cartographer", "Meteorologist", "Oceanographer", "Paleontologist", "Entomologist", "Botanist", "Zoologist", "Ethnographer", "Curator", "Archivist", "Conservator|Art Restorer", "Luthiery|Luthier", "Horologist|Watchmaker", "Cobbler|Shoemaker", "Cooper", "Tanner", "Chandler", "Glazier", "Glassblower", "Potter|Ceramicist", "Foley Artist", "Gaffer", "Best Boy", "Colorist", "Choreographer", "Conductor", "Taxidermist"],
       "6": ["Apothecary", "Alchemist", "Astrologer", "Cartomancer", "Phrenologist", "Vintner|Oenologist", "Cicerone", "Fromager", "Affineur", "Charcutier", "Patissier", "Chocolatier", "Confectioner", "Haberdasher", "Milliner", "Cordwainer", "Wheelwright", "Cartwright", "Wainwright", "Farrier", "Saddler", "Fletcher", "Bowyer", "Armorer", "Cutler", "Whitesmith", "Tinker", "Thatcher", "Stevedore|Longshoreman", "Lighterman", "Lockkeeper", "Lighthouse Keeper", "Signalman", "Brakeman", "Gandy Dancer", "Bellhop", "Concierge", "Majordomo", "Butler", "Valet", "Scullion", "Ostler", "Groom", "Gamekeeper", "Falconer", "Huntsman", "Verderer", "Reeve", "Bailiff", "Beadle", "Crier|Town Crier", "Scriveners|Scrivener", "Illuminator", "Bookbinder", "Typesetter|Compositor", "Dragoman", "Muezzin", "Rhapsode", "Troubadour", "Skald", "Griots|Griot"]
     }
+  },
+  {
+    "id": "four-letter-animals",
+    "pack": "everyday",
+    "prompt": "Name an animal whose name is exactly 4 letters long",
+    "hint": "English common names with 4 letters (e.g., Lion, Bear, Wolf, Orca, Ibex)",
+    "tiers": {
+      "1": ["Lion", "Bear", "Wolf", "Duck", "Frog", "Goat", "Deer", "Fish", "Bird"],
+      "2": ["Seal", "Crab", "Crow", "Swan", "Hawk", "Moth", "Wasp", "Worm", "Bull", "Pony", "Toad", "Hare"],
+      "3": ["Lynx", "Puma", "Mule", "Boar", "Dove", "Wren", "Gull", "Orca", "Mole", "Newt", "Mink", "Flea", "Tick", "Slug", "Clam", "Tuna", "Carp", "Bass"],
+      "4": ["Ibis", "Loon", "Lark", "Kite", "Rhea", "Kiwi", "Vole", "Gnat", "Pike", "Shad", "Colt", "Foal", "Calf", "Lamb", "Joey", "Buck", "Stag", "Hind", "Hart", "Zebu"],
+      "5": ["Ibex", "Kudu", "Oryx", "Gaur", "Tahr", "Sika", "Paca", "Cavy", "Degu", "Anoa", "Tern", "Skua", "Shag", "Ruff", "Rook", "Dace", "Chub", "Sole", "Hake", "Ling", "Rudd", "Tope", "Dodo", "Mina|Myna"],
+      "6": ["Mara", "Nene", "Sora", "Tody", "Piha", "Kagu", "Kaka", "Weka", "Hihi", "Moho", "Huia", "Titi", "Puku", "Tora", "Zobo", "Goby", "Dory", "Pudu", "Orfe", "Opah", "Cusk", "Tusk", "Scad", "Wels", "Parr", "Gilt", "Galt", "Pika", "Coot", "Teal", "Smew"]
+    }
+  },
+  {
+    "id": "types-of-stations-places",
+    "pack": "everyday",
+    "prompt": "Name a type of station or named station",
+    "hint": "Anything called a '... station' (infrastructure, science, broadcasting, or slang)",
+    "tiers": {
+      "1": ["Train Station|Railway Station", "Police Station", "Fire Station", "Gas Station|Petrol Station|Service Station"],
+      "2": ["Bus Station", "Space Station", "Radio Station", "TV Station|Television Station", "Subway Station|Metro Station", "Power Station"],
+      "3": ["Weather Station", "Charging Station", "Docking Station", "Workstation|Work Station", "PlayStation|Play Station", "Research Station"],
+      "4": ["Battle Station", "Aid Station", "Pumping Station|Pump Station", "Ranger Station", "Coast Guard Station", "Weigh Station", "Base Station", "Relay Station", "Transfer Station", "Ski Station", "Polling Station"],
+      "5": ["Tracking Station", "Cattle Station", "Sheep Station", "Listening Station", "Whaling Station", "Lifeboat Station", "Filling Station", "Fuel Station", "Hydroelectric Station|Hydro Station", "Nuclear Station", "Switching Station", "Substation|Transformer Station", "Waystation|Way Station", "Rest Station", "Comfort Station"],
+      "6": ["Ghost Station", "Number Station|Numbers Station", "Field Station", "Quarantine Station", "Coaling Station", "Semaphore Station", "Signal Station", "Pilot Station", "Degaussing Station", "Compressor Station", "Booster Station", "Chlorination Station", "Metering Station", "Sounding Station", "Mareograph Station|Tide Station", "Triangulation Station", "Remount Station", "Mission Station", "Trading Station", "Botanical Station", "Marine Station", "High-Altitude Station", "Outstation|Out Station"]
+    }
   }
 ]

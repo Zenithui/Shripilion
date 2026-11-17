@@ -59,14 +59,14 @@
     "id": "ev-modern-cars",
     "pack": "current",
     "prompt": "Name an electric vehicle (EV), EV brand, or modern EV model",
-    "hint": "Electric carmakers or specific electric cars, trucks & SUVs",
+    "hint": "Electric carmakers & models (including Australian, Asian, European & US EVs)",
     "tiers": {
-      "1": ["Tesla", "Model 3|Tesla Model 3", "Model Y|Tesla Model Y", "Cybertruck|Tesla Cybertruck", "Prius|Toyota Prius"],
-      "2": ["Rivian", "Ford Mustang Mach-E|Mach-E", "Ford F-150 Lightning|F-150 Lightning", "Hyundai Ioniq|Ioniq 5|Ioniq 6", "BYD", "Chevy Bolt|Chevrolet Bolt", "Nissan Leaf", "Porsche Taycan"],
-      "3": ["Lucid|Lucid Air", "Polestar|Polestar 2", "Kia EV6", "Kia EV9", "BMW i4|BMW iX", "Audi e-tron|Audi Q4 e-tron", "Volkswagen ID.4|ID.4", "Volvo EX30|EX90", "Model S|Tesla Model S", "Model X|Tesla Model X"],
-      "4": ["Rivian R1T", "Rivian R1S", "Rivian R2", "Lucid Gravity", "Hummer EV|GMC Hummer EV", "Cadillac Lyriq", "Chevy Blazer EV|Equinox EV", "Mercedes EQS|Mercedes EQE", "Jaguar I-Pace", "Mini Cooper SE", "Fiat 500e", "Subaru Solterra", "Toyota bZ4X", "Honda Prologue", "Dodge Charger Daytona EV", "BYD Seal", "BYD Atto 3", "BYD Dolphin"],
-      "5": ["NIO|Nio ET5|Nio ES8", "XPeng|XPeng G6", "Li Auto", "Xiaomi SU7", "Zeekr|Zeekr 001", "Polestar 3", "Polestar 4", "VinFast|VF8|VF9", "Fisker Ocean", "Canoo", "Aptera", "Slate Auto", "Scout Motors", "Jeep Wagoneer S", "Kia EV3", "Hyundai Ioniq 9", "Renault 5 E-Tech", "MG4", "Dacia Spring", "Cupra Born", "Smart #1"],
-      "6": ["Rimac Nevera|Rimac", "Lotus Eletre", "Lotus Emeya", "Pininfarina Battista", "Aspark Owl", "Maserati GranTurismo Folgore", "Rolls-Royce Spectre", "Afeela", "Togg", "Aion|GAC Aion", "Avatr", "Deepal", "Leapmotor", "Neta", "Voyah", "Seres", "Hongqi E-HS9", "Yangwang U8|Yangwang U9", "Lightyear 0", "Sono Sion", "Bollinger B1", "Lordstown Endurance", "Faraday Future|FF 91", "Mullen", "workhorse|Workhorse", "Microlino", "Citroen Ami", "Kandi", "Wuling Hongguang Mini EV", "Ora Funky Cat|Ora Good Cat"]
+      "1": ["Tesla", "Model 3|Tesla Model 3", "Model Y|Tesla Model Y", "BYD", "Cybertruck|Tesla Cybertruck"],
+      "2": ["MG|MG4", "BYD Atto 3|Atto 3", "BYD Seal|Seal", "BYD Dolphin|Dolphin", "Hyundai Ioniq 5|Ioniq 5|Hyundai Ioniq", "Kia EV6", "Polestar|Polestar 2", "Nissan Leaf", "Rivian", "Porsche Taycan"],
+      "3": ["MG ZS EV|ZS EV", "Hyundai Kona Electric|Kona Electric", "Kia EV5", "Kia EV9", "Kia Niro EV|Niro EV", "Volvo EX30", "BMW i4|BMW iX", "Audi e-tron|Audi Q4 e-tron", "Ford Mustang Mach-E|Mach-E", "Ford F-150 Lightning|F-150 Lightning", "Chevy Bolt|Chevrolet Bolt", "Lucid|Lucid Air", "Volkswagen ID.4|ID.4", "Model S|Tesla Model S", "Model X|Tesla Model X"],
+      "4": ["BYD Sealion 7|Sealion 7", "BYD Sealion 6|Sealion 6", "BYD Shark 6|BYD Shark|Shark 6", "GWM Ora|Ora|Ora Good Cat|Ora Funky Cat", "Chery Omoda E5|Omoda E5", "Geely EX5|EX5", "Zeekr X", "Deepal S07", "Leapmotor C10", "XPeng G6|XPeng", "Hyundai Ioniq 6|Ioniq 6", "Hyundai Inster|Inster", "Kia EV3", "Smart #1", "Smart #3", "Cupra Born", "Volvo EX40|XC40 Recharge", "Volvo C40|EC40|C40 Recharge", "Volvo EX90", "MG Cyberster", "Polestar 3", "Polestar 4", "BMW iX1|BMW iX2|BMW iX3", "Mercedes EQA|Mercedes EQB", "Porsche Macan Electric", "MINI Cooper SE|Mini Electric", "Fiat 500e", "Subaru Solterra", "Toyota bZ4X"],
+      "5": ["Zeekr 009", "Zeekr 7X", "Zeekr 001", "Leapmotor B10", "Deepal E07", "MG S5 EV|MGS5 EV", "Cupra Tavascan", "Renault Megane E-Tech|Megane E-Tech", "Renault 5 E-Tech", "MINI Aceman|Mini Aceman", "Skoda Enyaq|Enyaq", "Skoda Elroq|Elroq", "Volkswagen ID. Buzz|ID Buzz", "Volkswagen ID.5|Volkswagen ID.3", "Nissan Ariya", "BMW i5|BMW i7", "Mercedes EQC|Mercedes EQE|Mercedes EQS", "Audi Q6 e-tron|Audi Q8 e-tron|Audi e-tron GT", "LDV MIFA 9|MIFA 9", "LDV eT60|eT60", "Jaguar I-Pace", "Peugeot E-2008|Peugeot E-208|Peugeot E-308", "Jeep Avenger", "Rivian R1T|Rivian R1S|Rivian R2", "Hummer EV|GMC Hummer EV", "Cadillac Lyriq", "NIO|Nio ET5|Nio ES8", "Xiaomi SU7", "Li Auto", "VinFast|VF8|VF9", "Dacia Spring"],
+      "6": ["LDV eDeliver 7|LDV eDeliver 9|eDeliver", "Farizon SV", "Riddara RD6|Radar RD6", "KGM Torres EVX|Torres EVX", "Aion V|GAC Aion", "JAC T9 EV|JAC N55", "Neta X|Neta", "Ace Cargo|ACE EV", "Foton eAumark", "Savic|Savic Motorcycles", "Smart #5", "Leapmotor T03", "BYD Atto 2", "Jaecoo J5 EV", "Chery Tiggo 4 EV|Omoda E3", "Zeekr Mix", "Denza B5|Denza Z9|Denza", "Yangwang U8|Yangwang U9", "Alfa Romeo Junior", "Abarth 500e", "Hyundai Ioniq 9", "Kia EV4", "Ford Capri EV|Ford Explorer EV", "Honda Prologue|Honda e", "Mazda MX-30", "Rimac Nevera|Rimac", "Lotus Eletre|Lotus Emeya", "Pininfarina Battista", "Rolls-Royce Spectre", "Maserati GranTurismo Folgore", "Avatr|Avatr 11", "Voyah|Seres", "Aptera|Canoo", "Fisker Ocean", "Microlino|Citroen Ami", "Wuling Hongguang Mini EV", "Togg|Afeela"]
     }
   },
   {
@@ -165,6 +165,62 @@
       "4": ["Sinners", "Conclave", "The Substance", "The Brutalist", "Poor Things", "The Holdovers", "Past Lives", "Killers of the Flower Moon", "Anatomy of a Fall", "The Zone of Interest", "American Fiction", "Flow", "Nosferatu", "A Complete Unknown", "Furiosa", "The Fall Guy", "Twisters", "Civil War", "Longlegs", "Talk to Me", "Alien Romulus", "The Banshees of Inisherin", "Tar|TAR", "Triangle of Sadness", "Aftersun", "Babylon", "Tenet", "Soul", "CODA", "Druk|Another Round"],
       "5": ["Nickel Boys", "I m Still Here|Im Still Here", "Sing Sing", "A Real Pain", "The Seed of the Sacred Fig", "All We Imagine as Light", "I Saw the TV Glow", "The Iron Claw", "May December", "Monster 2023|Kore-eda Monster", "Perfect Days", "Decision to Leave", "Drive My Car", "The Worst Person in the World", "Licorice Pizza", "The Power of the Dog", "Pig", "The Green Knight", "Marcel the Shell with Shoes On", "Petite Maman", "C mon C mon", "Tick Tick Boom", "The Mitchells vs the Machines", "KPop Demon Hunters", "One Battle After Another", "Marty Supreme", "Mickey 17", "28 Years Later"],
       "6": ["EO", "Close", "Saint Omer", "Tori and Lokita", "La Chimera", "Evil Does Not Exist", "Do Not Expect Too Much from the End of the World", "About Dry Grasses", "Fallen Leaves", "The Beasts|As Bestas", "Alcarras", "Pacifiction", "No Bears", "Hit the Road", "The Quiet Girl|An Cailin Ciuin", "Scrapper", "How to Have Sex", "Janet Planet", "Didi", "Kneecap", "Good One", "Rye Lane", "Theater Camp", "Bottoms", "Shiva Baby", "Red Rocket", "Vortex", "Bergman Island", "Memoria", "Titane", "Quo Vadis Aida", "Flee"]
+    }
+  },
+  {
+    "id": "streaming-services-subs",
+    "pack": "current",
+    "prompt": "Name a streaming service or video/music platform",
+    "hint": "Global & regional TV, movie, sports, anime, or music streaming services",
+    "tiers": {
+      "1": ["Netflix", "Spotify", "Disney+|Disney Plus", "YouTube|YouTube TV", "Amazon Prime|Prime Video"],
+      "2": ["Apple TV+|Apple TV", "Apple Music", "Hulu", "Max|HBO Max", "Paramount+", "Peacock", "Twitch"],
+      "3": ["Stan", "Kayo|Kayo Sports", "Binge", "Crunchyroll", "Tidal", "SoundCloud", "ABC iview|iview", "SBS On Demand", "9Now", "7plus", "10 Play", "Audible"],
+      "4": ["Foxtel Go|Foxtel Now", "MUBI", "Shudder", "BritBox", "Acorn TV", "Hayu", "Bandcamp", "Deezer", "Qobuz", "DAZN", "ESPN+|ESPN Plus", "Fubo|FuboTV", "Tubi", "Pluto TV", "Roku Channel", "Plex"],
+      "5": ["Criterion Channel", "Dropout", "Nebula", "CuriosityStream", "Viki|Rakuten Viki", "iQIYI", "WeTV", "Viu", "Hotstar|JioHotstar", "SonyLIV", "TVNZ+|ThreeNow", "ITVX", "BBC iPlayer", "Channel 4|All 4", "Arte|ARTE", "Kanopy", "Beamafilm", "DocPlay"],
+      "6": ["Midnight Pulp", "Arrow Player", "Night Flight Plus", "Ovid|OVID.tv", "Kino Film Collection", "Alchemiya", "IWONDER", "HIDIVE", "BFI Player", "MHz Choice", "Topic", "Walter Presents", "Curzon Home Cinema", "DaCast", "Floatplane", "Means TV", "Nugs.net", "Mixcloud", "Resonate", "SomaFM", "NTS Radio", "Worldwide FM", "KEXP", "Roon"]
+    }
+  },
+  {
+    "id": "modern-anime-manga",
+    "pack": "current",
+    "prompt": "Name an anime or manga series",
+    "hint": "Shonen blockbusters, recent hits, Studio Ghibli classics, or cult seinen series",
+    "tiers": {
+      "1": ["Naruto", "One Piece", "Dragon Ball|Dragon Ball Z", "Attack on Titan", "Demon Slayer", "Pokemon", "Death Note"],
+      "2": ["My Hero Academia", "Jujutsu Kaisen", "Spirited Away", "My Neighbor Totoro", "Chainsaw Man", "Spy x Family", "One Punch Man", "Fullmetal Alchemist"],
+      "3": ["Hunter x Hunter", "Bleach", "Solo Leveling", "Tokyo Ghoul", "Sailor Moon", "Cowboy Bebop", "Neon Genesis Evangelion|Evangelion", "Haikyu|Haikyuu", "Mob Psycho 100", "JoJos Bizarre Adventure", "Howls Moving Castle", "Princess Mononoke", "Akira"],
+      "4": ["Frieren|Frieren Beyond Journeys End", "Dandadan", "Blue Lock", "Vinland Saga", "Delicious in Dungeon|Dungeon Meshi", "Oshi no Ko", "Bocchi the Rock", "Cyberpunk Edgerunners", "Berserk", "Vagabond", "Code Geass", "Steins Gate", "Your Name", "Suzume", "The Boy and the Heron", "Kaguya-sama|Love Is War", "Fruits Basket", "Gintama", "Black Clover", "Fairy Tail", "Dr Stone"],
+      "5": ["Orb On the Movements of the Earth", "Pluto", "Monster", "Mushishi", "Odd Taxi", "Ping Pong the Animation", "March Comes in Like a Lion", "Showa Genroku Rakugo Shinju", "A Place Further than the Universe", "Made in Abyss", "Land of the Lustrous|Houseki no Kuni", "Samurai Champloo", "FLCL|Fooly Cooly", "Gurren Lagann", "Kill la Kill", "Madoka Magica|Puella Magi Madoka Magica", "Nana", "Banana Fish", "Paranoia Agent", "Perfect Blue", "Millennium Actress", "Tokyo Godfathers", "Slam Dunk", "Kingdom", "Golden Kamuy", "Dorohedoro"],
+      "6": ["Kaiba", "Tatami Galaxy|The Tatami Galaxy", "Keep Your Hands Off Eizouken|Eizouken", "Mononoke", "Kemonozume", "Texhnolyze", "Serial Experiments Lain", "Ergo Proxy", "Haibane Renmei", "Legend of the Galactic Heroes", "Ashita no Joe", "Rose of Versailles", "Glass Mask", "Yokohama Kaidashi Kikou", "Aria|Aria the Animation", "Girls Last Tour", "Sonny Boy", "Revolutionary Girl Utena", "Mawaru Penguindrum", "Heike Monogatari", "Belladonna of Sadness", "Angel s Egg", "Mind Game", "Night on the Galactic Railroad", "Natsumes Book of Friends", "Chihayafuru", "Run with the Wind", "Space Brothers", "Silver Spoon", "Barakamon", "Yotsuba|Yotsuba&!"]
+    }
+  },
+  {
+    "id": "trending-foods-drinks-2020s",
+    "pack": "current",
+    "prompt": "Name a trendy modern food, cafe drink, or viral treat",
+    "hint": "Specialty coffee orders, TikTok viral snacks, bubble teas, or hip pantry staples",
+    "tiers": {
+      "1": ["Matcha|Matcha Latte", "Boba|Bubble Tea", "Iced Latte|Iced Coffee", "Avocado Toast", "Flat White", "Sourdough"],
+      "2": ["Oat Milk", "Cold Brew", "Espresso Martini", "Acai Bowl", "Kombucha", "Smash Burger", "Chai Latte"],
+      "3": ["Dubai Chocolate", "Birria Tacos", "Aperol Spritz", "Hot Honey", "Chili Crisp|Lao Gan Ma", "Crumbl Cookie", "Miso Caramel", "Ube", "Onigiri", "Ramen|Buldak Ramen", "Poke Bowl", "Yuzu"],
+      "4": ["Hojicha|Hojicha Latte", "Pandan Latte", "Dirty Soda", "Crookie", "Tinned Fish|Conservas", "Cottage Cheese Ice Cream", "Pistachio Cream", "Tanghulu", "Protein Coffee|Proffee", "Cloud Bread", "Baked Feta Pasta", "Butter Board", "Dalgona Coffee", "Whipped Ricotta", "Gochujang Noodles", "Biscoff"],
+      "5": ["Strawberry Matcha", "Mont Blanc Coffee", "Einspanner", "Coffee Tonic|Espresso Tonic", "Kinako", "Koji|Shio Koji", "Black Sesame Latte", "Mala|Mala Tang", "Biang Biang Noodles", "Roujiamo", "Smashed Cucumber Salad", "Cucumber Salad", "Pickled Garlic", "Tajin Watermelon", "Chamoy Pickle", "Mochi Donut", "Basque Cheesecake|Burnt Basque Cheesecake", "Pandan Kaya", "Egg Sando|Tamago Sando", "Katsu Sando"],
+      "6": ["Calamansi Espresso", "Durian Puff", "Bolo Bao|Pineapple Bun", "Bingsu", "Tofu Pudding|Douhua", "Kueh Lapis", "Salted Egg Yolk Chips", "Crispy Chili Oil Egg", "Miso Tahini Cookie", "Spiced Labneh", "Fermented Honey Garlic", "Sumac Onions", "Zhoug", "Amba", "Shichimi Popcorn", "Seaweed Butter", "Furikake Fries", "Nduja Honey", "Cascara Fizz", "Tepache", "Kefir Water", "Switchel", "Jun Kombucha", "Kava Latte", "Blue Spirulina Smoothie"]
+    }
+  },
+  {
+    "id": "global-brands-unicorns",
+    "pack": "current",
+    "prompt": "Name a major global tech, retail, or consumer brand",
+    "hint": "Retailers, electronics makers, sportswear, supermarkets, or unicorn software brands",
+    "tiers": {
+      "1": ["Apple", "Google", "Amazon", "Nike", "Samsung", "Microsoft", "Coca-Cola|Coke"],
+      "2": ["Adidas", "IKEA", "Costco", "Target", "Walmart", "Uniqlo", "Zara", "Aldi", "Kmart", "Sony", "Lego|LEGO"],
+      "3": ["Nvidia", "Woolworths|Woolies", "Coles", "Bunnings", "JB Hi-Fi", "Cotton On", "Sephora", "Mecca", "Lululemon", "Hoka", "Stanley", "Dyson", "Airbnb", "Uber", "Temu", "Shein"],
+      "4": ["Canva", "Atlassian", "Afterpay", "Shopify", "Stripe", "Figma", "Notion", "Linear", "Databricks", "Snowflake", "Patagonia", "Arc teryx|Arcteryx", "Salomon", "On Running|On Cloud", "ASICS", "New Balance", "Gymshark", "Owala", "Yeti", "Aesop", "Zimmermann", "Kith", "Supreme", "Muji", "Decathlon"],
+      "5": ["R.M. Williams|RM Williams", "Country Road", "Gorman", "P.E Nation", "Frank Green", "Crumpler", "Bellroy", "Orbitkey", "Quad Lock", "Rode|RODE Microphones", "Blackmagic Design", "Breville", "Ninja Kitchen", "Shark", "Nothing", "Anker", "Ugreen", "Peak Design", "Away", "Monos", "Rimowa", "Allbirds", "Veja", "Rothy s", "Everlane", "Aritzia", "Brandy Melville"],
+      "6": ["Nudie|Nudie Jeans", "Kloke", "Pamm|P.A.M.", "Perks and Mini", "Song for the Mute", "Incu", "Aje", "Oroton", "Koala Mattress|Koala", "ZeroCo", "Who Gives A Crap", "Modibodi", "Bondi Sands", "Ultra Violette", "Go-To Skincare", "T2|T2 Tea", "KeepCup", "St. Ali", "Campos Coffee", "Ona Coffee", "Buildkite", "SafetyCulture", "Employment Hero", "Airwallex", "Immutable", "Wise|TransferWise", "Revolut", "Monzo", "Up Bank", "Macquarie"]
     }
   }
 ]

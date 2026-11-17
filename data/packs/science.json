@@ -194,5 +194,33 @@
       "5": ["Atlas Moth", "Luna Moth", "Deaths-Head Hawkmoth|Deaths Head Hawkmoth", "Hercules Beetle", "Goliath Beetle", "Bombardier Beetle", "Tiger Beetle", "Water Strider", "Water Boatman", "Backswimmer", "Giant Water Bug", "Assassin Bug", "Wheel Bug", "Kissing Bug", "Lanternfly|Spotted Lanternfly", "Treehopper", "Planthopper", "Spittlebug", "Caddisfly", "Stonefly", "Dobsonfly", "Antlion", "Robber Fly", "Botfly", "Tsetse Fly", "Hoverfly", "Crane Fly", "Sawfly", "Ichneumon Wasp", "Tarantula Hawk", "Velvet Ant", "Orchid Mantis", "Goliath Birdeater", "Peacock Spider", "Whip Scorpion", "Vinegaroon"],
       "6": ["Tailless Whip Scorpion|Amblypygid", "Pseudoscorpion", "Sea Spider|Pycnogonid", "Springtail|Collembola", "Bristletail", "Firebrat", "Zorapteran", "Webspinner|Embioptera", "Ice Crawler|Grylloblattid", "Gladiator|Mantophasmatodea", "Snakefly", "Scorpionfly|Mecoptera", "Twisted-Wing Parasite|Strepsiptera", "Thrips", "Booklouse|Barklouse", "Psyllid", "Whitefly", "Scale Insect|Cochineal", "Mealybug", "Toad Bug", "Creeping Water Bug", "Thread-Legged Bug", "Emperor Scorpion", "Deathstalker", "Bark Scorpion", "Portia Spider", "Bolas Spider", "Ogre-Faced Spider", "Diving Bell Spider", "Bagheera Kiplingi", "Jewel Wasp|Emerald Cockroach Wasp", "Fig Wasp", "Gall Wasp", "Fairyfly", "Megaphragma", "Titan Beetle", "Jewel Beetle|Buprestid", "Oil Beetle|Blister Beetle", "Deathwatch Beetle", "Whirligig Beetle", "Rove Beetle", "Featherwing Beetle", "Trilobite Beetle", "Violin Mantis", "Devil Flower Mantis", "Thorn Bug", "Peanut-Head Bug", "Glasswing Butterfly", "Birdwing|Queen Alexandras Birdwing", "Blue Morpho", "Puss Moth", "Hummingbird Hawkmoth"]
     }
+  },
+  {
+    "id": "elements-one-letter-symbol",
+    "pack": "science",
+    "prompt": "Name a chemical element with a single-letter symbol",
+    "hint": "Elements whose periodic table symbol is just 1 letter (e.g., H, C, O, K, W)",
+    "tiers": {
+      "1": ["Hydrogen|H", "Oxygen|O", "Carbon|C"],
+      "2": ["Nitrogen|N", "Potassium|K", "Sulfur|S|Sulphur"],
+      "3": ["Fluorine|F", "Phosphorus|P", "Iodine|I"],
+      "4": ["Uranium|U", "Boron|B"],
+      "5": ["Vanadium|V", "Tungsten|W|Wolfram"],
+      "6": ["Yttrium|Y"]
+    }
+  },
+  {
+    "id": "australian-wildlife",
+    "pack": "science",
+    "prompt": "Name a native Australian animal",
+    "hint": "Marsupials, monotremes, birds, reptiles, spiders, or marine species native to Australia",
+    "tiers": {
+      "1": ["Kangaroo", "Koala", "Platypus", "Wombat", "Emu", "Kookaburra"],
+      "2": ["Echidna", "Tasmanian Devil", "Quokka", "Wallaby", "Dingo", "Cockatoo|Sulphur-Crested Cockatoo", "Magpie|Australian Magpie"],
+      "3": ["Saltwater Crocodile|Salty|Crocodile", "Blue-Tongue Lizard|Blue-Tongued Skink", "Cassowary", "Galah", "Lorikeet|Rainbow Lorikeet", "Black Swan", "Sugar Glider", "Bilby", "Redback Spider", "Funnel-Web Spider|Sydney Funnel-Web", "Great White Shark"],
+      "4": ["Quoll", "Numbat", "Bandicoot", "Lyrebird", "Thorny Devil", "Frilled-Neck Lizard|Frill-Necked Lizard", "Goanna|Perentie", "Brolga", "Wedge-Tailed Eagle", "Tawny Frogmouth", "King Parrot", "Rosella", "Budgerigar|Budgie", "Dugong", "Blue-Ringed Octopus", "Box Jellyfish", "Irukandji", "Huntsman Spider", "Inland Taipan|Taipan", "Eastern Brown Snake", "Red-Bellied Black Snake"],
+      "5": ["Pademelon", "Potoroo", "Bettong", "Tree Kangaroo|Lumholtzs Tree Kangaroo", "Thylacine|Tasmanian Tiger", "Marsupial Mole", "Antechinus", "Dunnart", "Kowari", "Rakali|Water Rat", "Greater Glider", "Leadbeaters Possum", "Mountain Pygmy Possum", "Shingleback|Bobtail", "Moloch", "Bearded Dragon", "Woma Python", "Green Tree Python", "Murray Cod", "Barramundi", "Leafy Seadragon", "Weedy Seadragon", "Little Penguin|Fairy Penguin", "Malleefowl", "Regent Honeyeater", "Superb Fairywren|Fairywren", "Bowerbird|Satin Bowerbird", "Southern Hairy-Nosed Wombat"],
+      "6": ["Mulgara", "Dibbler", "Ningaui", "Planigale", "Kultarr", "Sminthopsis", "Nabarlek", "Monjon", "Woylie", "Gilberts Potoroo", "Mala|Rufous Hare-Wallaby", "Bridled Nail-Tail Wallaby", "Proserpine Rock-Wallaby", "Mahogany Glider", "Squirrel Glider", "Scaly-Tailed Possum", "Western Swamp Tortoise", "Mary River Turtle", "Fitzroy River Turtle", "Corroboree Frog", "Gastric-Brooding Frog", "Toadlet|Turtle Frog", "Giant Gippsland Earthworm", "Peacock Spider|Maratus", "Golden Orb Weaver", "Lord Howe Island Stick Insect", "Tasmanian Giant Freshwater Crayfish", "Australian Lungfish|Queensland Lungfish", "Handfish|Spotted Handfish", "Red Handfish", "Mauganean Skate|Maugean Skate", "Forty-Spotted Pardalote", "Night Parrot", "Orange-Bellied Parrot", "Plains-Wanderer", "Gouldian Finch", "Palm Cockatoo", "Jabiru|Black-Necked Stork", "Noisy Scrub-Bird", "Helmeted Honeyeater", "Swift Parrot"]
+    }
   }
 ]

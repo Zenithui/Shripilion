@@ -194,5 +194,33 @@
       "5": ["Scottish Gaelic", "Breton", "Galician", "Maltese", "Luxembourgish", "Faroese", "Macedonian", "Belarusian", "Kurdish", "Pashto", "Tajik", "Kyrgyz", "Turkmen", "Tibetan", "Dzongkha", "Hokkien", "Hakka", "Wu|Shanghainese", "Javanese", "Sundanese", "Cebuano", "Ilocano", "Malagasy", "Somali", "Oromo", "Tigrinya", "Shona", "Xhosa", "Tswana", "Wolof", "Akan|Twi", "Lingala", "Kinyarwanda", "Quechua", "Guarani", "Nahuatl", "Navajo", "Cherokee", "Inuktitut", "Cree", "Ojibwe", "Haitian Creole", "Tok Pisin", "Bislama", "Fijian", "Tongan", "BSL|British Sign Language", "Auslan"],
       "6": ["Romansh", "Sardinian", "Occitan", "Corsican", "Friulian", "Ladin", "Aragonese", "Asturian", "Mirandese", "Scots", "Manx", "Cornish", "Frisian|West Frisian", "Sorbian", "Kashubian", "Silesian", "Rusyn", "Sami|Northern Sami", "Veps", "Karelian", "Mari", "Udmurt", "Komi", "Chuvash", "Tatar", "Bashkir", "Yakut|Sakha", "Tuvan", "Buryat", "Kalmyk", "Chechen", "Avar", "Lezgian", "Abkhaz", "Ossetian", "Syriac|Aramaic", "Coptic", "Ge ez|Geez", "Berber|Tamazight", "Tuareg", "Bambara", "Fula|Fulani", "Ewe", "Fon", "Sango", "Kirundi", "Luganda", "Kikuyu", "Maasai", "Khoekhoe|Nama", "Taa", "Hadza", "Sandawe", "Ainu", "Okinawan|Ryukyuan", "Manchu", "Uyghur", "Brahui", "Santali", "Mundari", "Khasi", "Manipuri|Meitei", "Bodo", "Dogri", "Konkani", "Odia", "Assamese", "Kashmiri", "Sindhi", "Balochi", "Dhivehi|Maldivian", "Tetum", "Chamorro", "Palauan", "Marshallese", "Nauruan", "Rotuman", "Rapa Nui", "Tahitian", "Yucatec Maya", "Kiche", "Aymara", "Mapudungun", "Piraha", "Xavante", "Yanomami", "Lakota", "Dakota", "Mohawk", "Haida", "Tlingit", "Yupik", "Kalaallisut|Greenlandic", "Old Norse", "Gothic", "Old English", "Sumerian", "Akkadian", "Hittite", "Etruscan", "Linear B|Mycenaean Greek", "Pali", "Avestan", "Classical Nahuatl", "Toki Pona", "Lojban", "Ithkuil", "Klingon", "Quenya", "Sindarin"]
     }
+  },
+  {
+    "id": "australian-cities-landmarks",
+    "pack": "world",
+    "prompt": "Name an Australian city, state, territory, or iconic landmark",
+    "hint": "Capitals, regional towns, beaches, islands, reefs, or states across Australia",
+    "tiers": {
+      "1": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Sydney Opera House|Opera House", "Great Barrier Reef"],
+      "2": ["Canberra", "Gold Coast", "Hobart", "Darwin", "Bondi Beach|Bondi", "Uluru|Ayers Rock", "New South Wales|NSW", "Victoria|VIC", "Queensland|QLD"],
+      "3": ["Western Australia|WA", "South Australia|SA", "Tasmania|TAS", "Northern Territory|NT", "ACT|Australian Capital Territory", "Cairns", "Newcastle", "Geelong", "Wollongong", "Sunshine Coast", "Byron Bay", "Sydney Harbour Bridge|Harbour Bridge", "Twelve Apostles"],
+      "4": ["Townsville", "Toowoomba", "Ballarat", "Bendigo", "Launceston", "Fremantle", "Albury", "Alice Springs", "Noosa", "Broome", "Rottnest Island", "Kangaroo Island", "Fraser Island|K gari", "Whitsundays|Whitsunday Islands", "Kakadu", "Daintree", "Blue Mountains", "Great Ocean Road", "Port Douglas", "Busselton", "Margaret River"],
+      "5": ["Coober Pedy", "Kalgoorlie", "Geraldton", "Bunbury", "Albany", "Esperance", "Exmouth|Ningaloo Reef", "Mackay", "Rockhampton", "Bundaberg", "Coffs Harbour", "Port Macquarie", "Tamworth", "Wagga Wagga", "Dubbo", "Mildura", "Warrnambool", "Shepparton", "Devonport", "Burnie", "Cradle Mountain", "Freycinet|Wineglass Bay", "Lord Howe Island", "Norfolk Island", "Philip Island|Phillip Island", "Mornington Peninsula", "Bells Beach", "St Kilda"],
+      "6": ["Kununurra", "Katherine", "Tennant Creek", "Yulara", "Oodnadatta", "Birdsville", "Longreach", "Mount Isa", "Charters Towers", "Cooktown", "Cape York", "Thursday Island", "Mornington Island", "Groote Eylandt", "Tiwi Islands", "Arnhem Land", "Karumba", "Winton", "Quilpie", "Broken Hill", "Bourke", "White Cliffs", "Lightning Ridge", "Thredbo", "Perisher", "Kosciuszko|Mount Kosciuszko", "Maria Island", "Bruny Island", "Strahan", "Queenstown TAS", "Tarkine", "Flinders Ranges", "Nullarbor", "Eucla", "Hyden|Wave Rock", "Karijini", "Purnululu|Bungle Bungles", "Shark Bay", "Monkey Mia", "Ningaloo", "Coral Bay", "Hutt River", "Jervis Bay", "Heard Island", "Macquarie Island"]
+    }
+  },
+  {
+    "id": "countries-ending-in-e",
+    "pack": "world",
+    "prompt": "Name a country whose English name ends in the letter E",
+    "hint": "Sovereign countries ending cleanly in -e (e.g., France, Chile, Zimbabwe)",
+    "tiers": {
+      "1": ["France", "Greece"],
+      "2": ["Chile", "Ukraine"],
+      "3": ["Singapore", "Zimbabwe", "Sierra Leone"],
+      "4": ["Mozambique", "Belize"],
+      "5": ["Suriname", "Palestine", "Cape Verde|Cabo Verde"],
+      "6": ["Sao Tome and Principe", "Cote d Ivoire", "Timor-Leste"]
+    }
   }
 ]

@@ -22,7 +22,7 @@ const PACKS = {
   mixed: {
     id: 'mixed',
     name: 'Open Ocean',
-    subtitle: 'All 5 packs mixed (68 prompts)',
+    subtitle: 'All 5 packs mixed (80 prompts)',
     icon: '🌊'
   },
   current: {

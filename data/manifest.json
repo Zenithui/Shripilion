@@ -1,20 +1,20 @@
 {
   "version": 2,
   "datasetName": "Shrimplion Pelagic Reverse-Trivia Corpus",
-  "totalPrompts": 68,
-  "totalCanonicalAnswers": 8389,
-  "totalSearchForms": 9839,
+  "totalPrompts": 80,
+  "totalCanonicalAnswers": 9519,
+  "totalSearchForms": 11195,
   "dailyRange": {
     "start": "2026-11-01",
     "end": "2027-10-31",
     "days": 365
   },
   "packCounts": {
-    "world": 14,
-    "science": 14,
-    "culture": 14,
-    "everyday": 14,
-    "current": 12
+    "world": 16,
+    "science": 16,
+    "culture": 16,
+    "everyday": 16,
+    "current": 16
   },
   "packFiles": {
     "world": "data/packs/world.json",
@@ -28,7 +28,7 @@
     "mixed": {
       "id": "mixed",
       "name": "Open Ocean",
-      "subtitle": "All 5 packs mixed (68 prompts)",
+      "subtitle": "All 5 packs mixed (80 prompts)",
       "icon": "🌊"
     },
     "current": {

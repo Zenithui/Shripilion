@@ -194,5 +194,33 @@
       "5": ["Alekhine Defense", "Philidor Defense", "Catalan|Catalan Opening", "Reti Opening", "Birds Opening", "Trompowsky|Trompowsky Attack", "Evans Gambit", "Fried Liver|Fried Liver Attack", "Stafford Gambit", "Budapest Gambit", "Benko Gambit", "Albin Countergambit", "Najdorf|Sicilian Najdorf", "Sicilian Dragon|Dragon Variation", "Sveshnikov", "Taimanov", "Accelerated Dragon", "Smith-Morra Gambit", "Alapin|Sicilian Alapin", "Bongcloud", "Fools Mate", "Scholars Mate", "Lucena Position", "Philidor Position", "Opposition", "Triangulation", "Windmill", "Desperado", "Deflection", "Decoy", "Clearance", "Overloading", "Battery", "X-Ray", "Tempo", "Prophylaxis"],
       "6": ["Grob|Grobs Attack", "Sokolsky|Orangutan Opening", "Polish Opening", "Larsens Opening|Nimzo-Larsen Attack", "Van Geet|Dunst Opening", "Amar Opening", "Sodium Attack|Durkin Opening", "Ware Opening", "Corn Stalk Defense", "Barnes Opening", "Clemenz Opening", "Mieses Opening", "Saragossa Opening", "Englund Gambit", "Latvian Gambit", "Elephant Gambit", "Blackmar-Diemer Gambit", "Halloween Gambit", "Traxler Counterattack", "Jerome Gambit", "Muzio Gambit", "Allgaier Gambit", "Kieseritzky Gambit", "Rousseau Gambit", "Marshall Attack", "Berlin Defense", "Riga Variation", "Arkhangelsk", "Breyer", "Chigorin", "Saemisch", "Four Pawns Attack", "Averbakh", "Tarrasch Defense", "Chigorin Defense", "Baltic Defense", "Symmetrical English", "Botvinnik System", "Hedgehog", "Maroczy Bind", "Kalashnikov", "Richter-Rauzer", "Scheveningen", "Poisoned Pawn", "Boden Mate", "Lolli Mate", "Damiano Mate", "Anastasias Mate", "Opera Mate", "Legal Trap", "Noah s Ark Trap|Noahs Ark Trap", "Lasker Trap", "Siberian Trap", "Elephant Trap", "Rubinstein Trap", "Novotny", "Plachutta", "Grimshaw", "Turton Doubling", "Excelsior", "Saavedra Position", "Reti Endgame Study", "Vancura Position", "Kling and Horwitz", "Stamma"]
     }
+  },
+  {
+    "id": "superhero-teams-heroes",
+    "pack": "culture",
+    "prompt": "Name a comic-book superhero, villain, or superhero team",
+    "hint": "Marvel, DC, Image, Dark Horse, or indie comic characters and teams",
+    "tiers": {
+      "1": ["Spider-Man|Spiderman", "Batman", "Superman", "Iron Man", "Captain America", "Wonder Woman", "Avengers|The Avengers", "Thor"],
+      "2": ["Hulk|Incredible Hulk", "Wolverine", "Deadpool", "Black Panther", "Flash|The Flash", "Joker", "Thanos", "X-Men", "Justice League", "Aquaman"],
+      "3": ["Doctor Strange", "Scarlet Witch|Wanda", "Green Lantern", "Guardians of the Galaxy", "Fantastic Four", "Teen Titans", "Daredevil", "Ant-Man", "Black Widow", "Hawkeye", "Venom", "Magneto", "Lex Luthor", "Catwoman", "Harley Quinn", "Shazam", "Cyborg"],
+      "4": ["Invincible", "Homelander", "Omniman|Omni-Man", "Hellboy", "Spawn", "Moon Knight", "Punisher", "Luke Cage", "Jessica Jones", "Ms Marvel", "Miles Morales", "Spider-Gwen", "Nightwing", "Batgirl", "Supergirl", "Martian Manhunter", "Green Arrow", "Doctor Doom", "Galactus", "Silver Surfer", "Ghost Rider", "Blade", "Gambit", "Rogue", "Storm", "Cyclops", "Nightcrawler"],
+      "5": ["Blue Beetle", "Booster Gold", "Zatanna", "John Constantine|Constantine", "Swamp Thing", "Watchmen|Rorschach|Dr Manhattan", "Squirrel Girl", "Kamala Khan", "America Chavez", "She-Hulk", "Beta Ray Bill", "Nova", "Adam Warlock", "Sentry", "Namor", "The Tick", "Static Shock|Static", "Etrigan", "The Question", "Plastic Man", "Mister Terrific", "Peacemaker", "Suicide Squad", "X-Force", "Young Avengers", "Runaways", "Cloak and Dagger"],
+      "6": ["Alpha Flight", "Great Lakes Avengers", "Doom Patrol", "Nextwave", "Authority|The Authority", "Planetary", "Miracleman|Marvelman", "The Phantom", "Mandrake the Magician", "Captain Britain", "Union Jack", "Excalibur", "Starjammers", "Power Pack", "Sleepwalker", "Darkhawk", "Moon Girl|Devil Dinosaur", "Gwenpool", "Howard the Duck", "Forbush Man", "Doop", "Arm-Fall-Off-Boy", "Matter-Eater Lad", "Kite Man", "Polka-Dot Man", "Condiment King", "Deadman", "Animal Man", "Ambush Bug", "Shade the Changing Man", "Jack Knight|Starman", "Wesley Dodds|Sandman", "Wildcat", "Hourman", "Flex Mentallo", "Crazy Jane", "Midnighter", "Apollo", "Jenny Sparks", "Supreme", "Savage Dragon", "Madman", "Radiant Black", "Tech Jacket", "Flaming Carrot", "Groo"]
+    }
+  },
+  {
+    "id": "aussie-slang-culture",
+    "pack": "culture",
+    "prompt": "Name an Australian slang word, Aussie food, or cultural icon",
+    "hint": "Classic Straya slang, snacks, traditions, or everyday Australianisms",
+    "tiers": {
+      "1": ["Vegemite", "G day|Gday", "Mate", "Barbie|Barbecue", "Tim Tam", "Thongs"],
+      "2": ["Ute", "Esky", "Bogan", "Maccas", "Servo", "Arvo", "Fair Dinkum", "No Worries", "Meat Pie", "Pavlova", "Lamington"],
+      "3": ["Smoko", "Bottle-O|Bottleo", "Bunnings Snag|Sausage Sizzle", "Fairy Bread", "Anzac Biscuit", "Chicken Salt", "Flat White", "Sunnies", "Mozzie", "Stubby", "Tinnie", "Doona", "Tradie", "Stoked", "Ripper", "She ll Be Right|Shell Be Right"],
+      "4": ["Budgie Smugglers", "Chiko Roll", "Daks|Dacks", "Sparky", "Chippy", "Chook", "Chunder", "Cobber", "Drongo", "Hard Yakka", "True Blue", "Crook", "Spewin", "Footy", "Togs|Bathers|Cossie", "Ugg Boots|Uggs", "Hills Hoist", "Swooping Season|Magpie Season", "Milk Bar", "Bickie", "Brekkie", "Sanga", "Avo", "Coldie", "Furphy"],
+      "5": ["Larrikin", "Bonzer", "Rack Off", "Galah", "Dunny", "Yabby", "Damper", "Billycan|Billy Tea", "Swagman", "Bluey", "Triple J", "Hottest 100", "Bundaberg|Bundy", "Shoey", "Choccy Biccy", "Dim Sim|South Melbourne Dim Sim", "Halal Snack Pack|HSP", "Snot Block|Vanilla Slice", "Neenish Tart", "Frog Cake", "Polony|Devon|Fritz", "Potato Cake|Potato Scallop", "FIFO", "RDO", "Centrelink", "Pokies", "Two-Up"],
+      "6": ["Cactus", "Buckleys|Buckleys Chance", "Stone the Crows", "Strewth", "Crikey", "Cobba", "Dinkum", "Dag|Daggy", "Bodgy|Dodgy", "Chockers", "Devo", "Grouse", "Hoon|Hooning", "Woop Woop", "Back of Bourke", "Never Never", "Jackaroo", "Jillaroo", "Ringer", "Digger", "Waltzing Matilda", "Matilda", "Billabong", "Coolabah", "Bunyip", "Yowie", "Drop Bear", "Bushranger|Ned Kelly", "Eureka Stockade", "Bradman|Don Bradman", "Phar Lap", "Cathy Freeman", "Steve Irwin", "Succulent Chinese Meal", "Democracy Manifest", "Tall Poppy Syndrome", "Bingle", "Chockablock", "Good On Ya", "Avagoodweegend"]
+    }
   }
 ]
